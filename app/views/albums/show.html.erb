@@ -1,0 +1,668 @@
+<header>
+           <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">        
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuContent">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="title">
+                        <span class="icon"></span>
+                        <h1>bscure albums</h1>
+                        <sup>beta!</sup>
+                    </div>
+                </div>
+                <div id="menuContent" class="collapse navbar-collapse">
+                    <div id="siteLinks">
+                        <ul id="menuBar" class="nav navbar-nav">
+                            <li>
+                                <a href="#">News</a>
+                            </li>
+                            <li>
+                                <a href="#">Artists</a>
+                            </li>
+                            <li>
+                                <a href="#">Contribute</a>
+                            </li>
+                            <li>
+                                <a href="#">Forum</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="socialMediaLinks">
+                        <li><a class="fbLink" href="linktofb.com"></a></li>
+                        <li><a class="twitterLink" href="linktotwitter.com"></a></li>
+                    </ul>
+                </div>               
+          </div>
+           </nav>
+        </header>
+        <div class="contentWrapper">
+            <section id="leftPanel">
+                <div class="postContent">
+                    <div class="postTitle">
+                        <div class="albumArt">
+                            <img src="<%= @album.album_art %>" />
+                        </div>
+                        <div class="albumTitle">                                       
+                            <div class="albumHeader">
+                                <h2><%= @album.title %></h2>
+                                <h5><%= @album.artist.name %></h5>
+                                <h4><%= @album.year %></h4>
+                                <div class="streamBuyLinks">                           
+                                    <a href="spotify:album:4lxW0axOKlImAQ0akMRz61" title="Stream Album on Spotify">
+                                        <span class="spotify albumLinkIcons"></span>
+                                    </a>
+                                    <a href="spotify:album:4lxW0axOKlImAQ0akMRz61" title="Stream Album on Spotify">
+                                        <span class="spotify albumLinkIcons"></span>
+                                    </a>
+                                    <a href="spotify:album:4lxW0axOKlImAQ0akMRz61" title="Stream Album on Spotify">
+                                        <span class="spotify albumLinkIcons"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="authorInfo">
+                                <div id="authorPhoto">
+                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ2Xo6K6h_rnk2tI55QYW66PSvPkvkY0kcrcanC1_aWjgQNwIRF" width="50px" height="50px"></img>
+                                </div>
+                                <div class="authorDetail">
+                                    <a href="#authorBio" title="View Bio">
+                                        <span id="authorName">George Slater</span>
+                                    </a>
+                                    <br />
+                                    <a href="#seeReviews" style="margin-top: 6px; display: block;" title="5 Reviews">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                        <span id="authorNumReviews">5</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>                            
+                    </div>
+                    <div class="content">
+                        <article>
+                            <%= @album.body %>
+                        </article>
+                    </div>
+                    <hr />
+                    <div id="relatedPosts">
+                        <div id="relatedPostsImages">
+                            <figure>
+                                <img src="http://upload.wikimedia.org/wikipedia/en/thumb/f/f3/TheBreedersLastSplash.jpg/220px-TheBreedersLastSplash.jpg" />
+                                <figcaption>Captain Beefheart - Safe As Milk (1969)</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="http://upload.wikimedia.org/wikipedia/en/thumb/f/f3/TheBreedersLastSplash.jpg/220px-TheBreedersLastSplash.jpg" />
+                                <figcaption>Muse - Showbiz (1999)</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="http://upload.wikimedia.org/wikipedia/en/thumb/f/f3/TheBreedersLastSplash.jpg/220px-TheBreedersLastSplash.jpg" />
+                                <figcaption>Lou Reed - Mistrial (1986)</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                </div>
+                <!-- <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'obscurealbums'; // required: replace example with your forum shortname
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> -->               
+            </section>
+            <section class="rightPanel">
+                <div class="albumInfo">
+                    <table class="table-striped table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Track</th>
+                                <th>Author</th>
+                                <th>Users</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td>New Year</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>Cannonball</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>Invisible Man</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>No Aloha</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>Roi</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>Do You Love Me Now</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>Flipside</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>I Just Wanna Get Along</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>Mad Lucas</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>Divine Hammer</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>S.O.S.</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>Hag</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>Saints</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>Drivin' On 9</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                                <tr>
+                                    <td>Roi (reprise)</td>
+                                    <td><div class="ratyTest author"></div></td>         
+                                    <td><div class="ratyTest user"></div></td>
+                                </tr>
+                            </tbody>
+                        </table>                           
+                    </div> 
+                    <div>
+                        <ul id="mostList" class="nav nav-tabs" role="tablist">
+                          <li class="active">
+                            <a href="#mostRead" data-toggle="tab">Read</a>
+                          </li>
+                          <li><a href="#mostCommented" data-toggle="tab">Commented</a></li>
+                          <li><a href="#mostShared" data-toggle="tab">Shared</a></li>
+                        </ul>
+                        <!-- glyphicons from glyphicons.com -->
+                        <div id="my-tab-content" class="tab-content">                      
+                            <div id="mostRead" class="tab-pane active">
+                                <div class="mostRow">
+                                    <a href="#">
+                                        <span>1. Fleetwood Mac - Tusk</span>
+                                        <div style="float:right;">
+                                            <span>12546</span>
+                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="mostRow">
+                                    <a href="#">
+                                        <span>2. Nirvana - In Utero</span>
+                                        <div style="float:right;">
+                                            <span>8078</span>
+                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="mostRow">
+                                    <a href="#">
+                                        <span>3. Soundgarden - Superunknown</span>
+                                        <div style="float:right;">
+                                            <span>789</span>
+                                            <span class="glyphicon glyphicon-eye-open"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="mostCommented" class="tab-pane">
+                                <div class="mostRow">
+                                    <span>1. Fleetwood Mac - Tusk</span>
+                                    <div style="float:right;">
+                                        <span>6</span>
+                                        <span class="glyphicon glyphicon-comment"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="mostShared" class="tab-pane">
+                                <div class="mostRow">
+                                    <span>1. Soundgarden - Superunknown</span>
+                                    <div style="float:right;">
+                                        <span>124</span>
+                                        <span class="glyphicon glyphicon-retweet"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            
+        </section>
+        <footer>
+                Footer will go here.
+        </footer>
+        <style type="text/css">
+
+            body { 
+
+                padding-top: 70px; 
+            }
+
+            h1{
+
+                font-family: 'Fauna One', serif;
+                display:inline-block;
+            }    
+
+            sup{
+
+                vertical-align: text-top;
+            }
+
+            .albuminfo td{
+
+                font-size: 14px;
+            }
+
+            .albumInfo table{
+
+                width: 100%;
+            }
+
+            .albumHeader{
+
+                display: inline-block;
+                width: 38%;
+            }
+
+            .socialMediaLinks{
+
+                margin-top:10px;
+            }
+
+            .socialMediaLinks li{
+
+                float:right;
+            }
+
+            .socialMediaLinks a{
+
+                height:48px;
+                width:48px;
+                margin-right: 5px;
+                float:right;
+            }
+
+            .fbLink{
+
+                background-image: url(https://cdn2.iconfinder.com/data/icons/New-Social-Media-Icon-Set-V11/64/facebook.png);
+                background-size: 48px;
+                background-repeat: no-repeat;
+                
+                }
+
+            .twitterLink{
+
+                background-image: url(https://cdn2.iconfinder.com/data/icons/New-Social-Media-Icon-Set-V11/64/twitter.png);
+                background-size: 48px;
+                background-repeat: no-repeat;
+            }
+
+            .spotify{
+
+                background-image: url(https://cdn4.iconfinder.com/data/icons/free-colorful-icons/128/spotify.png);               
+            }
+
+            .streamBuyLinks{
+
+                height:5px;
+            }
+
+            .albumLinkIcons{
+
+                background-size: 25px;
+                background-repeat: no-repeat;
+                height:25px;
+                width:25px;
+                float:left;
+            }
+
+            .rightPanel{
+
+                width: 33%;
+                margin-right: 2%;
+                float: right;
+            }
+
+            .albumArt img{
+
+                float: left;
+                padding-right: 5%;
+            }
+
+            .trackTitle{
+
+                float:left;
+            }
+
+            .title{
+
+                float:left;
+                color:white;
+            }
+
+            .icon{
+
+                background-image: url(http://png-5.findicons.com/files/icons/2315/default_icon/256/media_vinyl_45_inv.png);
+
+                background-size: 32px;
+                width:27px;
+                height:27px;
+                display: inline-block;
+            }
+
+            .content{
+
+                text-align: justify;
+                font-size: 16px;
+                line-height:1.7em;
+                margin-top:30px;
+            }
+
+            #leftPanel{
+
+                float:left;
+                max-width: 63%;
+                border-right: 1px solid lightgray;
+                padding-right: 3%;
+            }
+
+            .contentWrapper{
+
+                margin-left: 2%;
+            }
+
+            #authorNumReviews{
+
+                margin-left: -2px;
+            }
+
+            #authorInfo{
+
+                display: inline-block;
+                border-radius: 5px;
+                border: 1px solid lightgray;
+                padding: 7px;
+            }
+
+            #authorName{
+
+                font-weight: bold;
+            }
+
+            .authorDetail{
+
+                float:left;
+                margin-left: 5px;
+            }
+
+            .albumInfo{
+
+                margin: 40px 0 40px 0;
+
+            }
+
+            .postTitle{
+
+                margin-top: 15px;
+            }
+
+            #relatedPostsImages{
+
+                text-align: center;
+            }
+
+            #relatedPostsImages figure {
+
+                width: 29%;
+                height: auto;
+                margin-left: 1%;
+                margin-right: 2%;
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            #relatedPostsImages img{
+
+                width: 60%;
+            }
+
+            #authorPhoto{
+
+                width: 50px;
+                height: 50px;
+                float:left;
+            }
+
+            td:not(:first-child), th:not(:first-child) {
+                text-align: center;
+            }
+
+            #mostList a{
+
+                color: black;
+            }
+
+            #mostList{
+
+                margin-bottom: 15px;
+            }
+
+            @media(max-width: 420px){
+
+                .albumArt{
+
+                    display: none;
+                }
+            }
+
+            @media(min-width: 1024px){
+                
+                #menuBar{
+
+                    margin: 20px 0 0 50px !important;
+                }
+
+                #menuBar li{
+
+                    display: inline-block;
+                }
+            }
+
+            @media(max-width: 1024px){
+
+                .rightPanel{
+
+                    display:none;
+                }
+
+                #leftPanel{
+
+                    border-right: none;
+                    max-width: 100%;
+                }
+
+                .socialMediaLinks{
+
+                    position:absolute;
+                    right: 0px;
+                    top: 100px;
+                }
+
+                .socialMediaLinks li{
+
+                    float: none;
+                }
+
+                .socialMediaLinks a{
+
+                    margin-bottom: 20px;
+                }
+
+                #menuBar li{
+
+                    display: block !important;
+                    padding: 10px;
+                }
+
+                #menuBar li:not(:last-child){
+
+                    border-bottom: 1px solid lightgray;
+                    width: 80%;
+                }
+
+                .socialMediaLinks{
+
+                    float:left;
+                }
+            }                      
+
+            a{
+
+                 color: black;
+                 text-decoration: none !important;
+            }
+
+            a:hover{
+
+                color: #428bca;
+            }
+
+            #menuBar a{
+
+                list-style: none;
+                text-decoration: none;
+                color: white;
+                font-size: 22px;
+                font-family: 'Fauna One', serif;
+            }
+
+            #albumsLinks{
+
+                float:right;
+            }
+
+            
+            .albumArt img{
+
+                width:22vw;
+            }
+
+            #mostList li.active{
+
+                font-weight: bold;
+            }
+
+            figcaption{
+
+                font-family: 'Fauna One', serif;
+                font-size: 18px;
+            }
+            
+            .mostRow{
+
+                line-height: 2em;
+            }
+
+        </style>
+        <script>
+
+            $(document).ready(function(){
+
+                $('#mostList a').click(function (e) {
+                  e.preventDefault();
+                  $(this).tab('show')
+                });
+
+                $('.ratyTest').each(function(event, ui){
+
+                    var score = getRandomArbitary(0, 5);
+                    var scoreText = score + ($(this).hasClass('author')? '':' (3 votes)'); 
+
+                    $(this).raty({ score: score, path: 'raty-2.7.0/lib/images', 
+
+                        readOnly: function(){ 
+
+                            return $(this).hasClass('author');
+                        },
+
+                        hints: [ scoreText, scoreText, scoreText, scoreText, scoreText ],
+
+                        click: function(score, event){
+                            
+                            var val = getRandomArbitary(0, 5);
+                            var valText = val+' (4 votes)';
+                            console.log(val);
+                            $(this).raty({ readOnly: true, score: val, path: 'raty-2.7.0/lib/images', halfShow: true, targetType: 'score',
+                                targetKeep: true,
+                                hints: [ valText, valText, valText, valText, valText ] });
+                            return false;
+                        },                      
+                    });
+                });
+            });
+
+            $('#menuContent').on('show.bs.collapse', function () {
+              $('.socialMediaLinks').hide();
+            });
+
+            $('#menuContent').on('shown.bs.collapse', function () {
+              $('.socialMediaLinks').show();
+            })
+
+            $('#menuContent').on('hide.bs.collapse', function () {
+              $('.socialMediaLinks').hide();
+            });
+
+            $('#menuContent').on('hidden.bs.collapse', function () {
+              $('.socialMediaLinks').show();
+            });
+
+            function getRandomArbitary (min, max) {
+                return (Math.random() * (max - min) + min).toFixed(2);
+            }
+        </script>

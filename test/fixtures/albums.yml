@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  album_art: MyString
+  year: 1
+  body: MyText
+  spotify_identifier: MyString
+
+two:
+  title: MyString
+  album_art: MyString
+  year: 1
+  body: MyText
+  spotify_identifier: MyString
