@@ -12,4 +12,13 @@
  *
  *= require_tree .
  *= require_self
+ *= require_bootstrap
  */
+
+ #menuBar a {
+  list-style: none;
+  text-decoration: none;
+  color: white !important;
+  font-size: 22px;
+  font-family: 'Fauna One', serif;
+}

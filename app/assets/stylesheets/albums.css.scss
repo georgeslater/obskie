@@ -1,3 +1,265 @@
-// Place all the styles related to the Albums controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  padding-top: 70px;
+}
+
+h1 {
+  font-family: 'Fauna One', serif;
+  display: inline-block;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+.albuminfo td {
+  font-size: 14px;
+}
+
+.albumInfo table {
+  width: 100%;
+}
+
+.albumHeader {
+  display: inline-block;
+  width: 38%;
+}
+
+.socialMediaLinks {
+  margin-top: 10px;
+  li {
+    float: right;
+  }
+  a {
+    height: 48px;
+    width: 48px;
+    margin-right: 5px;
+    float: right;
+  }
+}
+
+.fbLink {
+  background-image: url(https://cdn2.iconfinder.com/data/icons/New-Social-Media-Icon-Set-V11/64/facebook.png);
+  background-size: 48px;
+  background-repeat: no-repeat;
+}
+
+.twitterLink {
+  background-image: url(https://cdn2.iconfinder.com/data/icons/New-Social-Media-Icon-Set-V11/64/twitter.png);
+  background-size: 48px;
+  background-repeat: no-repeat;
+}
+
+.spotify {
+  background-image: url(https://cdn4.iconfinder.com/data/icons/free-colorful-icons/128/spotify.png);
+}
+
+.streamBuyLinks {
+  height: 5px;
+}
+
+.albumLinkIcons {
+  background-size: 25px;
+  background-repeat: no-repeat;
+  height: 25px;
+  width: 25px;
+  float: left;
+}
+
+.rightPanel {
+  width: 33%;
+  margin-right: 2%;
+  float: right;
+}
+
+.albumArt img {
+  float: left;
+  padding-right: 5%;
+}
+
+.trackTitle {
+  float: left;
+}
+
+.title {
+  float: left;
+  color: white;
+}
+
+.icon {
+  background-image: url(http://png-5.findicons.com/files/icons/2315/default_icon/256/media_vinyl_45_inv.png);
+  background-size: 32px;
+  width: 27px;
+  height: 27px;
+  display: inline-block;
+}
+
+.content {
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.7em;
+  margin-top: 30px;
+}
+
+#leftPanel {
+  float: left;
+  max-width: 63%;
+  border-right: 1px solid lightgray;
+  padding-right: 3%;
+}
+
+.contentWrapper {
+  margin-left: 2%;
+}
+
+#authorNumReviews {
+  margin-left: -2px;
+}
+
+#authorInfo {
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 7px;
+}
+
+#authorName {
+  font-weight: bold;
+}
+
+.authorDetail {
+  float: left;
+  margin-left: 5px;
+}
+
+.albumInfo {
+  margin: 40px 0 40px 0;
+}
+
+.postTitle {
+  margin-top: 15px;
+}
+
+#relatedPostsImages {
+  text-align: center;
+  figure {
+    width: 29%;
+    height: auto;
+    margin-left: 1%;
+    margin-right: 2%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  img {
+    width: 60%;
+  }
+}
+
+#authorPhoto {
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+
+td:not(:first-child), th:not(:first-child) {
+  text-align: center;
+}
+
+#mostList {
+  a {
+    color: black !important;
+  }
+  margin-bottom: 15px;
+}
+
+@media (max-width: 420px) {
+  .albumArt {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  #menuBar {
+    margin: 20px 0 0 50px !important;
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .rightPanel {
+    display: none;
+  }
+  #leftPanel {
+    border-right: none;
+    max-width: 100%;
+  }
+  .socialMediaLinks {
+    position: absolute;
+    right: 0px;
+    top: 100px;
+    li {
+      float: none;
+    }
+    a {
+      margin-bottom: 20px;
+    }
+  }
+  #menuBar li {
+    display: block !important;
+    padding: 10px;
+    &:not(:last-child) {
+      border-bottom: 1px solid lightgray;
+      width: 80%;
+    }
+  }
+  .socialMediaLinks {
+    float: left;
+  }
+}
+
+a {
+  color: black !important;
+  text-decoration: none !important;
+  &:hover {
+    color: #428bca;
+  }
+}
+
+#menuBar a {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-family: 'Fauna One', serif;
+}
+
+#albumsLinks {
+  float: right;
+}
+
+.loginInfo{
+	
+	color: white;
+	float: right;
+	margin-top: 25px;
+	margin-left: 20px;
+	font-weight: bold;
+}
+
+.albumArt img {
+  width: 22vw;
+}
+
+#mostList li.active {
+  font-weight: bold;
+}
+
+figcaption {
+  font-family: 'Fauna One', serif;
+  font-size: 18px;
+}
+
+.mostRow {
+  line-height: 2em;
+}
