@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tracks
+
   devise_for :users
   get 'welcome/index'
 
@@ -17,8 +19,14 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
+  resources :playlists
+
+  resources :albums 
+
   resources :artists do
-    resources :albums
+    resources :albums do
+      resources :tracks
+    end
   end
 
   # Example resource route with options:

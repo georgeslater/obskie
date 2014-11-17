@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114195538) do
+ActiveRecord::Schema.define(version: 20141116213917) do
 
   create_table "albums", force: true do |t|
     t.string   "title"
@@ -22,15 +22,31 @@ ActiveRecord::Schema.define(version: 20141114195538) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "artist_id"
+    t.integer  "user_id"
+    t.string   "album_art_file_name"
+    t.string   "album_art_content_type"
+    t.integer  "album_art_file_size"
+    t.datetime "album_art_updated_at"
   end
 
   add_index "albums", ["artist_id"], name: "index_albums_on_artist_id"
+  add_index "albums", ["user_id"], name: "index_albums_on_user_id"
 
   create_table "artists", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tracks", force: true do |t|
+    t.string   "name"
+    t.integer  "album_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "order"
+  end
+
+  add_index "tracks", ["album_id"], name: "index_tracks_on_album_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -45,9 +61,11 @@ ActiveRecord::Schema.define(version: 20141114195538) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end

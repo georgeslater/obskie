@@ -18,14 +18,14 @@
                 <div id="menuContent" class="collapse navbar-collapse">
                     <div id="siteLinks">
                         <ul id="menuBar" class="nav navbar-nav">
-                            <li>
-                                <a href="#">News</a>
+                            <li class="<%= 'activeTab' if current_page?(albums_path) %>">
+                                <%= link_to "Albums", albums_path %>
+                            </li>
+                            <li class="<%= 'activeTab' if current_page?(artists_path) %>">
+                                <%= link_to "Artists", artists_path %>
                             </li>
                             <li>
-                                <a href="#">Artists</a>
-                            </li>
-                            <li>
-                                <a href="#">Contribute</a>
+                                <%= link_to "Playlists", playlists_path %>
                             </li>
                             <li>
                                 <a href="#">Forum</a>

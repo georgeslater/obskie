@@ -22,3 +22,8 @@
   font-size: 22px;
   font-family: 'Fauna One', serif;
 }
+
+#menuBar li.activeTab a{
+
+	color: lightskyblue !important;
+}
