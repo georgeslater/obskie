@@ -2,14 +2,18 @@ class AlbumsController < ApplicationController
 
  	before_action :set_album, only: [:show, :edit, :update, :destroy]
 
+	impressionist :actions=>[:show]
+
   	respond_to :html
-	
+
 	def index
 		@albums = Album.all
 	end
 
 	def show
 		@album = Album.find(params[:id])
+		impressionist(@album)
+		@mostReadAlbums = Album.joins(:impressions).group("impressions.impressionable_id").order("count(impressions.id) DESC").limit(10)
 	end
 
 	def new

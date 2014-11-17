@@ -1,0 +1,43 @@
+<div>
+    <ul id="mostList" class="nav nav-tabs" role="tablist">
+      <li class="active">
+        <a href="#mostRead" data-toggle="tab">Read</a>
+      </li>
+      <li><a href="#mostCommented" data-toggle="tab">Commented</a></li>
+      <li><a href="#mostShared" data-toggle="tab">Shared</a></li>
+    </ul>
+    <!-- glyphicons from glyphicons.com -->
+    <div id="my-tab-content" class="tab-content">                      
+        <div id="mostRead" class="tab-pane active">
+            <% @mostReadAlbums.each do | mostRead | %>
+                <div class="mostRow">
+                    <a href="#">
+                        <span><%= mostRead.artist.name %> <%= mostRead.title %></span>
+                        <div style="float:right;">
+                            <span><%= mostRead.impressionist_count %></span>
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                        </div>
+                    </a>
+                </div>
+            <% end %>
+        </div>
+        <div id="mostCommented" class="tab-pane">
+            <div class="mostRow">
+                <span>1. Fleetwood Mac - Tusk</span>
+                <div style="float:right;">
+                    <span>6</span>
+                    <span class="glyphicon glyphicon-comment"></span>
+                </div>
+            </div>
+        </div>
+        <div id="mostShared" class="tab-pane">
+            <div class="mostRow">
+                <span>1. Soundgarden - Superunknown</span>
+                <div style="float:right;">
+                    <span>124</span>
+                    <span class="glyphicon glyphicon-retweet"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

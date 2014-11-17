@@ -27,13 +27,13 @@
                                     <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ2Xo6K6h_rnk2tI55QYW66PSvPkvkY0kcrcanC1_aWjgQNwIRF" width="50px" height="50px"></img>
                                 </div>
                                 <div class="authorDetail">
-                                    <a href="#authorBio" title="View Bio">
-                                        <span id="authorName">George Slater</span>
-                                    </a>
+                                    <%= link_to @album.user.username, user_path(@album.user.id), :title => "Profile page", :class => "authorName" %>
                                     <br />
                                     <a href="#seeReviews" style="margin-top: 6px; display: block;" title="5 Reviews">
                                         <span class="glyphicon glyphicon-pencil"></span>
-                                        <span id="authorNumReviews">5</span>
+                                        <span id="authorNumReviews">
+                                            <%= @album.user.albums.size %>
+                                        </span>
                                     </a>
                                 </div>
                             </div>
@@ -64,170 +64,12 @@
                     <br />
                     <br />
                     <br />
-                </div>
-                <!-- <div id="disqus_thread"></div>
-                <script type="text/javascript">
-                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-                    var disqus_shortname = 'obscurealbums'; // required: replace example with your forum shortname
-
-                    /* * * DON'T EDIT BELOW THIS LINE * * */
-                    (function() {
-                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                    })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a> -->               
+                </div>                             
             </section>
             <section class="rightPanel">
                 <div class="albumInfo">
-                    <table class="table-striped table-condensed">
-                        <thead>
-                            <tr>
-                                <th>Track</th>
-                                <th>Author</th>
-                                <th>Users</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                                <tr>
-                                    <td>New Year</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                                <tr>
-                                    <td>Cannonball</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                                <tr>
-                                    <td>Invisible Man</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                                <tr>
-                                    <td>No Aloha</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                                <tr>
-                                    <td>Roi</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                                <tr>
-                                    <td>Do You Love Me Now</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                                <tr>
-                                    <td>Flipside</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                                <tr>
-                                    <td>I Just Wanna Get Along</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                                <tr>
-                                    <td>Mad Lucas</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                                <tr>
-                                    <td>Divine Hammer</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                                <tr>
-                                    <td>S.O.S.</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                                <tr>
-                                    <td>Hag</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                                <tr>
-                                    <td>Saints</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                                <tr>
-                                    <td>Drivin' On 9</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                                <tr>
-                                    <td>Roi (reprise)</td>
-                                    <td><div class="ratyTest author"></div></td>         
-                                    <td><div class="ratyTest user"></div></td>
-                                </tr>
-                            </tbody>
-                        </table>                           
-                    </div> 
-                    <div>
-                        <ul id="mostList" class="nav nav-tabs" role="tablist">
-                          <li class="active">
-                            <a href="#mostRead" data-toggle="tab">Read</a>
-                          </li>
-                          <li><a href="#mostCommented" data-toggle="tab">Commented</a></li>
-                          <li><a href="#mostShared" data-toggle="tab">Shared</a></li>
-                        </ul>
-                        <!-- glyphicons from glyphicons.com -->
-                        <div id="my-tab-content" class="tab-content">                      
-                            <div id="mostRead" class="tab-pane active">
-                                <div class="mostRow">
-                                    <a href="#">
-                                        <span>1. Fleetwood Mac - Tusk</span>
-                                        <div style="float:right;">
-                                            <span>12546</span>
-                                            <span class="glyphicon glyphicon-eye-open"></span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="mostRow">
-                                    <a href="#">
-                                        <span>2. Nirvana - In Utero</span>
-                                        <div style="float:right;">
-                                            <span>8078</span>
-                                            <span class="glyphicon glyphicon-eye-open"></span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="mostRow">
-                                    <a href="#">
-                                        <span>3. Soundgarden - Superunknown</span>
-                                        <div style="float:right;">
-                                            <span>789</span>
-                                            <span class="glyphicon glyphicon-eye-open"></span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div id="mostCommented" class="tab-pane">
-                                <div class="mostRow">
-                                    <span>1. Fleetwood Mac - Tusk</span>
-                                    <div style="float:right;">
-                                        <span>6</span>
-                                        <span class="glyphicon glyphicon-comment"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="mostShared" class="tab-pane">
-                                <div class="mostRow">
-                                    <span>1. Soundgarden - Superunknown</span>
-                                    <div style="float:right;">
-                                        <span>124</span>
-                                        <span class="glyphicon glyphicon-retweet"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
+                    <%= render "ratings" %>
+                    <%= render "sidebar" %>
                 </div>
             
         </section>

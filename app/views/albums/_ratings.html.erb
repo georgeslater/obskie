@@ -1,0 +1,18 @@
+<table class="table-striped table-condensed">
+    <thead>
+        <tr>
+            <th>Track</th>
+            <th>Author</th>
+            <th>Users</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @album.tracks.each do | track | %>
+            <tr>
+                <td><%= track.name %></td>
+                <td><div class="ratyTest author" data-score="<%= track.author_rating %>"></div></td>
+                <td><div class="ratyTest user" data-votes="<%= track.ratings.size %>" data-score="<%= track.avgUserRating %>" data-trackid="<%= track.id %>"></div></td>
+            </tr>
+        <% end %>                               
+    </tbody>
+</table> 

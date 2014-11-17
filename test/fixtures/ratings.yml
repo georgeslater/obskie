@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  track_id: 
+  score: 
+  ip_address: MyString
+
+two:
+  track_id: 
+  score: 
+  ip_address: MyString

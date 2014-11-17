@@ -7,29 +7,32 @@ $(document).ready ->
     $(this).tab "show"
 
   $(".ratyTest").each (event, ui) ->
-    score = getRandomArbitary(0, 5)
-    scoreText = score + ((if $(this).hasClass("author") then "" else " (3 votes)"))
-    $(this).raty
-      score: score
-      path: "/assets"
-      readOnly: ->
-        $(this).hasClass "author"
+    
+      score = $(this).data('score')
+      scoreText = (score? score: '')+($(this).data('votes')? '('+$(this).data('votes')+' votes)': '')
+      $(this).raty
+        score: score
+        path: "/assets"
+        readOnly: ->
+          $(this).hasClass "author"
 
-      hints: [ scoreText, scoreText, scoreText, scoreText, scoreText ]
-      click: (score, event) ->
-        val = getRandomArbitary(0, 5)
-        valText = val + " (4 votes)"
-        console.log val
-        $(this).raty
-          readOnly: true
-          score: val
-          path: ".assets"
-          halfShow: true
-          targetType: "score"
-          targetKeep: true
-          hints: [ valText, valText, valText, valText, valText ]
+        hints: [ scoreText, scoreText, scoreText, scoreText, scoreText ]
+        click: (score, event) ->
+          valText = score
+          $(this).raty
+            readOnly: true
+            score: score
+            path: "/assets"
+            halfShow: true
+            targetType: "score"
+            targetKeep: true
+            hints: [ valText, valText, valText, valText, valText ]
+            $.ajax
+              type: 'POST'
+              url: '/ratings'
+              data: score: score, track: $(this).data('trackid')
 
-        false
+          false
 
 
 
