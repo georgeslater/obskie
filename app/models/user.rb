@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
     	:case_sensitive => false
   		}
 
+  def forem_name
+    username
+  end
+
   def login=(login)
     @login = login
   end

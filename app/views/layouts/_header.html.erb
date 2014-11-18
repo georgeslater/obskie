@@ -10,15 +10,17 @@
                         <span class="icon-bar"></span>
                     </button>
                     <div class="title">
-                        <span class="icon"></span>
-                        <h1>bscure albums</h1>
-                        <sup>beta!</sup>
+                        <a id="obscureIcon" href="/">
+                            <span class="icon"></span>
+                            <h1>bscure albums</h1>
+                            <sup>beta!</sup>
+                        </a>
                     </div>
                 </div>
                 <div id="menuContent" class="collapse navbar-collapse">
                     <div id="siteLinks">
                         <ul id="menuBar" class="nav navbar-nav">
-                            <li class="<%= 'activeTab' if current_page?(albums_path) %>">
+                            <li class="<%= 'activeTab' if current_page?(albums_path) || current_page?(root_path) %>">
                                 <%= link_to "Albums", albums_path %>
                             </li>
                             <li class="<%= 'activeTab' if current_page?(artists_path) %>">
@@ -28,7 +30,7 @@
                                 <%= link_to "Playlists", playlists_path %>
                             </li>
                             <li>
-                                <a href="#">Forum</a>
+                                <%= link_to "Forum", forem_path %>
                             </li>
                         </ul>
                     </div>
