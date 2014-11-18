@@ -7,7 +7,7 @@ class AlbumsController < ApplicationController
   	respond_to :html
 
 	def index
-		@albums = Album.all
+		@albums = Album.all.order("created_at DESC")
 	end
 
 	def show
@@ -23,7 +23,24 @@ class AlbumsController < ApplicationController
 
 	def create
 	    @album = Album.new(album_params)
+	    @album.user_id = current_user.id
+
+	    name = params[:album][:artist_name]
+
+
+	    album_artist = Artist.find_by(name: name)
+
+	    if album_artist.blank?
+
+	    	album_artist = Artist.new
+	    	album_artist.name = name
+	    	album_artist.save
+	    end
+
+	    @album.artist_id = album_artist.id
+
 	    @album.save
+	    
 	    respond_with(@album)
 	end
 
@@ -33,6 +50,6 @@ class AlbumsController < ApplicationController
     end
 
     def album_params
-      params.require(:album).permit(:title, :album_art, :artist_id, :original_filename, :content_type)
+      params.require(:album).permit(:title, :album_art, :artist_id, :original_filename, :content_type, :body, :artist_name)
     end
 end

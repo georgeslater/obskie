@@ -1,0 +1,22 @@
+<div id="artistsWrapper">
+	
+	<% @artists.each do | artist |%>
+		
+		<h3> <%= artist.name %> </h3>
+
+		<ul>
+
+			<% artist.albums.each do | album | %>
+
+				<li>
+
+					<%= link_to album.title, album_path(album) %>
+
+				</li>
+
+			<% end %>
+
+		</ul>
+		
+	<% end %>
+</div>

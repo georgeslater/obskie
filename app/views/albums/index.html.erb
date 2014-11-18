@@ -1,1 +1,10 @@
-hello!
+<div id="albums">
+	<% @albums.each do | album | %>
+		<div class="album_images">
+			<figure>
+				<%= image_tag(album.album_art, :class => 'albumArt', :width => 200) %>
+			</figure>
+			<figcaption><%= album.artist.name %> - <%= album.title %> (<%= album.year %>)</figcaption>
+		</div>
+	<% end %>
+</div>

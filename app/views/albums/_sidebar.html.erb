@@ -12,7 +12,7 @@
             <% @mostReadAlbums.each do | mostRead | %>
                 <div class="mostRow">
                     <a href="#">
-                        <span><%= mostRead.artist.name %> <%= mostRead.title %></span>
+                        <span><%= mostRead.artist.name %> - <%= mostRead.title %> (<%= mostRead.year %>) </span>
                         <div style="float:right;">
                             <span><%= mostRead.impressionist_count %></span>
                             <span class="glyphicon glyphicon-eye-open"></span>

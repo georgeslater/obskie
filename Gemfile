@@ -16,9 +16,11 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'paperclip', '~> 4.2'
 
-gem 'forem', :github => "radar/forem", :branch => "rails4"
+gem 'rspotify'
+
+gem 'forem', :git => "https://github.com/radar/forem.git", :branch => "rails4"
 gem 'kaminari', '0.15.1'
-gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
+gem 'forem-bootstrap',:git => "https://github.com/radar/forem-bootstrap.git"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
