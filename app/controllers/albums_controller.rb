@@ -14,6 +14,14 @@ class AlbumsController < ApplicationController
 		@album = Album.find(params[:id])
 		impressionist(@album)
 		@mostReadAlbums = Album.joins(:impressions).group("impressions.impressionable_id").order("count(impressions.id) DESC").limit(10)
+		
+		@relatedAlbums = Array.new
+		c = Album.count
+
+		3.times do 
+
+			@relatedAlbums.push(Album.offset(rand(c)).first)
+		end
 	end
 
 	def new
@@ -50,6 +58,6 @@ class AlbumsController < ApplicationController
     end
 
     def album_params
-      params.require(:album).permit(:title, :album_art, :artist_id, :original_filename, :content_type, :body, :artist_name)
+      params.require(:album).permit(:title, :album_art, :artist_id, :original_filename, :content_type, :body, :artist_name, :year)
     end
 end

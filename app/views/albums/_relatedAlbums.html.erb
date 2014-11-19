@@ -1,0 +1,9 @@
+<div id="relatedPostsImages">
+    <% @relatedAlbums.each do | relAlbum | %>
+        <figure>
+            <img src="<%= relAlbum.album_art %>" />
+            <figcaption><%= relAlbum.artist.name %> - <%= relAlbum.title %> (<%= relAlbum.year %>)
+            </figcaption>
+        </figure>
+    <% end %>
+</div>

@@ -11,7 +11,7 @@
                                 <h5><%= @album.artist.name %></h5>
                                 <h4><%= @album.year %></h4>
                                 <div class="streamBuyLinks">                           
-                                    <a href="spotify:album:4lxW0axOKlImAQ0akMRz61" title="Stream Album on Spotify">
+                                    <a href="spotify:album:<%= @album.spotify_identifier %>" title="Stream Album on Spotify">
                                         <span class="spotify albumLinkIcons"></span>
                                     </a>
                                     <a href="spotify:album:4lxW0axOKlImAQ0akMRz61" title="Stream Album on Spotify">
@@ -46,20 +46,7 @@
                     </div>
                     <hr />
                     <div id="relatedPosts">
-                        <div id="relatedPostsImages">
-                            <figure>
-                                <img src="http://upload.wikimedia.org/wikipedia/en/thumb/f/f3/TheBreedersLastSplash.jpg/220px-TheBreedersLastSplash.jpg" />
-                                <figcaption>Captain Beefheart - Safe As Milk (1969)</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="http://upload.wikimedia.org/wikipedia/en/thumb/f/f3/TheBreedersLastSplash.jpg/220px-TheBreedersLastSplash.jpg" />
-                                <figcaption>Muse - Showbiz (1999)</figcaption>
-                            </figure>
-                            <figure>
-                                <img src="http://upload.wikimedia.org/wikipedia/en/thumb/f/f3/TheBreedersLastSplash.jpg/220px-TheBreedersLastSplash.jpg" />
-                                <figcaption>Lou Reed - Mistrial (1986)</figcaption>
-                            </figure>
-                        </div>
+                        <%= render 'relatedAlbums' %>
                     </div>
                     <br />
                     <br />

@@ -6,7 +6,7 @@ class Album < ActiveRecord::Base
 
 	attr_accessor :artist_name
 
-	before_save :get_album_art
+	before_save :get_spotify_info
 
 	is_impressionable # :counter_cache => true
 
@@ -20,30 +20,19 @@ class Album < ActiveRecord::Base
   	validates_presence_of :user_id, presence: true
   	validates_presence_of :artist_id, presence: true
 
-  	def get_album_art
+  	def get_spotify_info
   		
-  		artist = RSpotify::Artist.search(self.artist_name).first
-  		
-		i = 0
-		albumCount = artist.albums.length
+  		albums = RSpotify::Album.search(self.title)
+  		artist = self.artist_name
 
-		album_id = nil
+  		for album in albums
+  			if album.artists[0].name == artist
 
-		while i < albumCount do
-				
-			if artist.albums[i].name == self.title
-
-				album_id = artist.albums[i].id
-			end
-
-			i += 1
-		end
-			
-		if album_id.present?
-
-	  		album = RSpotify::Album.find(album_id)
-	    	image = album.images.first
-	    	self.album_art = image['url']
-	 	end
+  				image = album.images.first
+     			self.album_art = image['url']
+     			self.spotify_identifier = album.id
+  				break;
+  			end
+  		end
   	end
 end
