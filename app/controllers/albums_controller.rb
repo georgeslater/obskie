@@ -11,7 +11,7 @@ class AlbumsController < ApplicationController
 	end
 
 	def show
-		@album = Album.find(params[:id])
+		@album = Album.friendly.find(params[:id])
 		impressionist(@album)
 		@mostReadAlbums = Album.joins(:impressions).group("impressions.impressionable_id").order("count(impressions.id) DESC").limit(10)
 		
@@ -49,15 +49,15 @@ class AlbumsController < ApplicationController
 
 	    @album.save
 	    
-	    respond_with(@album)
+	    respond_with(@album.artist, @album)
 	end
 
   	private
     def set_album
-      @album = Album.find(params[:id])
+      @album = Album.friendly.find(params[:id])
     end
 
     def album_params
-      params.require(:album).permit(:title, :album_art, :artist_id, :original_filename, :content_type, :body, :artist_name, :year)
+      params.require(:album).permit(:title, :artist_id, :original_filename, :content_type, :body, :artist_name, :year)
     end
 end

@@ -11,7 +11,7 @@
         <div id="mostRead" class="tab-pane active">
             <% @mostReadAlbums.each do | mostRead | %>
                 <div class="mostRow">
-                    <%= link_to album_path(mostRead) do %>
+                    <%= link_to artist_album_path(mostRead.artist, mostRead) do %>
                         <span><%= mostRead.artist.name %> - <%=mostRead.title%> (<%=mostRead.year%>)</span>
                     <% end %> 
                     <div style="float:right;">

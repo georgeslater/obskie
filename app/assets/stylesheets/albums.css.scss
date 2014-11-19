@@ -9,6 +9,39 @@ h1 {
 
 sup {
   vertical-align: text-top;
+  color: white;
+}
+
+.albumImage{
+  
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  figure img{
+    width: 200px;
+    height:200px;
+  }
+  figcaption{
+    max-width: 200px;
+    text-align: center;
+    font-size: 14px;
+    background-color: black;
+    color: white
+  }
+  .albumCaptionTitle{
+
+    font-size: 16px
+  }
+
+  .albumCaptionArtist{
+
+    font-size: 16px
+  }
+
+  .albumCaptionYear{
+
+    font-size: 12px;
+  }
 }
 
 .albuminfo td {
@@ -34,6 +67,19 @@ sup {
     width: 48px;
     margin-right: 5px;
     float: right;
+  }
+}
+
+#albumIndexWrapper{
+  
+  position: relative;
+  margin-top: 30px;
+
+  #sortBy{
+
+    position: absolute;
+    top: -20px;
+    right: 10px;
   }
 }
 
@@ -98,6 +144,7 @@ sup {
   font-size: 16px;
   line-height: 1.7em;
   margin-top: 30px;
+  min-height:175px;
 }
 
 #leftPanel {
@@ -226,12 +273,10 @@ a {
   }
 }
 
-#menuBar a {
+#menuContent a {
   list-style: none;
   text-decoration: none;
-  color: white;
-  font-size: 22px;
-  font-family: 'Fauna One', serif;
+  color: white !important;
 }
 
 #albumsLinks {

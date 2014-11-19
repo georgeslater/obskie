@@ -1,10 +1,22 @@
-<div id="albums">
-	<% @albums.each do | album | %>
-		<div class="album_images">
-			<figure>
-				<%= image_tag(album.album_art, :class => 'albumArt', :width => 200) %>
-			</figure>
-			<figcaption><%= album.artist.name %> - <%= album.title %> (<%= album.year %>)</figcaption>
-		</div>
-	<% end %>
+<div id="albumIndexWrapper">
+	<div id="sortBy">
+		<span>Sort by:</span>
+		<%= select_tag "sort_by", options_for_select([ "Newest first", "Oldest first" ], "Newest first") %>
+	</div>
+	<div id="albums">
+		<% @albums.each do | album | %>
+			<div class="albumImage">
+				<%= link_to artist_album_path(album.artist, album) do %>
+					<figure>
+						<%= image_tag(album.album_art, :class => 'albumArt', :width => 200) %>
+					</figure>
+					<figcaption>
+						<div class="albumCaptionArtist"><%= album.artist.name %></div>
+						<div class="albumCaptionTitle"><%= album.title %></div>
+						<div class="albumCaptionYear"><%= album.year %></div>
+					</figcaption>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
 </div>

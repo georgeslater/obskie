@@ -8,7 +8,7 @@
                         <div class="albumTitle">                                       
                             <div class="albumHeader">
                                 <h2><%= @album.title %></h2>
-                                <h5><%= @album.artist.name %></h5>
+                                <h5><%= link_to @album.artist.name, artist_path(@album.artist) %></h5>
                                 <h4><%= @album.year %></h4>
                                 <div class="streamBuyLinks">                           
                                     <a href="spotify:album:<%= @album.spotify_identifier %>" title="Stream Album on Spotify">

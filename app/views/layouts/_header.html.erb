@@ -24,7 +24,7 @@
                                 <%= link_to "Albums", albums_path %>
                             </li>
                             <li class="<%= 'activeTab' if current_page?(artists_path) %>">
-                                <%= link_to "Artists", artists_path %>
+                                <%= link_to "A-Z", artists_path %>
                             </li>
                             <li>
                                 <%= link_to "Playlists", playlists_path %>
@@ -37,7 +37,7 @@
                     <div>
                         <div class="loginInfo">
                             <% if user_signed_in? %>
-                                <%= link_to current_user.email, destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                                <%= link_to current_user.username, destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
                             <% else %>
                                 <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %>
                             <% end %> 

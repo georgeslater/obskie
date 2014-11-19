@@ -1,7 +1,7 @@
 class ArtistsController < ApplicationController
 
 	def show
-		@artist = Artist.find(params[:id])
+		@artist = Artist.friendly.find(params[:id])
 	end
 
 	def index
