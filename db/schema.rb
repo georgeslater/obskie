@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141119135033) do
+ActiveRecord::Schema.define(version: 20141120141553) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20141119135033) do
     t.integer  "album_art_file_size"
     t.datetime "album_art_updated_at"
     t.string   "slug"
+    t.integer  "impressions_count"
   end
 
   add_index "albums", ["artist_id"], name: "index_albums_on_artist_id", using: :btree
@@ -195,6 +196,8 @@ ActiveRecord::Schema.define(version: 20141119135033) do
     t.datetime "updated_at"
     t.integer  "order"
     t.float    "author_rating"
+    t.integer  "duration_milli"
+    t.string   "spotify_identifier"
   end
 
   add_index "tracks", ["album_id"], name: "index_tracks_on_album_id", using: :btree

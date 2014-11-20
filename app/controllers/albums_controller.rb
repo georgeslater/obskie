@@ -7,13 +7,39 @@ class AlbumsController < ApplicationController
   	respond_to :html
 
 	def index
-		@albums = Album.all.order("created_at DESC")
+
+		order = params[:order]
+
+		case order
+		when 'Newest first'
+
+			@albums = Album.all.order('created_at DESC')
+		
+		when 'Oldest first'
+
+			@albums = Album.all.order('created_at ASC')
+		
+		when 'Album name'
+
+			@albums = Album.all.order('title ASC')
+
+		when 'Artist name'
+
+			@albums = Album.joins(:artist).all.order('artists.name ASC')
+
+		else
+
+			@albums = Album.all.order('created_at DESC')
+		end
+
+		respond_with(@albums)
+
 	end
 
 	def show
 		@album = Album.friendly.find(params[:id])
 		impressionist(@album)
-		@mostReadAlbums = Album.joins(:impressions).group("impressions.impressionable_id").order("count(impressions.id) DESC").limit(10)
+		@mostReadAlbums = Album.all.order("impressions_count DESC").limit(10)
 		
 		@relatedAlbums = Array.new
 		c = Album.count
@@ -22,6 +48,8 @@ class AlbumsController < ApplicationController
 
 			@relatedAlbums.push(Album.offset(rand(c)).first)
 		end
+
+		@albumTracks = @album.tracks.order('tracks.order')
 	end
 
 	def new
@@ -52,12 +80,17 @@ class AlbumsController < ApplicationController
 	    respond_with(@album.artist, @album)
 	end
 
+	def destroy
+	    @track.destroy
+	    respond_with(@track)
+	  end
+
   	private
     def set_album
       @album = Album.friendly.find(params[:id])
     end
 
     def album_params
-      params.require(:album).permit(:title, :artist_id, :original_filename, :content_type, :body, :artist_name, :year)
+      params.require(:album).permit(:order, :title, :artist_id, :original_filename, :content_type, :body, :artist_name, :year)
     end
 end

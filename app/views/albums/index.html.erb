@@ -1,11 +1,11 @@
 <div id="albumIndexWrapper">
 	<div id="sortBy">
 		<span>Sort by:</span>
-		<%= select_tag "sort_by", options_for_select([ "Newest first", "Oldest first" ], "Newest first") %>
+		<%= select_tag "sort_by", options_for_select([ "Newest first", "Oldest first", "Album name", "Artist name" ], "Newest first"), { :onchange => "changeSortOrderJs(this.value)" } %>
 	</div>
 	<div id="albums">
-		<% @albums.each do | album | %>
-			<div class="albumImage">
+		 <% @albums.each do | album | %>
+		    <div class="albumImage">
 				<%= link_to artist_album_path(album.artist, album) do %>
 					<figure>
 						<%= image_tag(album.album_art, :class => 'albumArt', :width => 200) %>
@@ -17,6 +17,28 @@
 					</figcaption>
 				<% end %>
 			</div>
-		<% end %>
+		  <% end %>
 	</div>
+	<script>
+		function changeSortOrderJs(val){
+
+		  var theValue = val
+		  		
+		  $.ajax({
+		      type: 'GET',
+		      url: '/albums',
+		      data: {
+		        order: val
+		      },
+		      format: 'js',
+		      success: function(result) {
+		      	var html = $(result).find('#albums').html();
+
+		      	console.log(html)
+		      	$('#albums').html(html);
+		      	
+		      }
+		   });
+		}
+	</script> 
 </div>
