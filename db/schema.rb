@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141119135033) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "albums", force: true do |t|
     t.string   "title"
     t.string   "album_art"
@@ -30,8 +33,8 @@ ActiveRecord::Schema.define(version: 20141119135033) do
     t.string   "slug"
   end
 
-  add_index "albums", ["artist_id"], name: "index_albums_on_artist_id"
-  add_index "albums", ["user_id"], name: "index_albums_on_user_id"
+  add_index "albums", ["artist_id"], name: "index_albums_on_artist_id", using: :btree
+  add_index "albums", ["user_id"], name: "index_albums_on_user_id", using: :btree
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -48,7 +51,7 @@ ActiveRecord::Schema.define(version: 20141119135033) do
     t.integer  "position",   default: 0
   end
 
-  add_index "forem_categories", ["slug"], name: "index_forem_categories_on_slug", unique: true
+  add_index "forem_categories", ["slug"], name: "index_forem_categories_on_slug", unique: true, using: :btree
 
   create_table "forem_forums", force: true do |t|
     t.string  "name"
@@ -59,27 +62,27 @@ ActiveRecord::Schema.define(version: 20141119135033) do
     t.integer "position",    default: 0
   end
 
-  add_index "forem_forums", ["slug"], name: "index_forem_forums_on_slug", unique: true
+  add_index "forem_forums", ["slug"], name: "index_forem_forums_on_slug", unique: true, using: :btree
 
   create_table "forem_groups", force: true do |t|
     t.string "name"
   end
 
-  add_index "forem_groups", ["name"], name: "index_forem_groups_on_name"
+  add_index "forem_groups", ["name"], name: "index_forem_groups_on_name", using: :btree
 
   create_table "forem_memberships", force: true do |t|
     t.integer "group_id"
     t.integer "member_id"
   end
 
-  add_index "forem_memberships", ["group_id"], name: "index_forem_memberships_on_group_id"
+  add_index "forem_memberships", ["group_id"], name: "index_forem_memberships_on_group_id", using: :btree
 
   create_table "forem_moderator_groups", force: true do |t|
     t.integer "forum_id"
     t.integer "group_id"
   end
 
-  add_index "forem_moderator_groups", ["forum_id"], name: "index_forem_moderator_groups_on_forum_id"
+  add_index "forem_moderator_groups", ["forum_id"], name: "index_forem_moderator_groups_on_forum_id", using: :btree
 
   create_table "forem_posts", force: true do |t|
     t.integer  "topic_id"
@@ -92,10 +95,10 @@ ActiveRecord::Schema.define(version: 20141119135033) do
     t.boolean  "notified",    default: false
   end
 
-  add_index "forem_posts", ["reply_to_id"], name: "index_forem_posts_on_reply_to_id"
-  add_index "forem_posts", ["state"], name: "index_forem_posts_on_state"
-  add_index "forem_posts", ["topic_id"], name: "index_forem_posts_on_topic_id"
-  add_index "forem_posts", ["user_id"], name: "index_forem_posts_on_user_id"
+  add_index "forem_posts", ["reply_to_id"], name: "index_forem_posts_on_reply_to_id", using: :btree
+  add_index "forem_posts", ["state"], name: "index_forem_posts_on_state", using: :btree
+  add_index "forem_posts", ["topic_id"], name: "index_forem_posts_on_topic_id", using: :btree
+  add_index "forem_posts", ["user_id"], name: "index_forem_posts_on_user_id", using: :btree
 
   create_table "forem_subscriptions", force: true do |t|
     t.integer "subscriber_id"
@@ -117,10 +120,10 @@ ActiveRecord::Schema.define(version: 20141119135033) do
     t.string   "slug"
   end
 
-  add_index "forem_topics", ["forum_id"], name: "index_forem_topics_on_forum_id"
-  add_index "forem_topics", ["slug"], name: "index_forem_topics_on_slug", unique: true
-  add_index "forem_topics", ["state"], name: "index_forem_topics_on_state"
-  add_index "forem_topics", ["user_id"], name: "index_forem_topics_on_user_id"
+  add_index "forem_topics", ["forum_id"], name: "index_forem_topics_on_forum_id", using: :btree
+  add_index "forem_topics", ["slug"], name: "index_forem_topics_on_slug", unique: true, using: :btree
+  add_index "forem_topics", ["state"], name: "index_forem_topics_on_state", using: :btree
+  add_index "forem_topics", ["user_id"], name: "index_forem_topics_on_user_id", using: :btree
 
   create_table "forem_views", force: true do |t|
     t.integer  "user_id"
@@ -133,9 +136,9 @@ ActiveRecord::Schema.define(version: 20141119135033) do
     t.datetime "past_viewed_at"
   end
 
-  add_index "forem_views", ["updated_at"], name: "index_forem_views_on_updated_at"
-  add_index "forem_views", ["user_id"], name: "index_forem_views_on_user_id"
-  add_index "forem_views", ["viewable_id"], name: "index_forem_views_on_viewable_id"
+  add_index "forem_views", ["updated_at"], name: "index_forem_views_on_updated_at", using: :btree
+  add_index "forem_views", ["user_id"], name: "index_forem_views_on_user_id", using: :btree
+  add_index "forem_views", ["viewable_id"], name: "index_forem_views_on_viewable_id", using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -145,10 +148,10 @@ ActiveRecord::Schema.define(version: 20141119135033) do
     t.datetime "created_at"
   end
 
-  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
-  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "impressions", force: true do |t|
     t.string   "impressionable_type"
@@ -166,14 +169,14 @@ ActiveRecord::Schema.define(version: 20141119135033) do
     t.datetime "updated_at"
   end
 
-  add_index "impressions", ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index"
-  add_index "impressions", ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index"
-  add_index "impressions", ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index"
-  add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
-  add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
-  add_index "impressions", ["user_id"], name: "index_impressions_on_user_id"
+  add_index "impressions", ["controller_name", "action_name", "ip_address"], name: "controlleraction_ip_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "request_hash"], name: "controlleraction_request_index", using: :btree
+  add_index "impressions", ["controller_name", "action_name", "session_hash"], name: "controlleraction_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "ip_address"], name: "poly_ip_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "request_hash"], name: "poly_request_index", using: :btree
+  add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index", using: :btree
+  add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index", using: :btree
+  add_index "impressions", ["user_id"], name: "index_impressions_on_user_id", using: :btree
 
   create_table "ratings", force: true do |t|
     t.integer  "track_id"
@@ -183,7 +186,7 @@ ActiveRecord::Schema.define(version: 20141119135033) do
     t.datetime "updated_at"
   end
 
-  add_index "ratings", ["track_id"], name: "index_ratings_on_track_id"
+  add_index "ratings", ["track_id"], name: "index_ratings_on_track_id", using: :btree
 
   create_table "tracks", force: true do |t|
     t.string   "name"
@@ -194,7 +197,7 @@ ActiveRecord::Schema.define(version: 20141119135033) do
     t.float    "author_rating"
   end
 
-  add_index "tracks", ["album_id"], name: "index_tracks_on_album_id"
+  add_index "tracks", ["album_id"], name: "index_tracks_on_album_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",               null: false
@@ -217,8 +220,8 @@ ActiveRecord::Schema.define(version: 20141119135033) do
     t.boolean  "forem_auto_subscribe",   default: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
