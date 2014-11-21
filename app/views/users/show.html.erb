@@ -1,0 +1,28 @@
+<div id="userWrapper">
+
+	<h4><%= @user.first_name %> <%= @user.last_name %></h4>
+	
+	<ul>
+		<li>Joined: <%= @user.created_at.strftime("%A, %d %b %Y") %></li>
+	</ul>
+
+	<span>Reviews (<%= @user.albums.size %>)</span>
+	<table>
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Submitted Date</td>
+				<td>Average Track Rating</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @user.albums.each do | album | %>
+				<tr>
+					<td><%= link_to album.title, artist_album_path(album.artist, album) %></td>
+					<td><%= album.created_at.strftime("%d %b %Y") %></td>
+					<td><%= avg_track_rating(album.tracks) %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

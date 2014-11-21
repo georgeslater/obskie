@@ -48,9 +48,13 @@ class AlbumsController < ApplicationController
 		@relatedAlbums = Array.new
 		c = Album.count
 
-		3.times do 
+		until @relatedAlbums.size == 3 || @relatedAlbums.size == c do 
 
-			@relatedAlbums.push(Album.offset(rand(c)).first)
+			relAlbum = Album.offset(rand(c)).first
+
+			unless @relatedAlbums.include?(relAlbum) || relAlbum == @album
+				@relatedAlbums.push(relAlbum)
+			end
 		end
 
 		@albumTracks = @album.tracks.order('tracks.order')

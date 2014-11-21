@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.1.3"
+#ruby "2.1.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
@@ -51,6 +51,8 @@ gem 'friendly_id', '~> 5.0.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'shareable'
 
 gem 'impressionist'
 
