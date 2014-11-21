@@ -5,6 +5,11 @@
                 <td><%= track.name %></td>
                 <td><%= formatTime(track.duration_milli) %></td>
                 <td><div class="ratyTest author" data-score="<%= track.author_rating %>"></div></td>
+                <td>
+                	<a href="spotify:track:<%= track.spotify_identifier %>" title="Stream Track on Spotify">
+                    	<span class="spotify albumLinkIcons"></span>
+                    </a>
+                 </td>
             </tr>
         <% end %>                               
     </tbody>

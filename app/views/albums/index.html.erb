@@ -1,7 +1,7 @@
 <div id="albumIndexWrapper">
 	<div id="sortBy">
 		<span>Sort by:</span>
-		<%= select_tag "sort_by", options_for_select([ "Newest first", "Oldest first", "Album name", "Artist name" ], "Newest first"), { :onchange => "changeSortOrderJs(this.value)" } %>
+		<%= select_tag "sort_by", options_for_select([ "Newest first", "Oldest first", "Album name", "Artist name", "Year" ], "Newest first"), { :onchange => "changeSortOrderJs(this.value)" } %>
 	</div>
 	<div id="albums">
 		 <% @albums.each do | album | %>
@@ -11,9 +11,9 @@
 						<%= image_tag(album.album_art, :class => 'albumArt', :width => 200) %>
 					</figure>
 					<figcaption>
-						<div class="albumCaptionArtist"><%= album.artist.name %></div>
-						<div class="albumCaptionTitle"><%= album.title %></div>
-						<div class="albumCaptionYear"><%= album.year %></div>
+						<div class="albumCaption albumCaptionArtist"><%= album.artist.name %></div>
+						<div class="albumCaption albumCaptionTitle"><%= album.title %></div>
+						<div class="albumCaption albumCaptionYear"><%= album.year %></div>
 					</figcaption>
 				<% end %>
 			</div>

@@ -28,24 +28,38 @@ sup {
     background-color: black;
     color: white
   }
+
+  .albumCaption{
+
+     padding: 2px 5px;
+  }
+
   .albumCaptionTitle{
 
-    font-size: 16px
+    font-size: 17px;
+    font-style: italic;
   }
 
   .albumCaptionArtist{
 
-    font-size: 16px
+    font-size: 16px;
+    padding-top: 5px;
   }
 
   .albumCaptionYear{
 
     font-size: 12px;
+    min-height: 21px;
   }
 }
 
-.albuminfo td {
+.albumInfo td {
   font-size: 14px;
+}
+
+.albumInfo td:first-child{
+  
+  max-width: 200px;
 }
 
 .albumInfo table {
@@ -301,7 +315,7 @@ a {
 }
 
 figcaption {
-  font-family: 'Fauna One', serif;
+  font-family: 'Vollkorn', serif;
   font-size: 18px;
 }
 

@@ -15,3 +15,4 @@ development:
   adapter: postgresql
   encoding: unicode
   pool: 5
+  username: georgeslater

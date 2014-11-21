@@ -11,12 +11,9 @@ class SpotifyAlbumInfoJob
       for album in albums
         if album.artists[0].name == artist
 
-          image = album.images[0]
+            image = album.images[0]
             
-            year = nil
-            if album.release_date_precision == 'year'
-              year = album.release_date
-            end
+            year = album.release_date
 
             albumCreated.update_columns(album_art: image['url'], spotify_identifier: album.id, year: year)
 

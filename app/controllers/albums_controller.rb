@@ -27,6 +27,9 @@ class AlbumsController < ApplicationController
 
 			@albums = Album.joins(:artist).all.order('artists.name ASC')
 
+		when 'Year'
+
+			@albums = Album.all.order('year ASC')
 		else
 
 			@albums = Album.all.order('created_at DESC')
