@@ -23,6 +23,10 @@
   	<%= f.label :year %><br>
   	<%= select_year(1975, :start_year => 1950, :end_year => Time.now.year, :field_name => 'year', :prefix => :album) %>
   </div>
+  <div class="field">
+    <%= f.label "Sync with spotify" %><br>
+    <%= f.check_box(:sync_with_spotify, {}) %> 
+  </div>
   <br />
   <div class="field">
   	<%= f.label :body %>

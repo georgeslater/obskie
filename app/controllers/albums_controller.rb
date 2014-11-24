@@ -99,6 +99,6 @@ class AlbumsController < ApplicationController
     end
 
     def album_params
-      params.require(:album).permit(:order, :title, :artist_id, :original_filename, :content_type, :body, :artist_name, :year)
+      params.require(:album).permit(:order, :title, :artist_id, :original_filename, :content_type, :body, :artist_name, :year, :sync_with_spotify)
     end
 end

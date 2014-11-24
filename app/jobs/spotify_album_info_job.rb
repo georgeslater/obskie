@@ -12,10 +12,11 @@ class SpotifyAlbumInfoJob
         if album.artists[0].name == artist
 
             image = album.images[0]
-            
+    
             year = album.release_date
+            obscurity = ((100 - album.artists[0].popularity) * (100 - album.popularity)) / 100
 
-            albumCreated.update_columns(album_art: image['url'], spotify_identifier: album.id, year: year)
+            albumCreated.update_columns(album_art: image['url'], spotify_identifier: album.id, year: year, obscurity_rating: obscurity)
 
             tracks = Array.new
 
