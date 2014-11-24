@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :albums
+  has_many :comments
 
 	validates :username,
   		:uniqueness => {

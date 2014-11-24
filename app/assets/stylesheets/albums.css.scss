@@ -12,6 +12,11 @@ sup {
   color: white;
 }
 
+#manualSection{
+  
+  display: none;
+}
+
 .albumImage{
   
   display: inline-block;
@@ -181,6 +186,11 @@ sup {
   border-radius: 5px;
   border: 1px solid lightgray;
   padding: 7px;
+}
+
+.authorIcons{
+  
+  margin-top:5px;
 }
 
 .authorName {

@@ -22,13 +22,17 @@
             <% end %>
         </div>
         <div id="mostCommented" class="tab-pane">
-            <div class="mostRow">
-                <span>1. Fleetwood Mac - Tusk</span>
-                <div style="float:right;">
-                    <span>6</span>
-                    <span class="glyphicon glyphicon-comment"></span>
+            <% @mostCommentedAlbums.each do | mostCommented | %>
+                <div class="mostRow">
+                    <%= link_to artist_album_path(mostCommented.artist, mostCommented) do %>
+                        <span><%= mostCommented.artist.name %> - <%=mostCommented.title%> (<%=mostCommented.year%>)</span>
+                    <% end %> 
+                    <div style="float:right;">
+                        <span><%= mostCommented.comments_count %></span>
+                        <span class="glyphicon glyphicon-comment"></span>
+                    </div>
                 </div>
-            </div>
+            <% end %>
         </div>
         <div id="mostShared" class="tab-pane">
             <div class="mostRow">

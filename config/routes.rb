@@ -34,10 +34,13 @@ Rails.application.routes.draw do
 
   resources :playlists
 
-  resources :albums 
+  resources :albums do
+    resources :comments
+  end
 
   resources :artists do
     resources :albums do
+      resources :comments
       resources :tracks
     end
   end

@@ -43,8 +43,9 @@ class AlbumsController < ApplicationController
 	def show
 		@album = Album.friendly.find(params[:id])
 		impressionist(@album)
-		@mostReadAlbums = Album.all.order("impressions_count DESC").limit(10)
-		
+		@mostReadAlbums = Album.all.order("impressions_count DESC").limit(20)
+		@mostCommentedAlbums = Album.all.order("comments_count DESC").limit(20)
+
 		@relatedAlbums = Array.new
 		c = Album.count
 
@@ -70,7 +71,9 @@ class AlbumsController < ApplicationController
 	    @album.user_id = current_user.id
 
 	    name = params[:album][:artist_name]
+	    sync_with_spotify = params[:sync_with_spotify]
 
+	    logger.debug "Sync? #{sync_with_spotify}"
 
 	    album_artist = Artist.find_by(name: name)
 
@@ -85,6 +88,12 @@ class AlbumsController < ApplicationController
 
 	    @album.save
 	    
+	   	logger.debug "Album attributes hash: #{@album.attributes.inspect}"
+
+	    if sync_with_spotify == 'Automatic'
+			SpotifyAlbumInfoJob.new.async.perform(@album)
+	    end
+
 	    respond_with(@album.artist, @album)
 	end
 

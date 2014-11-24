@@ -31,22 +31,34 @@
                                 </div>
 
                         <div>Obscurometer: <%= @album.obscurity_rating %>/100</div>
+                        <% if @album.comments_count > 0 %> 
+                            <a href="#albumComments">
+                                <span>Jump to Comments (<%= @album.comments_count %>)</span>
+                            </a>                        
+                        <% end %>
         </div>                          
                             </div>
                             <div id="authorInfo">
-                                <div id="authorPhoto">
-                                    <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ2Xo6K6h_rnk2tI55QYW66PSvPkvkY0kcrcanC1_aWjgQNwIRF" width="50px" height="50px"></img>
-                                </div>
-                                <div class="authorDetail">
-                                    <%= link_to @album.user.username, user_path(@album.user.id), :title => "Profile page", :class => "authorName" %>
-                                    <br />
-                                    <a href="#seeReviews" style="margin-top: 6px; display: block;" title="5 Reviews">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                        <span id="authorNumReviews">
-                                            <%= @album.user.albums.size %>
-                                        </span>
-                                    </a>
-                                </div>
+                                <%= link_to user_path(@album.user.id), :title => "Profile page", :class => "authorName" do %>
+                                    <div id="authorPhoto">
+                                        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ2Xo6K6h_rnk2tI55QYW66PSvPkvkY0kcrcanC1_aWjgQNwIRF" width="50px" height="50px"></img>
+                                    </div>
+                                    <div class="authorDetail">                                  
+                                        <div>
+                                            <span><%= @album.user.username %></span>
+                                        </div>
+                                        <div class="authorIcons">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                            <span id="authorNumReviews">
+                                                <%= @album.user.albums.size %>
+                                            </span>
+                                            <span class="glyphicon glyphicon-comment"></span>
+                                            <span id="authorNumComments">
+                                                <%= @album.user.comments.size %>
+                                            </span> 
+                                        </div>                                  
+                                    </div>
+                                <% end %>
                             </div>
                         </div>                            
                     </div>
@@ -59,14 +71,27 @@
                     <div id="relatedPosts">
                         <%= render 'relatedAlbums' %>
                     </div>
+                    <br />                    
+                    
+                    <div id="albumComments">
+                        <h3>
+                            <%= pluralize(@album.comments_count, "Comment") %>
+                        </h3>
+                        
+                        <%= render @album.comments %>
+
+                        <%= render 'comments/form' %> 
+                    </div>
                     <br />
                     <br />
-                    <br />
+                    <br />                   
                 </div>                             
             </section>
             <section class="rightPanel">
                 <div class="albumInfo">
                     <%= render "ratings" %>
+                    <br />
+                    <br />
                     <%= render "sidebar" %>
                 </div>
             
@@ -77,3 +102,5 @@
 <%= javascript_include_tag "jquery.raty" %>
 <%= stylesheet_link_tag "jquery.raty" %>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/js/bootstrap.min.js"</script>
+

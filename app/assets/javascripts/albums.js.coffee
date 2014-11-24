@@ -1,38 +1,45 @@
 getRandomArbitary = (min, max) ->
   (Math.random() * (max - min) + min).toFixed 2
+
 $(document).ready ->
+  $("input[name='sync_with_spotify']").click ->
+    if $(this).val() == 'Manual' 
+      $("#manualSection").show()
+    else
+      $("#manualSection").hide()
+    return
+
   $("#mostList a").click (e) ->
     e.preventDefault()
     $(this).tab "show"
 
   $(".ratyTest").each (event, ui) ->
     
-      score = $(this).data('score')
-      scoreText = (score? score: '')+($(this).data('votes')? '('+$(this).data('votes')+' votes)': '')
-      $(this).raty
-        score: score
-        path: "/assets"
-        readOnly: ->
-          $(this).hasClass "author"
+    score = $(this).data('score')
+    scoreText = (score? score: '')+($(this).data('votes')? '('+$(this).data('votes')+' votes)': '')
+    $(this).raty
+      score: score
+      path: "/assets"
+      readOnly: ->
+        $(this).hasClass "author"
 
-        hints: [ scoreText, scoreText, scoreText, scoreText, scoreText ]
-        click: (score, event) ->
-          valText = score
-          $(this).raty
-            readOnly: true
-            score: score
-            path: "/assets"
-            halfShow: true
-            targetType: "score"
-            targetKeep: true
-            hints: [ valText, valText, valText, valText, valText ]
-            $.ajax
-              type: 'POST'
-              url: '/ratings'
-              data: score: score, track: $(this).data('trackid')
+      hints: [ scoreText, scoreText, scoreText, scoreText, scoreText ]
+      click: (score, event) ->
+        valText = score
+        $(this).raty
+          readOnly: true
+          score: score
+          path: "/assets"
+          halfShow: true
+          targetType: "score"
+          targetKeep: true
+          hints: [ valText, valText, valText, valText, valText ]
+          $.ajax
+            type: 'POST'
+            url: '/ratings'
+            data: score: score, track: $(this).data('trackid')
 
-          false
-
+        false
 
 
 $("#menuContent").on "show.bs.collapse", ->
