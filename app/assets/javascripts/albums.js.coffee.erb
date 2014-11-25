@@ -1,3 +1,4 @@
+
 getRandomArbitary = (min, max) ->
   (Math.random() * (max - min) + min).toFixed 2
 
@@ -19,7 +20,11 @@ $(document).ready ->
     scoreText = (score? score: '')+($(this).data('votes')? '('+$(this).data('votes')+' votes)': '')
     $(this).raty
       score: score
-      path: "/assets"
+      starOn: "<%= image_path('star-on.png') %>"
+      starOff: "<%= image_path('star-off.png')%>"
+      path: ""
+      scoreName: "star"
+      space: true
       readOnly: ->
         $(this).hasClass "author"
 
@@ -29,7 +34,7 @@ $(document).ready ->
         $(this).raty
           readOnly: true
           score: score
-          path: "/assets"
+          path: "/public/images"
           halfShow: true
           targetType: "score"
           targetKeep: true
