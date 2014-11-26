@@ -31,6 +31,11 @@ class AlbumsController < ApplicationController
 		when 'Year'
 
 			@albums = Album.all.order('year ASC')
+		
+		when 'Most Obscure'
+
+			@albums = Album.all.order('obscurity_rating DESC')
+
 		else
 
 			@albums = Album.all.order('created_at DESC')
@@ -91,7 +96,7 @@ class AlbumsController < ApplicationController
 	   	logger.debug "Album attributes hash: #{@album.attributes.inspect}"
 
 	    if sync_with_spotify == 'Automatic'
-			SpotifyAlbumInfoJob.new.async.perform(@album)
+			SpotifyAlbumInfoJob.new.perform(@album)
 	    end
 
 	    respond_with(@album.artist, @album)

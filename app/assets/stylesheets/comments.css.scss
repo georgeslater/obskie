@@ -1,3 +1,12 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+textarea{
+	
+	resize: none;
+	height: 200px;
+	width: 90%;
+	border-radius: 5px;
+	border: 1.5px solid lightgray;
+}

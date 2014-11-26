@@ -2,21 +2,51 @@
 	
 	<% @artists.each do | artist |%>
 		
-		<h3> <%= artist.name %> </h3>
+		<% if artist.albums.size > 0 %>
 
-		<ul>
+			<h3> <%= artist.name %> </h3>
 
-			<% artist.albums.each do | album | %>
+			<table class="table">
 
-				<li>
+				<% artist.albums.each do | album | %>
 
-					<%= link_to album.title, artist_album_path(artist, album) %>
+					<tr>
+						<td>
+							<%= image_tag album.album_art, :height => '50' %>
+						</td>
 
-				</li>
+						<td>
+							<div class="albumTitle boldColumn">
+								<%= album.title %>
+							</div>
+						</td>
+						<td>
+							<%= album.year %>
+						</td>
+						<td>
+							<div class="boldColumn">
+								<%= album.user.username %>
+							</div>
+						</td>
 
-			<% end %>
+						<td>
 
-		</ul>
+							<%= album.created_at.strftime("%A, %d %b %Y") %>
+						</td>
+
+						<td>
+							<div class="boldColumn">
+								<%= link_to "View", artist_album_path(artist, album)%>
+							</div>
+						</td>
+					</tr>
+
+				<% end %>
+
+			</table>
+		<% end %>
 		
 	<% end %>
+
+	</table>
 </div>

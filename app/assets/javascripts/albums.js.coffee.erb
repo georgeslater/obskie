@@ -3,6 +3,9 @@ getRandomArbitary = (min, max) ->
   (Math.random() * (max - min) + min).toFixed 2
 
 $(document).ready ->
+  
+  $('img.albumArt').lazyload();
+
   $("input[name='sync_with_spotify']").click ->
     if $(this).val() == 'Manual' 
       $("#manualSection").show()

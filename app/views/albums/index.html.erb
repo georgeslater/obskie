@@ -1,14 +1,14 @@
 <div id="albumIndexWrapper">
 	<div id="sortBy">
 		<span>Sort by:</span>
-		<%= select_tag "sort_by", options_for_select([ "Newest first", "Oldest first", "Album name", "Artist name", "Year" ], "Newest first"), { :onchange => "changeSortOrderJs(this.value)" } %>
+		<%= select_tag "sort_by", options_for_select([ "Newest first", "Oldest first", "Album name", "Artist name", "Year", "Most Obscure" ], "Newest first"), { :onchange => "changeSortOrderJs(this.value)" } %>
 	</div>
 	<div id="albums">
 		 <% @albums.each do | album | %>
 		    <div class="albumImage">
 				<%= link_to artist_album_path(album.artist, album) do %>
 					<figure>
-						<%= image_tag(album.album_art, :class => 'albumArt', :width => 200) %>
+						<%= image_tag(album.album_art, :class => 'albumArt', :width => 200, lazy:true) %>
 					</figure>
 					<figcaption>
 						<div class="albumCaption albumCaptionArtist"><%= album.artist.name %></div>
@@ -37,6 +37,7 @@
 		      	console.log(html)
 		      	$('#albums').html(html);
 		      	
+		      	$('figure img').lazyload();
 		      }
 		   });
 		}

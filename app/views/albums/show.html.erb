@@ -5,39 +5,8 @@
                         <div class="albumArt">
                             <img src="<%= @album.album_art %>" />
                         </div>
-                        <div class="albumTitle">                                       
-                            <div class="albumHeader">
-                                <h2><%= @album.title %></h2>
-                                <h5><%= link_to @album.artist.name, artist_path(@album.artist) %></h5>
-                                <h4><%= @album.year %></h4>
-                                <div class="streamBuyLinks">                           
-                                    <a href="spotify:album:<%= @album.spotify_identifier %>" title="Stream Album on Spotify">
-                                        <span class="spotify albumLinkIcons"></span>
-                                    </a>
-                                    <a href="spotify:album:4lxW0axOKlImAQ0akMRz61" title="Stream Album on Spotify">
-                                        <span class="spotify albumLinkIcons"></span>
-                                    </a>
-                                    <a href="spotify:album:4lxW0axOKlImAQ0akMRz61" title="Stream Album on Spotify">
-                                        <span class="spotify albumLinkIcons"></span>
-                                    </a>
-                                </div>
-                                <div id="fb-root"></div>
-                                <div id="shareBtns" style="display: none;">
-                                    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
-                                    <div style="display: inline-block; vertical-align: top;">
-                                        <a href="https://twitter.com/share" class="twitter-share-button" data-via="obscurealbums" data-count="none" data-hashtags="obscurealbums" data-dnt="true">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                                <div class="g-plusone" data-size="medium" data-annotation="none"></div>
-                                </div>
+                        <div class="albumTitle">
 
-                        <div>Obscurometer: <%= @album.obscurity_rating %>/100</div>
-                        <% if @album.comments_count > 0 %> 
-                            <a href="#albumComments">
-                                <span>Jump to Comments (<%= @album.comments_count %>)</span>
-                            </a>                        
-                        <% end %>
-        </div>                          
-                            </div>
                             <div id="authorInfo">
                                 <%= link_to user_path(@album.user.id), :title => "Profile page", :class => "authorName" do %>
                                     <div id="authorPhoto">
@@ -59,7 +28,47 @@
                                         </div>                                  
                                     </div>
                                 <% end %>
-                            </div>
+                            </div>                                       
+                            <div class="albumHeader">
+                                <h2><%= @album.title %></h2>
+                                <h5><%= link_to @album.artist.name, artist_path(@album.artist) %></h5>
+                                <h4><%= @album.year %></h4>
+                                <div class="streamBuyLinks">                           
+                                    <a href="spotify:album:<%= @album.spotify_identifier %>" title="Stream Album on Spotify">
+                                        <span class="spotify albumLinkIcons"></span>
+                                    </a>
+                                    <a href="spotify:album:4lxW0axOKlImAQ0akMRz61" title="Stream Album on Spotify">
+                                        <span class="spotify albumLinkIcons"></span>
+                                    </a>
+                                    <a href="spotify:album:4lxW0axOKlImAQ0akMRz61" title="Stream Album on Spotify">
+                                        <span class="spotify albumLinkIcons"></span>
+                                    </a>
+                                </div>
+                                <div id="obscurometer">
+                                    <% if @album.obscurity_rating.present? %>
+                                        <h6>Obscurometer:</h6>
+                                        <div style="display: inline-block; vertical-align: middle; position: relative;"><input type="range" readonly="readonly" value="<%= @album.obscurity_rating %>" max="100"></input>
+                                            <div style="position:absolute; top: -13px; left: <%= @album.obscurity_rating * 1.03 %>px;">
+                                                <img src="<%= image_url("moulding.gif") %>" style="height: 35px;" title="<%= @album.obscurity_rating %>/100"></img>
+                                            </div>
+                                        </div>
+                                    <% end %>
+                                    <% if @album.comments_count > 0 %> 
+                                        <a href="#albumComments">
+                                            <span>Jump to Comments (<%= @album.comments_count %>)</span>
+                                        </a>                        
+                                    <% end %>
+                                </div>
+                                <br /><br />
+                                <div id="fb-root"></div>
+                                <div id="shareBtns" style="display: none;">
+                                    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
+                                    <div style="display: inline-block; vertical-align: top;">
+                                        <a href="https://twitter.com/share" class="twitter-share-button" data-via="obscurealbums" data-count="none" data-hashtags="obscurealbums" data-dnt="true">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                                <div class="g-plusone" data-size="medium" data-annotation="none"></div>                       
+                                </div>                          
+                            </div>                          
                         </div>                            
                     </div>
                     <div class="content">
@@ -75,11 +84,15 @@
                     
                     <div id="albumComments">
                         <h3>
-                            <%= pluralize(@album.comments_count, "Comment") %>
+                            <%= pluralize(@album.comments_count, "Comment") %>                            
                         </h3>
+
+                        <% if @album.comments_count == 0 %>
+                            <span>Tumbleweed...</span>
+                        <% end %>
                         
                         <%= render @album.comments %>
-
+                        <br /><br />
                         <%= render 'comments/form' %> 
                     </div>
                     <br />
@@ -102,5 +115,3 @@
 <%= javascript_include_tag "jquery.raty" %>
 <%= stylesheet_link_tag "jquery.raty" %>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/js/bootstrap.min.js"</script>
-

@@ -5,6 +5,6 @@ class ArtistsController < ApplicationController
 	end
 
 	def index
-		@artists = Artist.all
+		@artists = Artist.all.order('name ASC')
 	end
 end
