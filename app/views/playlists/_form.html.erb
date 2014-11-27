@@ -10,6 +10,14 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
+    <%= f.label "Spotify URI" %><br>
+    <%= f.text_field :spotify_uri %>
+  </div>
+  <div class="field">
+    <%= f.label "Explain what you like about this playlist" %><br>
+    <%= f.text_area :blurb, :cols => "100", :rows => "10" %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

@@ -1,3 +1,66 @@
 // Place all the styles related to the Playlists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#playlistWrapper{
+	
+	margin-left: 30px;
+}
+
+#submittedByInfo{
+	
+	margin-bottom: 40px;
+}
+
+.triangle-border {
+	position: relative;
+	padding: 15px;
+	margin: 1em 0 3em;
+	border: 5px solid lightgray;
+	color: #333;
+	background: #fff;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	max-width: 50%;
+	margin-left: 30px;
+}
+
+.triangle-border.left:before {
+	top: 10px;
+	bottom: auto;
+	left: -30px;
+	border-width: 15px 30px 15px 0;
+	border-color: transparent lightgray;
+}
+
+.triangle-border:before {
+	content: "";
+	position: absolute;
+	bottom: -20px;
+	left: 40px;
+	border-width: 20px 20px 0;
+	border-style: solid;
+	border-color: #5a8f00 transparent;
+	display: block;
+	width: 0;
+}
+
+.triangle-border.left:after {
+	top: 16px;
+	bottom: auto;
+	left: -21px;
+	border-width: 9px 21px 9px 0;
+	border-color: transparent #fff;
+}
+.triangle-border:after {
+	content: "";
+	position: absolute;
+	bottom: -13px;
+	left: 47px;
+	border-width: 13px 13px 0;
+	border-style: solid;
+	border-color: #fff transparent;
+	display: block;
+	width: 0;
+}

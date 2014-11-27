@@ -2,8 +2,6 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username
 
-
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -11,12 +9,18 @@ class User < ActiveRecord::Base
 
   has_many :albums
   has_many :comments
+  has_many :playlists
 
 	validates :username,
   		:uniqueness => {
     	:case_sensitive => false
   		}
 
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment :avatar,
+  :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
+  do_not_validate_attachment_file_type :avatar
+  
   def forem_name
     username
   end

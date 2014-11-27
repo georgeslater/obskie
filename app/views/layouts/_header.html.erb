@@ -26,7 +26,7 @@
                             <li class="<%= 'activeTab' if current_page?(artists_path) %>">
                                 <%= link_to "A-Z", artists_path %>
                             </li>
-                            <li>
+                            <li class="<%= 'activeTab' if current_page?(playlists_path) %>">
                                 <%= link_to "Playlists", playlists_path %>
                             </li>
                             <li>

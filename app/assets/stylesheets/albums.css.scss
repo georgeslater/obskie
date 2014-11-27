@@ -88,13 +88,13 @@ sup {
 }
 
 .socialMediaLinks {
-  margin-top: 10px;
+  margin-top: 25px;
   li {
     float: right;
   }
   a {
-    height: 48px;
-    width: 48px;
+    height: 32px;
+    width: 32px;
     margin-right: 5px;
     float: right;
   }
@@ -115,13 +115,13 @@ sup {
 
 .fbLink {
   background-image: url(https://cdn2.iconfinder.com/data/icons/New-Social-Media-Icon-Set-V11/64/facebook.png);
-  background-size: 48px;
+  background-size: 32px;
   background-repeat: no-repeat;
 }
 
 .twitterLink {
   background-image: url(https://cdn2.iconfinder.com/data/icons/New-Social-Media-Icon-Set-V11/64/twitter.png);
-  background-size: 48px;
+  background-size: 32px;
   background-repeat: no-repeat;
 }
 
@@ -203,6 +203,11 @@ sup {
 .authorIcons{
   
   margin-top:5px;
+}
+
+.authorIcon{
+  
+  margin-right: 3px;
 }
 
 .authorName {
@@ -323,7 +328,7 @@ a {
 	
 	color: white;
 	float: right;
-	margin-top: 25px;
+	margin-top: 7px;
 	margin-left: 20px;
 	font-weight: bold;
 }

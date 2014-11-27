@@ -32,7 +32,9 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  resources :playlists
+  resources :playlists do
+    resources :comments
+  end
 
   resources :albums do
     resources :comments

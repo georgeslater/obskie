@@ -24,12 +24,18 @@ class PlaylistsController < ApplicationController
 
   def create
     @playlist = Playlist.new(playlist_params)
-    flash[:notice] = 'Playlist was successfully created.' if @playlist.save
+    @playlist.user_id = current_user.id
+    @playlist.save
+    
+    if @playlist.spotify_uri.present?
+        SpotifyPlaylistJob.new.perform(@playlist)
+    end
+    
     respond_with(@playlist)
+    
   end
 
   def update
-    flash[:notice] = 'Playlist was successfully updated.' if @playlist.update(playlist_params)
     respond_with(@playlist)
   end
 
@@ -44,6 +50,6 @@ class PlaylistsController < ApplicationController
     end
 
     def playlist_params
-      params[:playlist]
+      params.require(:playlist).permit(:spotify_uri, :blurb)
     end
 end

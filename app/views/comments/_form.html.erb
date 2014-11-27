@@ -1,6 +1,7 @@
 <h4>Add a Comment</h4>
 
 	<% if user_signed_in? %>
+		
 		<%= form_for([@album, @album.comments.build]) do |f| %>       
 		  <p>
 		    <%= f.text_area :body %>
@@ -9,6 +10,7 @@
 		    <%= f.submit "Submit" %>
 		  </p>
 		<% end %>
+
 	<% else %>
 		<div>
 			<span>Users must be logged in to leave comments.  Please <%= link_to "login", new_user_session_path %> or <%= link_to "sign up here", new_user_registration_path %></span>

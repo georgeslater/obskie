@@ -17,13 +17,23 @@
                                             <span><%= @album.user.username %></span>
                                         </div>
                                         <div class="authorIcons">
-                                            <span class="glyphicon glyphicon-pencil"></span>
-                                            <span id="authorNumReviews">
-                                                <%= @album.user.albums.size %>
+                                            <span class="authorIcon">
+                                                <span class="glyphicon glyphicon-pencil"></span>
+                                                <span id="authorNumReviews">
+                                                    <%= @album.user.albums.size %>
+                                                </span>
                                             </span>
-                                            <span class="glyphicon glyphicon-comment"></span>
-                                            <span id="authorNumComments">
-                                                <%= @album.user.comments.size %>
+                                            <span class="authorIcon">
+                                                <span class="glyphicon glyphicon-comment"></span>
+                                                <span id="authorNumComments">
+                                                    <%= @album.user.comments.size %>
+                                                </span>
+                                            </span>
+                                            <span class="authorIcon">
+                                                <span class="glyphicon glyphicon-stats"></span>
+                                                <span id="authorNumPlaylists">
+                                                    <%= @album.user.playlists.size %>
+                                                </span>
                                             </span> 
                                         </div>                                  
                                     </div>
@@ -53,21 +63,8 @@
                                             </div>
                                         </div>
                                     <% end %>
-                                    <% if @album.comments_count > 0 %> 
-                                        <a href="#albumComments">
-                                            <span>Jump to Comments (<%= @album.comments_count %>)</span>
-                                        </a>                        
-                                    <% end %>
                                 </div>
-                                <br /><br />
-                                <div id="fb-root"></div>
-                                <div id="shareBtns" style="display: none;">
-                                    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
-                                    <div style="display: inline-block; vertical-align: top;">
-                                        <a href="https://twitter.com/share" class="twitter-share-button" data-via="obscurealbums" data-count="none" data-hashtags="obscurealbums" data-dnt="true">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                                <div class="g-plusone" data-size="medium" data-annotation="none"></div>                       
-                                </div>                          
+                                <br /><br />                          
                             </div>                          
                         </div>                            
                     </div>
@@ -75,6 +72,15 @@
                         <article>
                             <%= @album.body %>
                         </article>
+                        <br /><br />
+                        <div id="fb-root"></div>
+                                <div id="shareBtns" style="display: none;">
+                                    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
+                                    <div style="display: inline-block; position: relative; top: 8px;">
+                                        <a href="https://twitter.com/share" class="twitter-share-button" data-via="obscurealbums" data-count="none" data-hashtags="obscurealbums" data-dnt="true">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                                <div class="g-plusone" data-size="medium" data-annotation="none"></div>                       
+                                </div>
                     </div>
                     <hr />
                     <div id="relatedPosts">

@@ -1,4 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div id="playlistWrapper">
+	<h3><%= @playlist.name %></h3>
+	<div id="playlistInfo">
+		<div><%= @playlist.track_count %> tracks</div>
 
-<%= link_to 'Edit', edit_playlist_path(@playlist) %> |
-<%= link_to 'Back', playlists_path %>
+	</div>
+	<div id="submittedByInfo">
+		<span>Submitted by: <%= link_to @playlist.user.username, user_path(@playlist.user.username), :title => "Profile page", :class => "authorName" %>
+		<span>
+		<% if @playlist.blurb.present? %>
+			<span class="triangle-border left">
+				<%= @playlist.blurb %>
+			</span>
+		<% end %>
+	</div>
+	<div>
+		<iframe src="https://embed.spotify.com/?uri=<%= @playlist.spotify_uri %>" style="width: 600px; height:680px;" frameborder="0" allowtransparency="true"></iframe>
+	</div>
+
+	<div id="albumComments">
+        <h3>
+            <%= pluralize(@playlist.comments_count, "Comment") %>                            
+        </h3>
+
+        <% if @playlist.comments_count == 0 %>
+            <span>Tumbleweed...</span>
+        <% end %>
+        
+        <%= render @playlist.comments %>
+        <br /><br />
+        <%= render 'comments/playlist_form'%> 
+    </div>
+</div>

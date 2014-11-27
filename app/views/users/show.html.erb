@@ -2,6 +2,8 @@
 
 	<h4><%= @user.first_name %> <%= @user.last_name %></h4>
 	
+	<%= image_tag @user.avatar.url(:medium) %>
+
 	<ul>
 		<li>Joined: <%= @user.created_at.strftime("%A, %d %b %Y") %></li>
 	</ul>
