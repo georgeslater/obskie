@@ -23,9 +23,7 @@ $(document).ready ->
     scoreText = (score? score: '')+($(this).data('votes')? '('+$(this).data('votes')+' votes)': '')
     $(this).raty
       score: score
-      starOn: "<%= asset_url('star-on.png') %>"
-      starOff: "<%= asset_url('star-off.png')%>"
-      path: ""
+      path: "/images"
       scoreName: "star"
       space: true
       readOnly: ->
@@ -37,7 +35,7 @@ $(document).ready ->
         $(this).raty
           readOnly: true
           score: score
-          path: "/public/images"
+          path: "/images"
           halfShow: true
           targetType: "score"
           targetKeep: true
