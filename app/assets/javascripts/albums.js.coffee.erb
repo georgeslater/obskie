@@ -22,10 +22,11 @@ $(document).ready ->
     score = $(this).data('score')
     scoreText = (score? score: '')+($(this).data('votes')? '('+$(this).data('votes')+' votes)': '')
     $(this).raty
-      score: score
-      path: "/images"
-      scoreName: "star"
-      space: true
+      starOn: '<%= asset_path('star-on.png') %>',
+      starOff: '<%= asset_path('star-off.png') %>',
+      path: '',
+      scoreName: 'star',
+      space: true,
       readOnly: ->
         $(this).hasClass "author"
 
