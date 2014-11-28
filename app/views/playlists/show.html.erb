@@ -1,7 +1,7 @@
 <div id="playlistWrapper">
 	<h3><%= @playlist.name %></h3>
 	<div id="playlistInfo">
-		<div><%= @playlist.track_count %> tracks</div>
+		<div><i><%= @playlist.track_count %> tracks</i></div>
 
 	</div>
 	<div id="submittedByInfo">
@@ -12,6 +12,18 @@
 				<%= @playlist.blurb %>
 			</span>
 		<% end %>
+	</div>
+	<div id="directLinks">
+		<div>
+			<a class="spotifyPlayNow" target="_top" href="<%= @playlist.spotify_uri %>">
+				<span class="spotifyText">Open in Spotify</span>
+			</a>
+		</div>
+		<div>
+			<a class="noSpotify" target="_blank" href="http://www.spotify.com">
+				<span>Don't have Spotify? Click here</span>
+			</a>
+		</div>
 	</div>
 	<div>
 		<iframe src="https://embed.spotify.com/?uri=<%= @playlist.spotify_uri %>" style="width: 600px; height:680px;" frameborder="0" allowtransparency="true"></iframe>

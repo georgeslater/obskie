@@ -40,6 +40,9 @@ footer{
 	color: white;
 	font-size: 11px;
 	padding: 20px 0;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
 }
 
 footer li a{

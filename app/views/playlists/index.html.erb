@@ -1,17 +1,21 @@
 <p class="bg-info" style="padding: 10px;">Note: ObscureAlbums.com uses external services to host its playlists.</p>
 
-<div id="albumIndexWrapper">
-	<div id="albums">
+<div id="playlistIndexWrapper">
+	<div id="playlists">
 		 <% @playlists.each do | playlist | %>
-		    <div class="albumImage">
+		    <div class="playlistImage">
 				<%= link_to playlist_path(playlist) do %>
 					<figure>
 						<%= image_tag(playlist.image_url, :class => 'albumArt', :width => 200, lazy:true) %>
 					</figure>
 					<figcaption>
-						<div class="albumCaption albumCaptionArtist"><%= playlist.name %></div>
-						<div class="albumCaption albumCaptionTitle">Title</div>
-						<div class="albumCaption albumCaptionYear">Year</div>
+						<div class="playlistCaption albumCaptionArtist"><%= playlist.name %></div>
+						<div class="playlistCaption albumCaptionTitle"><%= playlist.user.username %></div>
+						<div class="playlistCaption playlistCaptionMediums">
+							<% if playlist.spotify_uri.present? %>
+								<img src="/images/spotify.png" title="Available on Spotify"></img>
+							<% end %>
+						</div>
 					</figcaption>
 				<% end %>
 			</div>

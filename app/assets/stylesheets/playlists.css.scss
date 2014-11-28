@@ -12,6 +12,86 @@
 	margin-bottom: 40px;
 }
 
+#directLinks{
+	
+	margin-bottom: 20px;
+}
+
+.spotifyPlayNow{
+	
+	background-image: url('/images/spotify.png');
+	background-repeat: no-repeat;
+	background-color: #68b300;
+	background-position: 8px center;
+	border-radius: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 40px;
+	padding-right: 20px;
+	margin-bottom: 40px;
+
+}
+
+.spotifyPlayNow span{
+	
+	color: white !important;
+	font-size: 14px;
+}
+
+.noSpotify span{
+	
+	font-size: 11px;
+}
+
+#spotifyPlayNow 
+
+.noSpotify{
+	
+	font-size: 11px;
+}
+
+.playlistImage{
+  
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+  figure img{
+    width: 200px;
+    height:200px;
+  }
+  figcaption{
+    max-width: 200px;
+    text-align: center;
+    font-size: 14px;
+    background-color: black;
+    color: white
+  }
+
+  .playlistCaption{
+
+     padding: 2px 5px;
+  }
+
+  .playlistCaptionTitle{
+
+    font-size: 17px;
+    font-style: italic;
+  }
+
+  .playlistCaptionArtist{
+
+    font-size: 16px;
+    padding-top: 5px;
+  }
+
+  .playlistCaptionMediums{
+
+    font-size: 12px;
+    min-height: 21px;
+  }
+}
+
+
 .triangle-border {
 	position: relative;
 	padding: 15px;
@@ -63,4 +143,19 @@
 	border-color: #fff transparent;
 	display: block;
 	width: 0;
+}
+
+#spotifySection{
+	
+	display: none;
+}
+
+#deezerSection{
+	
+	display: none;
+}
+
+#rdioSection{
+	
+	display: none;
 }

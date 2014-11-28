@@ -10,8 +10,26 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
+
+ <div class="field">
+    <input type="checkbox" class="playlistTypeCb" data-type="spotify"/>
+    <label>Spotify</label>
+    <input type="checkbox" class="playlistTypeCb" data-type="deezer" />
+    <label>Deezer</label>
+    <input type="checkbox" class="playlistTypeCb" data-type="rdio" />
+    <label>Rdio</label>
+  </div>
+
+  <div id="spotifySection" class="field">
     <%= f.label "Spotify URI" %><br>
+    <%= f.text_field :spotify_uri %>
+  </div>
+  <div id="deezerSection" class="field">
+    <%= f.label "Deezer URI" %><br>
+    <%= f.text_field :spotify_uri %>
+  </div>
+  <div id="rdioSection" class="field">
+    <%= f.label "Rdio URI" %><br>
     <%= f.text_field :spotify_uri %>
   </div>
   <div class="field">
