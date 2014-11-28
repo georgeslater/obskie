@@ -32,3 +32,12 @@
 
 	color: lightskyblue !important;
 }
+
+footer{
+
+	clear: both;
+	background-color: black;
+	color: white;
+	font-size: 11px;
+	padding: 20px 0;
+}

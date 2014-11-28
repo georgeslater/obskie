@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-#ruby "2.1.3"
+ruby "2.1.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
@@ -53,9 +53,10 @@ gem 'friendly_id', '~> 5.0.0'
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano', '~> 3.3.0'
+gem 'whenever', :require => false
 
-gem "paperclip", "~> 4.2"
+gem "dynamic_sitemaps"
 
 gem 'impressionist'
 

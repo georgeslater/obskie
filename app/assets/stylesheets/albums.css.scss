@@ -184,10 +184,6 @@ sup {
   padding-right: 3%;
 }
 
-.contentWrapper {
-  margin-left: 2%;
-}
-
 #authorNumReviews {
   margin-left: -2px;
 }
@@ -281,6 +277,7 @@ td:not(:first-child), th:not(:first-child) {
   #leftPanel {
     border-right: none;
     max-width: 100%;
+    margin-left: 2%;
   }
   .socialMediaLinks {
     position: absolute;
