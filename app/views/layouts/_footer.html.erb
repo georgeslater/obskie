@@ -1,6 +1,24 @@
 <footer>
-        Footer will go here.
+        <div class="footerColumn">
+        	<ul>
+        		<li><%= link_to "Albums", albums_path %></li>
+        		<li><%= link_to "A-Z", artists_path %></li>
+        		<li><%= link_to "Playlists", playlists_path %></li>
+        	</ul>
+        </div>
 
+        <div class="footerColumn">
+        	<ul>
+	        	<li><a href="www.facebook.com/obscurealbums">Facebook</a></li>
+	        	<li><a href="www.twitter.com/obscurealbums">
+	        	Twitter</a></li> 
+        	</ul>
+        </div>
+        <div class="footerColumn">
+        	<ul>
+        		<li><%= link_to "Contact Us", new_contact_path %></li>
+        	</ul>
+        </div>
         <div id="copyrightNotice">
         	<span>&copy; Obscure Albums <%= Time.now.year %></span>
         </div>

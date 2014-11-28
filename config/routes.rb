@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'albums#index'
 
+  match '/contacts',     to: 'contacts#new',             via: 'get'
+  resources "contacts", only: [:new, :create]
+  
   resources :ratings, only: :create
 
   resources :users

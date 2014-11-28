@@ -1,0 +1,16 @@
+<div>
+  <h3>Contact Us</h3>
+
+  <%= simple_form_for @contact do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, :required => true %>
+    </div>
+    <%= f.input :email, :required => true %>
+    <%= f.input :message, :as => :text, :required => true %>
+    <div>
+      </br>
+      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

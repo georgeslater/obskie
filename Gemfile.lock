@@ -78,10 +78,14 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dotenv (1.0.2)
     erubis (2.7.0)
     execjs (2.2.2)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    foreman (0.76.0)
+      dotenv (~> 1.0.2)
+      thor (~> 0.19.1)
     friendly_id (5.0.4)
       activerecord (>= 4.0.0)
     gemoji (2.1.0)
@@ -112,6 +116,9 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mail_form (1.5.0)
+      actionmailer (>= 3.2, < 5)
+      activemodel (>= 3.2, < 5)
     mime-types (1.25.1)
     mini_portile (0.6.1)
     minitest (5.4.3)
@@ -233,6 +240,7 @@ DEPENDENCIES
   devise
   forem!
   forem-bootstrap!
+  foreman
   friendly_id (~> 5.0.0)
   impressionist
   jbuilder (~> 2.0)
@@ -240,6 +248,7 @@ DEPENDENCIES
   jquery-turbolinks
   kaminari (= 0.15.1)
   lazyload-rails
+  mail_form
   paperclip (~> 4.2)
   pg
   puma
@@ -248,6 +257,7 @@ DEPENDENCIES
   rspotify
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  simple_form
   spring
   sucker_punch (~> 1.0)
   turbolinks

@@ -55,9 +55,14 @@ gem 'friendly_id', '~> 5.0.0'
 # Use Capistrano for deployment
 #gem 'capistrano', '~> 3.3.0'
 
-#gem "dynamic_sitemaps"
+gem 'mail_form'
+gem 'simple_form'
 
 gem 'impressionist'
+
+group :development, :test do
+	gem 'foreman'
+end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
