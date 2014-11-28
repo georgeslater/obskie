@@ -59,7 +59,7 @@
                                         <h6>Obscurometer:</h6>
                                         <div style="display: inline-block; vertical-align: middle; position: relative;"><input type="range" readonly="readonly" value="<%= @album.obscurity_rating %>" max="100"></input>
                                             <div style="position:absolute; top: -13px; left: <%= @album.obscurity_rating * 1.03 %>px;">
-                                                <img src="<%= asset_path("moulding.gif") %>" style="height: 35px;" title="<%= @album.obscurity_rating %>/100"></img>
+                                                <img src="/images/moulding.gif" style="height: 35px" title="<%= @album.obscurity_rating %>/100">
                                             </div>
                                         </div>
                                     <% end %>

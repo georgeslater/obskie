@@ -53,10 +53,9 @@ gem 'friendly_id', '~> 5.0.0'
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano', '~> 3.3.0'
-gem 'whenever', :require => false
+#gem 'capistrano', '~> 3.3.0'
 
-gem "dynamic_sitemaps"
+#gem "dynamic_sitemaps"
 
 gem 'impressionist'
 
