@@ -2,8 +2,7 @@ class PlaylistsController < ApplicationController
   
   before_action :set_playlist, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:create]
-  after_action :allow_spotify_iframe
-
+  
   respond_to :html
 
   def index
@@ -53,9 +52,4 @@ class PlaylistsController < ApplicationController
     def playlist_params
       params.require(:playlist).permit(:spotify_uri, :blurb)
     end
-
-    def allow_spotify_iframe
-      response.headers['X-Frame-Options'] = 'ALLOW-FROM https://developer.spotify.com'
-    end
-
 end
