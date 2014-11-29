@@ -28,10 +28,6 @@ Rails.application.configure do
   user_name: ENV["GMAIL_USERNAME"],
   password: ENV["GMAIL_PASSWORD"]
   }
-  
-  config.action_dispatch.default_headers = {
-        'X-Frame-Options' => 'ALLOWALL'
-    }
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
