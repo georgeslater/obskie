@@ -1,5 +1,11 @@
 class ApplicationController < ActionController::Base
 
+  before_filter :default_headers
+
+  def default_headers
+    headers['X-Frame-Options'] = 'ALLOWALL'
+  end
+
   def forem_user
     current_user
   end
