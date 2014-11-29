@@ -60,9 +60,7 @@ gem 'simple_form'
 
 gem 'impressionist'
 
-group :development, :test do
-	gem 'foreman'
-end
+gem "non-stupid-digest-assets"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
