@@ -61,7 +61,9 @@ gem 'simple_form'
 gem 'impressionist'
 
 gem "non-stupid-digest-assets"
-
+gem 'httparty'
+gem "geocoder"
+gem "itunes-search-api"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: :production

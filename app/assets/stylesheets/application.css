@@ -32,38 +32,3 @@
 
 	color: lightskyblue !important;
 }
-
-footer{
-
-	clear: both;
-	background-color: black;
-	color: white;
-	font-size: 11px;
-	padding: 20px 0;
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-}
-
-footer li a{
-
-	color: white !important;
-}
-
-li, ol{
-
-	list-style: none;
-}
-
-#copyrightNotice{
-
-	font-size: 12px;
-	text-align: center;
-	clear: left;
-}
-
-.footerColumn{
-
-	width: 33%;
-	float:left;
-}

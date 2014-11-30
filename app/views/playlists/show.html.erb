@@ -14,20 +14,36 @@
 		<% end %>
 	</div>
 	<div id="directLinks">
-		<div>
-			<a class="spotifyPlayNow" target="_top" href="<%= @playlist.spotify_uri %>">
-				<span class="spotifyText">Open in Spotify</span>
-			</a>
-		</div>
-		<div>
-			<a class="noSpotify" target="_blank" href="http://www.spotify.com">
-				<span>Don't have Spotify? Click here</span>
-			</a>
-		</div>
+		
+		<% if @playlist.spotify_uri.present? %>		
+
+			<div>
+				<a class="spotifyPlayNow" target="_top" href="<%= @playlist.spotify_uri %>">
+					<span class="spotifyText">Open in Spotify</span>
+				</a>
+			</div>
+			<div>
+				<a class="noSpotify" target="_blank" href="http://www.spotify.com">
+					<span>Don't have Spotify? Click here</span>
+				</a>
+			</div>
+		<% end %>
+
+		<% if @playlist.deezer_uri.present? %>
+
+		<% end %>
 	</div>
-	<div>
-		<iframe src="https://embed.spotify.com/?uri=<%= @playlist.spotify_uri %>" style="width: 600px; height:680px;" frameborder="0" allowtransparency="true"></iframe>
-	</div>
+	<% if @playlist.spotify_uri.present? %>
+		<div id="spotifyEmbed">
+			<iframe src="https://embed.spotify.com/?uri=<%= @playlist.spotify_uri %>" style="width: 600px; height:680px;" frameborder="0" allowtransparency="true"></iframe>
+
+		</div>
+	<% end %>
+	<% if @playlist.deezer_uri.present? %>
+		<div id="deezerEmbed">
+		<iframe scrolling="no" frameborder="0" allowTransparency="true" src="http://www.deezer.com/plugins/player?autoplay=false&playlist=true&width=700&height=640&cover=true&type=playlist&id=<%= @playlist.deezer_uri %>&title=&app_id=undefined" width="700" height="640"></iframe>
+		</div>
+	<% end %>
 
 	<div id="albumComments">
         <h3>

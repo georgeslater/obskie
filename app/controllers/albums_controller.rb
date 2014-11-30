@@ -48,8 +48,8 @@ class AlbumsController < ApplicationController
 	def show
 		@album = Album.friendly.find(params[:id])
 		impressionist(@album)
-		@mostReadAlbums = Album.all.order("impressions_count DESC").limit(20)
-		@mostCommentedAlbums = Album.all.order("comments_count DESC").limit(20)
+		@mostReadAlbums = Album.where("impressions_count > 0").order("impressions_count DESC").limit(20)
+		@mostCommentedAlbums = Album.where("comments_count > 0").order("comments_count DESC").limit(20)
 
 		@relatedAlbums = Array.new
 		c = Album.count
@@ -64,6 +64,8 @@ class AlbumsController < ApplicationController
 		end
 
 		@albumTracks = @album.tracks.order('tracks.order')
+
+		@country = request.location.country_code
 	end
 
 	def new
@@ -98,6 +100,8 @@ class AlbumsController < ApplicationController
 	    if sync_with_spotify == 'Automatic'
 			SpotifyAlbumInfoJob.new.perform(@album)
 	    end
+
+	    ItunesAlbumInfoJob.new.perform(@album)
 
 	    respond_with(@album.artist, @album)
 	end

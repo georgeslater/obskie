@@ -15,6 +15,9 @@
 							<% if playlist.spotify_uri.present? %>
 								<img src="/images/spotify.png" title="Available on Spotify"></img>
 							<% end %>
+							<% if playlist.deezer_uri.present? %>
+								<img src="/images/deezer.jpg" title="Available on Deezer"></img>
+							<% end %>
 						</div>
 					</figcaption>
 				<% end %>

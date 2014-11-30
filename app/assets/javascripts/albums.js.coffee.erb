@@ -4,6 +4,12 @@ getRandomArbitary = (min, max) ->
 
 $(document).ready ->
   
+  $('.loginInfoMenu').click ->
+    if $('#userMenu').css('display') == 'none'
+      $('#userMenu').css('display', 'block');
+    else
+      $('#userMenu').css('display', 'none')  
+
   $('img.albumArt').lazyload();
 
   $("input[name='sync_with_spotify']").click ->

@@ -1,4 +1,4 @@
-        <div class="contentWrapper">
+        <div id="contentWrapper">
             <section id="leftPanel">
                 <div class="postContent">
                     <div class="postTitle">
@@ -47,9 +47,7 @@
                                     <a href="spotify:album:<%= @album.spotify_identifier %>" title="Stream Album on Spotify">
                                         <span class="spotify albumLinkIcons"></span>
                                     </a>
-                                    <a href="spotify:album:4lxW0axOKlImAQ0akMRz61" title="Stream Album on Spotify">
-                                        <span class="spotify albumLinkIcons"></span>
-                                    </a>
+                                    <a href="<%= @album.itunes_view_url %>" target="itunes_store" class="itunes"></a>
                                     <a href="spotify:album:4lxW0axOKlImAQ0akMRz61" title="Stream Album on Spotify">
                                         <span class="spotify albumLinkIcons"></span>
                                     </a>

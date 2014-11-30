@@ -176,6 +176,11 @@ sup {
   min-height:175px;
 }
 
+#contentWrapper{
+  
+  margin-left: 3%;
+}
+
 #leftPanel {
   float: left;
   max-width: 63%;
@@ -324,7 +329,6 @@ a {
 	
 	color: white;
 	float: right;
-	margin-top: 7px;
 	margin-left: 20px;
 	font-weight: bold;
 }
@@ -349,4 +353,66 @@ figcaption {
 .mouldingImage{
   
   height: 35px;
+}
+
+.itunes{
+  
+  display: inline-block;
+  overflow:hidden;
+  background:asset-url('/images/itunes.png') no-repeat;
+  width:66px;
+  height:32px;
+  background-size:66px;
+}
+
+.menuRow{
+  
+  padding: 10px;
+}
+
+.loginInfoMenu{
+  
+  position: relative;
+  height: 30px; 
+  width:130px;
+}
+
+.displayName{
+  
+  margin-left: 15px;
+}
+
+.loginInfoArrowIcon{
+  
+    background: asset-url('/images/arrow-down.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 0;
+    margin-right: 7px;
+    top: 0;
+}
+
+#userMenu{
+  display: none;
+  width: 130px;
+  background-color: #222;
+  border-radius: 11px;
+  text-align: left;
+  font-size: 12px;
+  padding: 10px;
+}
+
+.displayNameArrow{
+  
+  font-size: 1.1em;
+  color: #fff;
+  height: 24px;
+  line-height: 24px;
+  cursor:pointer;
+}
+
+.displayNameArrow:hover span{
+
+  color: lightskyblue !important;
 }

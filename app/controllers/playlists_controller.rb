@@ -30,7 +30,11 @@ class PlaylistsController < ApplicationController
     if @playlist.spotify_uri.present?
         SpotifyPlaylistJob.new.perform(@playlist)
     end
-    
+
+    if @playlist.deezer_uri.present?
+        DeezerPlaylistJob.new.perform(@playlist)
+    end
+
     respond_with(@playlist)
     
   end
@@ -50,6 +54,6 @@ class PlaylistsController < ApplicationController
     end
 
     def playlist_params
-      params.require(:playlist).permit(:spotify_uri, :blurb)
+      params.require(:playlist).permit(:spotify_uri, :blurb, :deezer_uri, :rdio_uri)
     end
 end
