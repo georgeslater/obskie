@@ -330,6 +330,7 @@ a {
 	color: white;
 	float: right;
 	margin-left: 20px;
+  margin-top: 5px;
 	font-weight: bold;
 }
 
@@ -382,6 +383,11 @@ figcaption {
   margin-left: 15px;
 }
 
+.loginInfoArrowIcon.loginInfoArrowIconSelected{
+  
+  background-image: asset-url('/images/arrow-up.png')
+}
+
 .loginInfoArrowIcon{
   
     background: asset-url('/images/arrow-down.png') no-repeat;
@@ -403,6 +409,11 @@ figcaption {
   padding: 10px;
 }
 
+#userMenu .visible{
+  
+  display: block;
+}
+
 .displayNameArrow{
   
   font-size: 1.1em;
@@ -415,4 +426,9 @@ figcaption {
 .displayNameArrow:hover span{
 
   color: lightskyblue !important;
+}
+
+.menuRow:hover{
+  
+  color: lightskyblue;
 }
