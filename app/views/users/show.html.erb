@@ -1,14 +1,19 @@
 <div id="userWrapper">
+	
+	<div style="float:left; margin-right: 10px;">
+		<%= image_tag @user.avatar.url(:thumb) %>
+	</div>
 
 	<h4><%= @user.first_name %> <%= @user.last_name %></h4>
-	
-	<%= image_tag @user.avatar.url(:medium) %>
 
 	<ul>
 		<li>Joined: <%= @user.created_at.strftime("%A, %d %b %Y") %></li>
 	</ul>
 
-	<span>Reviews (<%= @user.albums.size %>)</span>
+	<div>Reviews (<%= @user.albums.size %>)</div>
+	<div>Comments (<%= @user.comments.size %>)</div>
+	<div>Playlists (<%= @user.playlists.size %>)</div>
+	<span
 	<table>
 		<thead>
 			<tr>

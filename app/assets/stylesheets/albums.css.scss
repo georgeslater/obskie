@@ -378,11 +378,6 @@ figcaption {
   width:130px;
 }
 
-.displayName{
-  
-  margin-left: 15px;
-}
-
 .loginInfoArrowIcon.loginInfoArrowIconSelected{
   
   background-image: asset-url('/images/arrow-up.png')
@@ -409,11 +404,6 @@ figcaption {
   padding: 10px;
 }
 
-#userMenu .visible{
-  
-  display: block;
-}
-
 .displayNameArrow{
   
   font-size: 1.1em;
@@ -431,4 +421,9 @@ figcaption {
 .menuRow:hover{
   
   color: lightskyblue;
+}
+
+.avatarImage{
+  
+  margin-right: 5px;
 }

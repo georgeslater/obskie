@@ -11592,7 +11592,6 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
     $('.loginInfoMenu').click(function() {
       if ($('#userMenu').css('display') === 'none') {
         $("#userMenu").addClass('visible');
-        console.log('added visible');
         return $('.loginInfoArrowIcon').addClass('loginInfoArrowIconSelected');
       } else {
         $("#userMenu").removeClass('visible');

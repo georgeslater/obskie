@@ -11591,13 +11591,16 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
   $(document).ready(function() {
     $('.loginInfoMenu').click(function() {
       if ($('#userMenu').css('display') === 'none') {
-        $("#userMenu").addClass('visible');
-        console.log('added visible');
+        $("#userMenu").addClass("visible");
         return $('.loginInfoArrowIcon').addClass('loginInfoArrowIconSelected');
       } else {
-        $("#userMenu").removeClass('visible');
+        $("#userMenu").removeClass("visible");
         return $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected');
       }
+    });
+    $("#contentWrapper").click(function(e) {
+      $("#userMenu").removeClass("visible");
+      return $(".loginInfoArrowIcon").removeClass("loginInfoArrowIconSelected");
     });
     $('img.albumArt').lazyload();
     $("input[name='sync_with_spotify']").click(function() {

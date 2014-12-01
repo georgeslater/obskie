@@ -6,16 +6,12 @@ $(document).ready ->
   
   $('.loginInfoMenu').click ->
     if $('#userMenu').css('display') == 'none'
-      $("#userMenu").addClass "visible"
-      $('.loginInfoArrowIcon').addClass 'loginInfoArrowIconSelected'
+      $("#userMenu").css('display', 'block')
+      $('.loginInfoArrowIcon').addClass('loginInfoArrowIconSelected')
     else
-      $("#userMenu").removeClass "visible"
-      $('.loginInfoArrowIcon').removeClass 'loginInfoArrowIconSelected'
+      $("#userMenu").css('display', 'none')
+      $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected')
 
-  $("#contentWrapper").click (e) ->
-    $("#userMenu").removeClass "visible"
-    $(".loginInfoArrowIcon").removeClass "loginInfoArrowIconSelected"
-    
   $('img.albumArt').lazyload();
 
   $("input[name='sync_with_spotify']").click ->

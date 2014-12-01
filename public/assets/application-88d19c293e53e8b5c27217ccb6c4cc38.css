@@ -446,7 +446,7 @@ figcaption {
 
 /* line 397, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #userMenu {
-  display: none !important;
+  display: none;
   width: 130px;
   background-color: #222;
   border-radius: 11px;
@@ -457,7 +457,7 @@ figcaption {
 
 /* line 407, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #userMenu.visible {
-  display: block !important;
+  display: block;
 }
 
 /* line 412, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
