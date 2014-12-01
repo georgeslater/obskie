@@ -11591,14 +11591,11 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
   $(document).ready(function() {
     console.log('called doc ready');
     $('.loginInfoMenu').click(function() {
-      console.log('click');
       if ($('#userMenu').css('display') === 'none') {
-        console.log('show');
-        document.getElementById('userMenu').style.display = 'block';
+        $("#userMenu").css('display', 'block !important');
         return $('.loginInfoArrowIcon').addClass('loginInfoArrowIconSelected');
       } else {
-        console.log('hide');
-        document.getElementById('userMenu').style.display = 'none';
+        $("#userMenu").css('display', 'none !important');
         return $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected');
       }
     });

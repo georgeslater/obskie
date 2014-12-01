@@ -2,15 +2,7 @@
 getRandomArbitary = (min, max) ->
   (Math.random() * (max - min) + min).toFixed 2
 
-$(document).ready ->
-  
-  $('.loginInfoMenu').click ->
-    if $('#userMenu').css('display') == 'none'
-      $("#userMenu").css('display', 'block')
-      $('.loginInfoArrowIcon').addClass('loginInfoArrowIconSelected')
-    else
-      $("#userMenu").css('display', 'none')
-      $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected')
+ready = ->
 
   $('img.albumArt').lazyload();
 
@@ -56,6 +48,9 @@ $(document).ready ->
 
         false
 
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
 
 $("#menuContent").on "show.bs.collapse", ->
   $(".socialMediaLinks").hide()

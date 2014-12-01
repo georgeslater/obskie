@@ -8,9 +8,9 @@
                         <div class="albumTitle">
 
                             <div id="authorInfo">
-                                <%= link_to user_path(@album.user.id), :title => "Profile page", :class => "authorName" do %>
+                                <%= link_to user_path(@album.user.username), :title => "Profile page", :class => "authorName" do %>
                                     <div id="authorPhoto">
-                                        <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ2Xo6K6h_rnk2tI55QYW66PSvPkvkY0kcrcanC1_aWjgQNwIRF" width="50px" height="50px"></img>
+                                        <%= image_tag @album.user.avatar.url(:thumb), size: "50x50" %>
                                     </div>
                                     <div class="authorDetail">                                  
                                         <div>

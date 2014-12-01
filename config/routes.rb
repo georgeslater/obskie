@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :album_info
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

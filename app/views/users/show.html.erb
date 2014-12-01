@@ -7,14 +7,19 @@
 	<h4><%= @user.first_name %> <%= @user.last_name %></h4>
 
 	<ul>
-		<li>Joined: <%= @user.created_at.strftime("%A, %d %b %Y") %></li>
+		<li>Date Joined: <%= @user.created_at.strftime("%A, %d %b %Y") %></li>
 	</ul>
 
-	<div>Reviews (<%= @user.albums.size %>)</div>
-	<div>Comments (<%= @user.comments.size %>)</div>
-	<div>Playlists (<%= @user.playlists.size %>)</div>
-	<span
-	<table>
+	<div>
+		<a href="#reviews">Reviews (<%= @user.albums.size %>)</a>
+	</div>
+	<div>
+		<a href="#comments">Comments (<%= @user.comments.size %>)</a>
+	</div>
+	<div>
+		<a href="#playlists">Playlists (<%= @user.playlists.size %>)</a>
+	</div>
+	<table class="table">
 		<thead>
 			<tr>
 				<td>Name</td>
