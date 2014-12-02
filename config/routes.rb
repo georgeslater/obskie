@@ -25,8 +25,13 @@ Rails.application.routes.draw do
 
   resources :users
 
-  match '/search/albums', to: 'searches#query', via: 'get'
+  match '/search/albums', to: 'searches#get_albums', via: 'get'
   match '/search/tracks', to: 'searches#get_tracks', via: 'get'
+  match '/search/artists', to: 'searches#get_artists', via: 'get'
+  match '/submitAlbum', to: 'searches#submit', via: 'get'
+
+
+  get '/albums/newAlbum2' => 'albums#new_step2', as: :new_album_step_2
 
   resources :album_info
 

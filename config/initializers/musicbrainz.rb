@@ -10,5 +10,5 @@ MusicBrainz.configure do |c|
 
   # Querying config (optional)
   c.query_interval = 1.2 # seconds
-  c.tries_limit = 2
+  c.tries_limit = 4
 end

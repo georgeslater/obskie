@@ -8,19 +8,23 @@
     <div>Artist Name</div>
     <input id="artist">
   </div>
-  <div class="field">
-    <div>Album Name</div>
-    <input id="album">
+  <button onclick="getArtists();">Search</button>
+
+  <div id="artistResultsWrapper" style="display: none;">
+  	<select id="artistResults">
+
+  	</select>
+  	<button onclick="getAlbums();">Get Albums</button>
   </div>
-  <button onclick="searchAlbums();">Get Results</button>
 
   <div id="albumResultsWrapper"  style="display: none;">
 	  <select id="albumResults">
 
 	  		
 	  </select>
-	  <button onclick="seeTracks();">See Tracks</button>
+	  <button onclick="getTracks();">See Tracks</button>
   </div>
+
   <div id="trackResultsWrapper" style="display: none;">
   	<ul id="trackResults" >
 
@@ -33,7 +37,61 @@
 
 <script>
 	
-	function seeTracks(){
+	function submit(){
+
+		var $albumSel = $('#albumResults option:selected');
+
+		if($albumSel){
+
+			var id = $albumSel.data('mbid');
+
+			$.ajax({
+		      type: 'GET',
+		      url: '/submitAlbum',
+		      data: {
+		        album_selected: id
+		      },
+		      format: 'js'
+		   });
+		}
+	}
+
+	function getAlbums(){
+
+		var $artistSel = $('#artistResults option:selected');
+		
+		if($artistSel){
+			
+			var id = $artistSel.data('mbid');
+
+			$.ajax({
+		      type: 'GET',
+		      url: '/search/albums',
+		      data: {
+		        artist_selected: id
+		      },
+		      format: 'js',
+		      success: function(result) {
+		      	
+		      	console.log(result)
+		      	
+		      	var html = '';
+
+		      	for(var i = 0; i < result.length; i++){
+
+		      		album = result[i];
+		      		html += "<option data-mbid='"+album['id']+"'>"+album['title']+"</option>"
+		      	}
+
+		      	$('#albumResults').html(html);
+		      	$('#trackResults').empty();
+		      	$('#albumResultsWrapper').css('display', 'block');
+		      }
+		   });
+		}
+	}
+
+	function getTracks(){
 
 		var $albumSel = $('#albumResults option:selected');
 		
@@ -50,6 +108,8 @@
 		      format: 'js',
 		      success: function(result) {
 		      	
+		      	console.log(result);
+
 		      	var html = "";
 		      	for(var i = 0; i < result.length; i++){
 
@@ -64,19 +124,17 @@
 		}
 	} 
 
-	function searchAlbums(){
+	function getArtists(){
 
 		var artistName = $('#artist').val();
-		var albumName = $('#album').val();
 
-		if(artistName && artistName.trim().length && albumName.trim().length){
+		if(artistName && artistName.trim().length){
 
 			$.ajax({
 		      type: 'GET',
-		      url: '/search/albums',
+		      url: '/search/artists',
 		      data: {
 		        artist: artistName,
-		        album: albumName
 		      },
 		      format: 'js',
 		      success: function(result) {
@@ -86,14 +144,14 @@
 
 		      	for(var i = 0; i < result.length; i++){
 
-		      		album = result[i];
-		      		html += "<option data-mbid='"+album['mbid']+"'>"+album['title']+" ("+album['score']+")</option>"
+		      		artist = result[i];
+		      		html += "<option data-mbid='"+artist['mbid']+"'>"+artist['name']+"</option>"
 		      	}
 
-		      	$('#albumResults').html(html);
+		      	$('#artistResults').html(html);
 		      	$('#trackResults').empty();
-		      	$('#albumResultsWrapper').css('display', 'block');
-		      	$('#submitAlbum').css('display', 'block');
+		      	$('#albumResults').empty();
+		      	$('#artistResultsWrapper').css('display', 'block');
 		      }
 		   });
 

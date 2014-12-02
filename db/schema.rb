@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130151029) do
+ActiveRecord::Schema.define(version: 20141202174800) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20141130151029) do
     t.integer  "comments_count",         default: 0
     t.string   "itunes_identifier"
     t.string   "itunes_view_url"
+    t.boolean  "published",              default: false, null: false
+    t.boolean  "approved",               default: false, null: false
   end
 
   add_index "albums", ["artist_id"], name: "index_albums_on_artist_id", using: :btree

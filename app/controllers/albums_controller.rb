@@ -68,9 +68,9 @@ class AlbumsController < ApplicationController
 		@country = request.location.country_code
 	end
 
-	def new
-	    @album = Album.new
-	    respond_with @album
+	def new_step2
+	    
+	    @album = @Album.new
   	end
 
 	def create
