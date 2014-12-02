@@ -1,5 +1,106 @@
-<h1>New album</h1>
+<div id="basic_info">
 
-<%= render 'form' %>
+<div class="jumbotron">
+  <p>Thank you for contributing to ObscureAlbums.com!  Please enter the album information below and select the correct match from the results returned.  If the album isn't there or the list is empty, please reach out to us.</p>
+</div>
 
+  <div class="field">
+    <div>Artist Name</div>
+    <input id="artist">
+  </div>
+  <div class="field">
+    <div>Album Name</div>
+    <input id="album">
+  </div>
+  <button onclick="searchAlbums();">Get Results</button>
+
+  <div id="albumResultsWrapper"  style="display: none;">
+	  <select id="albumResults">
+
+	  		
+	  </select>
+	  <button onclick="seeTracks();">See Tracks</button>
+  </div>
+  <div id="trackResultsWrapper" style="display: none;">
+  	<ul id="trackResults" >
+
+	</ul>
+  </div>
+</div>
+
+<button id="submitAlbum" onclick="submit();" style="display: none;">This is my album!</button>
 <%= link_to 'Back', albums_path %>
+
+<script>
+	
+	function seeTracks(){
+
+		var $albumSel = $('#albumResults option:selected');
+		
+		if($albumSel){
+			
+			var id = $albumSel.data('mbid');
+
+			$.ajax({
+		      type: 'GET',
+		      url: '/search/tracks',
+		      data: {
+		        album_selected: id
+		      },
+		      format: 'js',
+		      success: function(result) {
+		      	
+		      	var html = "";
+		      	for(var i = 0; i < result.length; i++){
+
+		      		track = result[i];
+		      		html += "<li>"+track['title']+"</li>";
+		      	}
+
+		      	$('#trackResults').html(html);
+		      	$('#trackResultsWrapper').css('display', 'block');
+		      }
+		   });
+		}
+	} 
+
+	function searchAlbums(){
+
+		var artistName = $('#artist').val();
+		var albumName = $('#album').val();
+
+		if(artistName && artistName.trim().length && albumName.trim().length){
+
+			$.ajax({
+		      type: 'GET',
+		      url: '/search/albums',
+		      data: {
+		        artist: artistName,
+		        album: albumName
+		      },
+		      format: 'js',
+		      success: function(result) {
+		      	console.log(result)
+		      	
+		      	var html = '';
+
+		      	for(var i = 0; i < result.length; i++){
+
+		      		album = result[i];
+		      		html += "<option data-mbid='"+album['mbid']+"'>"+album['title']+" ("+album['score']+")</option>"
+		      	}
+
+		      	$('#albumResults').html(html);
+		      	$('#trackResults').empty();
+		      	$('#albumResultsWrapper').css('display', 'block');
+		      	$('#submitAlbum').css('display', 'block');
+		      }
+		   });
+
+		}else{
+
+			alert('Please fill in all fields!');
+		}
+
+	}
+</script>

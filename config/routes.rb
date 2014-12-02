@@ -25,6 +25,9 @@ Rails.application.routes.draw do
 
   resources :users
 
+  match '/search/albums', to: 'searches#query', via: 'get'
+  match '/search/tracks', to: 'searches#get_tracks', via: 'get'
+
   resources :album_info
 
   # Example of regular route:

@@ -1,6 +1,6 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-#ruby "2.1.3"
+ruby "2.1.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
@@ -65,6 +65,7 @@ gem 'httparty'
 gem "geocoder"
 gem "itunes-search-api"
 gem "wicked"
+gem 'musicbrainz'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: :production

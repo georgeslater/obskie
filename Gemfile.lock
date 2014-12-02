@@ -22,7 +22,7 @@ GIT
       workflow (= 1.0.0)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     actionmailer (4.1.0)
       actionpack (= 4.1.0)
@@ -127,6 +127,9 @@ GEM
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    musicbrainz (0.7.7)
+      faraday
+      nokogiri
     netrc (0.7.9)
     nokogiri (1.6.4.1)
       mini_portile (~> 0.6.0)
@@ -256,6 +259,7 @@ DEPENDENCIES
   kaminari (= 0.15.1)
   lazyload-rails
   mail_form
+  musicbrainz
   non-stupid-digest-assets
   paperclip (~> 4.2)
   pg

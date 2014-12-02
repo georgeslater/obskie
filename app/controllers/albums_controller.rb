@@ -69,7 +69,8 @@ class AlbumsController < ApplicationController
 	end
 
 	def new
-	    redirect_to album_info_path(:enter_basic_info)
+	    @album = Album.new
+	    respond_with @album
   	end
 
 	def create
