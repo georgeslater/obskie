@@ -35,6 +35,8 @@
 <button id="submitAlbum" onclick="submit();" style="display: none;">This is my album!</button>
 <%= link_to 'Back', albums_path %>
 
+<input id="artistName" type="hidden">
+
 <script>
 	
 	function submit(){
@@ -49,9 +51,17 @@
 		      type: 'GET',
 		      url: '/submitAlbum',
 		      data: {
-		        album_selected: id
+		        album_selected: id,
+		        artist_selected: $('#artistName').val()
 		      },
-		      format: 'js'
+		      format: 'js',
+		      success: function(result) {
+		      	
+		      	window.location ='/albums/'+result['id']+'/edit';
+		      },
+		      error: function (jqXHR, status, err) {
+			    alert(err);
+			  }
 		   });
 		}
 	}
@@ -63,6 +73,8 @@
 		if($artistSel){
 			
 			var id = $artistSel.data('mbid');
+
+			$('#artistName').val($artistSel.val());
 
 			$.ajax({
 		      type: 'GET',
@@ -86,6 +98,7 @@
 		      	$('#albumResults').html(html);
 		      	$('#trackResults').empty();
 		      	$('#albumResultsWrapper').css('display', 'block');
+		      	$('#submitAlbum').css('display', 'block');
 		      }
 		   });
 		}

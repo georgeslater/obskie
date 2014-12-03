@@ -30,9 +30,6 @@ Rails.application.routes.draw do
   match '/search/artists', to: 'searches#get_artists', via: 'get'
   match '/submitAlbum', to: 'searches#submit', via: 'get'
 
-
-  get '/albums/newAlbum2' => 'albums#new_step2', as: :new_album_step_2
-
   resources :album_info
 
   # Example of regular route:

@@ -2,7 +2,7 @@ class SearchesController < ApplicationController
 	
 	require 'musicbrainz'
 
-	respond_to :json
+	respond_to :json, :html
 
 	def get_artists
 
@@ -47,14 +47,20 @@ class SearchesController < ApplicationController
 
 		newAlbum.year = yearPart
 
-		album_artist = Artist.find_by(name: params[:artist])
+		album_artist = Artist.find_by(name: artist)
 
-	    
+		if album_artist.blank?
+
+	    	album_artist = Artist.new
+	    	album_artist.name = artist
+	    	album_artist.save
+	    end
 
 	    newAlbum.artist_id = album_artist.id
 
-		newAlbum.save
+		if newAlbum.save
 
-		render js: "window.location.pathname='#{new_album_step_2_path}?id="+newAlbum+"'"
+			respond_with newAlbum.as_json
+		end
 	end
 end
