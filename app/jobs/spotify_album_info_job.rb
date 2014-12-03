@@ -6,7 +6,12 @@ class SpotifyAlbumInfoJob
 	def perform(albumCreated)
 
 		albums = RSpotify::Album.search(albumCreated.title)
-    artist = albumCreated.artist_name
+    artist = albumCreated.artist.name
+
+    albumTracks = albumCreated.tracks.sort_by{|e| e.order}
+
+      Rails.logger.debug(albumTracks)
+
 
       for album in albums
         if album.artists[0].name == artist
@@ -18,27 +23,19 @@ class SpotifyAlbumInfoJob
 
             albumCreated.update_columns(album_art: image['url'], spotify_identifier: album.id, year: year, obscurity_rating: obscurity)
 
-            tracks = Array.new
+            album.tracks.each_with_index do | track, index |
 
-            for track in album.tracks
+              if albumTracks[index].present?
 
-              new_track = Track.new
-              new_track.name = track.name
-              new_track.album_id = albumCreated.id
-              new_track.order = track.disc_number * track.track_number
-              new_track.duration_milli = track.duration_ms
-              new_track.spotify_identifier = track.id
-              tracks.push(new_track.as_json)
+                Rails.logger.debug(track.name)
+                Rails.logger.debug(albumTracks[index].name)
+
+                if track.name.casecmp(albumTracks[index].name) == 0
+                  albumTracks[index].update_attributes(spotify_identifier: track.id)
+                end
+              end
             end
-
-            Rails.logger.debug "This is my tracks!"
-            Rails.logger.debug tracks.inspect
-            Rails.logger.debug "This is self!"
-            Rails.logger.debug self
-            Track.create(tracks)
-
-            break;
-          end
         end
+      end
     end
 end

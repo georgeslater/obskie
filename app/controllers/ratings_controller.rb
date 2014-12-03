@@ -4,12 +4,14 @@ class RatingsController < ApplicationController
 
 	def create
 
-		rating = Rating.new
-		rating.score = params[:score]
-		rating.track_id = params[:track]
-		rating.ip_address = request.remote_ip
-		rating.save
+		track = Track.find(params[:track])
 
-		render :ratings
+		rating = params[:score].to_f
+
+		if rating >= 0 && rating <= 5
+			track.update_attributes(author_rating: rating)
+		end
+
+		render :nothing => true
 	 end
 end 

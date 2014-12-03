@@ -44,13 +44,14 @@
                                 <h5><%= link_to @album.artist.name, artist_path(@album.artist) %></h5>
                                 <h4><%= @album.year %></h4>
                                 <div class="streamBuyLinks">                           
-                                    <a href="spotify:album:<%= @album.spotify_identifier %>" title="Stream Album on Spotify">
-                                        <span class="spotify albumLinkIcons"></span>
-                                    </a>
-                                    <a href="<%= @album.itunes_view_url %>" target="itunes_store" class="itunes"></a>
-                                    <a href="spotify:album:4lxW0axOKlImAQ0akMRz61" title="Stream Album on Spotify">
-                                        <span class="spotify albumLinkIcons"></span>
-                                    </a>
+                                    <% if @album.spotify_identifier.present? %>
+                                        <a href="spotify:album:<%= @album.spotify_identifier %>" title="Stream Album on Spotify">
+                                            <span class="spotify albumLinkIcons"></span>
+                                        </a>
+                                    <% end %>
+                                    <% if @album.itunes_view_url.present? %>
+                                        <a href="<%= @album.itunes_view_url %>" target="itunes_store" class="itunes"></a>
+                                    <% end %>
                                 </div>
                                 <div id="obscurometer">
                                     <% if @album.obscurity_rating.present? %>

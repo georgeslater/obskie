@@ -1,0 +1,5 @@
+<% @unfinishedAlbums.each do | album | %>
+	
+	<%= link_to "Link", edit_artist_album_path(album.artist, album) %>
+
+<% end %>

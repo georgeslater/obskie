@@ -20,17 +20,17 @@ ready = ->
   $(".ratyTest").each (event, ui) ->
     
     score = $(this).data('score')
-    scoreText = (score? score: '')+($(this).data('votes')? '('+$(this).data('votes')+' votes)': '')
     $(this).raty
-      starOn: '<%= image_path('star-on.png') %>',
-      starOff: '<%= image_path('star-off.png') %>',
-      path: '',
-      scoreName: 'star',
-      space: true,
+      score: score
+      half: true
+      starOn: '<%= image_path('star-on.png') %>'
+      starOff: '<%= image_path('star-off.png') %>'
+      path: ''
+      scoreName: 'star'
+      space: true
       readOnly: ->
         $(this).hasClass "author"
 
-      hints: [ scoreText, scoreText, scoreText, scoreText, scoreText ]
       click: (score, event) ->
         valText = score
         $(this).raty

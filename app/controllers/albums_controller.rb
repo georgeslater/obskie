@@ -14,31 +14,31 @@ class AlbumsController < ApplicationController
 		case order
 		when 'Newest first'
 
-			@albums = Album.all.order('created_at DESC')
+			@albums = Album.where('published = true and approved = true').order('created_at DESC')
 		
 		when 'Oldest first'
 
-			@albums = Album.all.order('created_at ASC')
+			@albums = Album.where('published = true and approved = true').order('created_at ASC')
 		
 		when 'Album name'
 
-			@albums = Album.all.order('title ASC')
+			@albums = Album.where('published = true and approved = true').order('title ASC')
 
 		when 'Artist name'
 
-			@albums = Album.joins(:artist).all.order('artists.name ASC')
+			@albums = Album.joins(:artist).where('published = true and approved = true').order('artists.name ASC')
 
 		when 'Year'
 
-			@albums = Album.all.order('year ASC')
+			@albums = Album.where('published = true and approved = true').order('year ASC')
 		
 		when 'Most Obscure'
 
-			@albums = Album.all.order('obscurity_rating DESC')
+			@albums = Album.where('published = true and approved = true').order('obscurity_rating DESC')
 
 		else
 
-			@albums = Album.all.order('created_at DESC')
+			@albums = Album.where('published = true and approved = true').order('created_at DESC')
 		end
 
 		respond_with(@albums)
@@ -48,11 +48,11 @@ class AlbumsController < ApplicationController
 	def show
 		@album = Album.friendly.find(params[:id])
 		impressionist(@album)
-		@mostReadAlbums = Album.where("impressions_count > 0").order("impressions_count DESC").limit(20)
-		@mostCommentedAlbums = Album.where("comments_count > 0").order("comments_count DESC").limit(20)
+		@mostReadAlbums = Album.where("impressions_count > 0 and published = true and approved = true").order("impressions_count DESC").limit(20)
+		@mostCommentedAlbums = Album.where("comments_count > 0 and published = true and approved = true").order("comments_count DESC").limit(20)
 
 		@relatedAlbums = Array.new
-		c = Album.count
+		c = Album.where("published = true and approved = true").count
 
 		until @relatedAlbums.size == 3 || @relatedAlbums.size == c do 
 
@@ -73,43 +73,49 @@ class AlbumsController < ApplicationController
 	    @album = @Album.new
   	end
 
-	def create
-	    @album = Album.new(album_params)
-	    @album.user_id = current_user.id
+	def edit
 
-	    name = params[:album][:artist_name]
-	    sync_with_spotify = params[:sync_with_spotify]
+		@album = Album.friendly.find(params[:id])
+ 
+	end
 
-	    logger.debug "Sync? #{sync_with_spotify}"
+	def update
 
-	    album_artist = Artist.find_by(name: name)
+		Rails.logger.debug('YEEEE')
+		Rails.logger.debug(params[:type])
 
-	    if album_artist.blank?
+		if @album.tracks.select { | track | track.author_rating == nil }.size == 0
 
-	    	album_artist = Artist.new
-	    	album_artist.name = name
-	    	album_artist.save
+			if params[:type] == 'publish'
+
+				redirect_to root_path
+				@album.update(album_params.merge(:published => true))
+			else
+				redirect_to my_drafts_path(current_user)
+				@album.update(album_params)
+			end
 	    end
 
-	    @album.artist_id = album_artist.id
-
-	    @album.save
-	    
-	   	logger.debug "Album attributes hash: #{@album.attributes.inspect}"
-
-	    if sync_with_spotify == 'Automatic'
-			SpotifyAlbumInfoJob.new.perform(@album)
-	    end
-
-	    ItunesAlbumInfoJob.new.perform(@album)
-
-	    respond_with(@album.artist, @album)
 	end
 
 	def destroy
 	    @track.destroy
 	    respond_with(@track)
 	  end
+
+	def rate_track
+
+		track = Track.find(params[:id])
+
+		rating = params[:score]
+
+		if rating >= 0 && rating <= 5
+			track.author_rating = params[:score]
+			track.save
+
+			render :nothing => true
+		end
+	end
 
   	private
     def set_album

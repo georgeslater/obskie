@@ -11602,11 +11602,14 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
       return $(this).tab("show");
     });
     return $(".ratyTest").each(function(event, ui) {
-      var score;
+      var score, scoreText, _base;
       score = $(this).data('score');
+      scoreText = (typeof score === "function" ? score({
+        score: ''
+      }) : void 0) + (typeof (_base = $(this).data('votes')) === "function" ? _base('(' + $(this).data('votes') + {
+        ' votes)': ''
+      }) : void 0);
       return $(this).raty({
-        score: score,
-        half: true,
         starOn: '/assets/star-on.png',
         starOff: '/assets/star-off.png',
         path: '',
@@ -11615,6 +11618,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
         readOnly: function() {
           return $(this).hasClass("author");
         },
+        hints: [scoreText, scoreText, scoreText, scoreText, scoreText],
         click: function(score, event) {
           var valText;
           valText = score;
@@ -11628,7 +11632,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
             hints: [valText, valText, valText, valText, valText]
           }, $.ajax({
             type: 'POST',
-            url: '/ratings',
+            url: '/tracks/rate_track',
             data: {
               score: score,
               track: $(this).data('trackid')
@@ -12749,6 +12753,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 $('document').ready(function() {
     $('.loginInfoMenu').click(function() {
       if ($('#userMenu').css('display') === 'none') {
+        alert(document.getElementById('userMenu').style.display);
         document.getElementById('userMenu').style.display = 'block';
         return $('.loginInfoArrowIcon').addClass('loginInfoArrowIconSelected');
       } else {

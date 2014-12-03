@@ -497,10 +497,6 @@ figcaption {
   width: 25%;
 }
 /* line 23, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
-#artistsWrapper table td:first-child {
-  min-width: 67px;
-}
-/* line 28, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
 #artistsWrapper table .boldColumn {
   font-weight: bold;
 }

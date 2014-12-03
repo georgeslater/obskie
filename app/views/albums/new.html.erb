@@ -46,18 +46,19 @@
 		if($albumSel){
 
 			var id = $albumSel.data('mbid');
+			var artistName = $('#artistName').val();
 
 			$.ajax({
 		      type: 'GET',
 		      url: '/submitAlbum',
 		      data: {
 		        album_selected: id,
-		        artist_selected: $('#artistName').val()
+		        artist_selected: artistName
 		      },
-		      format: 'js',
+		      dataType: "json",
 		      success: function(result) {
-		      	
-		      	window.location ='/albums/'+result['id']+'/edit';
+		      	console.log(result)
+		      	window.location = result['link'];
 		      },
 		      error: function (jqXHR, status, err) {
 			    alert(err);

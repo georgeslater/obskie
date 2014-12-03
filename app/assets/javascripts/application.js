@@ -20,7 +20,6 @@
 $('document').ready(function() {
     $('.loginInfoMenu').click(function() {
       if ($('#userMenu').css('display') === 'none') {
-        alert(document.getElementById('userMenu').style.display);
         document.getElementById('userMenu').style.display = 'block';
         return $('.loginInfoArrowIcon').addClass('loginInfoArrowIconSelected');
       } else {

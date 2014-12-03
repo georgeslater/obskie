@@ -27,7 +27,9 @@ class SearchesController < ApplicationController
 
 		@albums = MusicBrainz::ReleaseGroup.find(release)
 
-		respond_with @albums.releases.first.tracks.as_json
+		@tracks = @albums.releases.first.tracks
+
+		respond_with @tracks.as_json
 	end
 
 	def submit
@@ -60,7 +62,32 @@ class SearchesController < ApplicationController
 
 		if newAlbum.save
 
-			respond_with newAlbum.as_json
-		end
+			link_to_album = edit_artist_album_path(newAlbum.artist.id, newAlbum.id)
+
+			@mbTracks = releaseGroup.releases.first.tracks
+
+			tracks = Array.new
+
+            for track in @mbTracks
+
+              new_track = Track.new
+              new_track.name = track.title
+              new_track.album_id = newAlbum.id
+              new_track.order = track.position
+              new_track.duration_milli = track.length
+              tracks.push(new_track.as_json)
+            end
+
+            Track.create(tracks)
+
+			SpotifyAlbumInfoJob.new.async.perform(newAlbum)
+			ItunesAlbumInfoJob.new.async.perform(newAlbum)
+
+        end
+
+        Rails.logger.debug(link_to_album.to_json)
+
+		respond_with '{"link": "'+link_to_album+'"}'
+
 	end
 end

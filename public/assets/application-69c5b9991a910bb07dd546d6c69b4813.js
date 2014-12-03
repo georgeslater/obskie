@@ -11604,9 +11604,9 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
     return $(".ratyTest").each(function(event, ui) {
       var score;
       score = $(this).data('score');
+      console.log(score);
       return $(this).raty({
         score: score,
-        half: true,
         starOn: '/assets/star-on.png',
         starOff: '/assets/star-off.png',
         path: '',
@@ -12749,6 +12749,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 $('document').ready(function() {
     $('.loginInfoMenu').click(function() {
       if ($('#userMenu').css('display') === 'none') {
+        alert(document.getElementById('userMenu').style.display);
         document.getElementById('userMenu').style.display = 'block';
         return $('.loginInfoArrowIcon').addClass('loginInfoArrowIconSelected');
       } else {

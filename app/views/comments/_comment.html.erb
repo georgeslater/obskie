@@ -1,5 +1,5 @@
 <div>
-  <strong>Posted by <%= comment.user.username %> on <%= comment.created_at.strftime("%A, %d %b %Y") %></strong>
+  <strong>Posted by <%= link_to comment.user.username, user_path(comment.user) %> on <%= comment.created_at.strftime("%A, %d %b %Y") %></strong>
   <div>
   	<%= comment.body %>
   </div>

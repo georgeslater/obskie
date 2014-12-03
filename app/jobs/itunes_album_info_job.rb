@@ -4,7 +4,7 @@ class ItunesAlbumInfoJob
 	def perform(albumCreated)
 
 		albums = ITunesSearchAPI.search(:term => albumCreated.title, :country => "US", :media => "music", :attribute => "albumTerm")
-	    artist = albumCreated.artist_name
+	    artist = albumCreated.artist.name
 		
 		for album in albums
 

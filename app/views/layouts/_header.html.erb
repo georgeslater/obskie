@@ -49,6 +49,16 @@
                                     </div>
                                     <div id="userMenu">
                                         <div>
+                                            <%= link_to user_path(current_user) do %>
+                                                <div class="menuRow">My Reviews</div>
+                                            <% end %>
+                                        </div>
+                                        <div>
+                                            <%= link_to my_drafts_path(current_user) do %>
+                                                <div class="menuRow">My Drafts</div>
+                                            <% end %>
+                                        </div>
+                                        <div>
                                             <%= link_to edit_user_registration_path(current_user) do %> 
                                                 <div class="menuRow">Edit Profile</div>
                                             <% end %>
