@@ -67,7 +67,7 @@ class AlbumsController < ApplicationController
 
 		@albumTracks = @album.tracks.order('tracks.order')
 
-		@country = request.location.country_code
+		#@country = request.location.country_code
 	end
 
 	def check_edit_permission
