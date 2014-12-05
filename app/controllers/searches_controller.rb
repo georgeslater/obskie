@@ -1,6 +1,7 @@
 class SearchesController < ApplicationController
 	
 	require 'musicbrainz'
+	require 'coverart'
 
 	respond_to :json, :html
 
@@ -39,10 +40,14 @@ class SearchesController < ApplicationController
 
 		releaseGroup = MusicBrainz::ReleaseGroup.find(release)
 		
+
 		newAlbum = Album.new
 		newAlbum.title = releaseGroup.title
 		newAlbum.user_id = current_user.id
 		
+		api = CoverArt::Client.new
+		newAlbum.album_art = api.group release
+
 		if releaseGroup.releases.first.date.present?
 			yearPart = releaseGroup.releases.first.date.year
 		end
@@ -62,7 +67,7 @@ class SearchesController < ApplicationController
 
 		if newAlbum.save
 
-			link_to_album = edit_artist_album_path(newAlbum.artist.id, newAlbum.id)
+			link_to_album = edit_artist_album_path(newAlbum.artist, newAlbum)
 
 			@mbTracks = releaseGroup.releases.first.tracks
 

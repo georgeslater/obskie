@@ -2,6 +2,8 @@ class AlbumsController < ApplicationController
 
  	before_action :set_album, only: [:show, :edit, :update, :destroy]
  	before_action :authenticate_user!, only: [:create]
+ 	before_filter :check_edit_permission, only: [:edit]
+ 	before_filter :check_published_approved, only: [:show]
 
 	impressionist :actions=>[:show]
 
@@ -68,6 +70,30 @@ class AlbumsController < ApplicationController
 		@country = request.location.country_code
 	end
 
+	def check_edit_permission
+
+		album = Album.friendly.find(params[:id])
+		
+		if album.published
+
+			redirect_to artist_album_path(album.artist, album)
+		
+		elsif current_user.nil? || album.user.id != current_user.id
+
+			redirect_to root_path
+		end 
+	end
+
+	def check_published_approved
+
+		album = Album.friendly.find(params[:id])
+
+		if !album.published || !album.approved
+
+			redirect_to root_path
+		end
+	end
+
 	def new_step2
 	    
 	    @album = @Album.new
@@ -76,7 +102,7 @@ class AlbumsController < ApplicationController
 	def edit
 
 		@album = Album.friendly.find(params[:id])
- 
+		@albumTracks = @album.tracks.order('tracks.order')
 	end
 
 	def update

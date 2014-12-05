@@ -66,6 +66,7 @@ gem "geocoder"
 gem "itunes-search-api"
 gem "wicked"
 gem 'musicbrainz'
+gem 'coverart', '~> 0.0.4'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: :production

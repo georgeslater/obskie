@@ -376,7 +376,7 @@ a:hover {
   color: white;
   float: right;
   margin-left: 20px;
-  margin-top: 5px;
+  margin-top: 35px;
   font-weight: bold;
 }
 
@@ -446,7 +446,7 @@ figcaption {
 
 /* line 397, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #userMenu {
-  display: none !important;
+  display: none;
   width: 130px;
   background-color: #222;
   border-radius: 11px;
@@ -456,11 +456,6 @@ figcaption {
 }
 
 /* line 407, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
-#userMenu.visible {
-  display: block !important;
-}
-
-/* line 412, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .displayNameArrow {
   font-size: 1.1em;
   color: #fff;
@@ -469,17 +464,17 @@ figcaption {
   cursor: pointer;
 }
 
-/* line 421, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 416, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .displayNameArrow:hover span {
   color: lightskyblue !important;
 }
 
-/* line 426, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 421, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .menuRow:hover {
   color: lightskyblue;
 }
 
-/* line 431, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 426, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .avatarImage {
   margin-right: 5px;
 }
@@ -502,6 +497,10 @@ figcaption {
   width: 25%;
 }
 /* line 23, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/artists.css.scss */
+#artistsWrapper table td:first-child {
+  min-width: 67px;
+}
+/* line 28, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/artists.css.scss */
 #artistsWrapper table .boldColumn {
   font-weight: bold;
 }
@@ -716,6 +715,19 @@ textarea {
 /* line 158, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #rdioSection {
   display: none;
+}
+/* line 1, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/users.css.scss */
+#userWrapper {
+  margin-left: 15px;
+}
+
+/* line 6, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/users.css.scss */
+#newUserWrapper {
+  margin-left: 30px;
+}
+/* line 10, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/users.css.scss */
+#newUserWrapper form {
+  width: 75%;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

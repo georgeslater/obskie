@@ -11582,26 +11582,13 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 
 }).call(this);
 (function() {
-  var getRandomArbitary;
+  var getRandomArbitary, ready;
 
   getRandomArbitary = function(min, max) {
     return (Math.random() * (max - min) + min).toFixed(2);
   };
 
-  $(document).ready(function() {
-    console.log('called doc ready');
-    $('.loginInfoMenu').click(function() {
-      console.log('click');
-      if ($('#userMenu').css('display') === 'none') {
-        console.log('show');
-        document.getElementById('userMenu').style.display = 'block';
-        return $('.loginInfoArrowIcon').addClass('loginInfoArrowIconSelected');
-      } else {
-        console.log('hide');
-        document.getElementById('userMenu').style.display = 'none';
-        return $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected');
-      }
-    });
+  ready = function() {
     $('img.albumArt').lazyload();
     $("input[name='sync_with_spotify']").click(function() {
       if ($(this).val() === 'Manual') {
@@ -11615,14 +11602,11 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
       return $(this).tab("show");
     });
     return $(".ratyTest").each(function(event, ui) {
-      var score, scoreText, _base;
+      var score, that;
+      that = this;
       score = $(this).data('score');
-      scoreText = (typeof score === "function" ? score({
-        score: ''
-      }) : void 0) + (typeof (_base = $(this).data('votes')) === "function" ? _base('(' + $(this).data('votes') + {
-        ' votes)': ''
-      }) : void 0);
       return $(this).raty({
+        score: score,
         starOn: '/assets/star-on.png',
         starOff: '/assets/star-off.png',
         path: '',
@@ -11631,16 +11615,16 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
         readOnly: function() {
           return $(this).hasClass("author");
         },
-        hints: [scoreText, scoreText, scoreText, scoreText, scoreText],
         click: function(score, event) {
           var valText;
           valText = score;
           $(this).raty({
             readOnly: true,
+            half: false,
             score: score,
             path: "/images",
-            halfShow: true,
             targetType: "score",
+            halfShow: false,
             targetKeep: true,
             hints: [valText, valText, valText, valText, valText]
           }, $.ajax({
@@ -11649,13 +11633,22 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
             data: {
               score: score,
               track: $(this).data('trackid')
+            },
+            success: function(data, textStatus, jqXHR) {
+              console.log(that);
+              console.log(score);
+              return $(that).data('score', score);
             }
           }));
           return false;
         }
       });
     });
-  });
+  };
+
+  $(document).ready(ready);
+
+  $(document).on('page:load', ready);
 
   $("#menuContent").on("show.bs.collapse", function() {
     return $(".socialMediaLinks").hide();
@@ -12758,4 +12751,15 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 
 
 
-;
+
+$('document').ready(function() {
+    $('.loginInfoMenu').click(function() {
+      if ($('#userMenu').css('display') === 'none') {
+        document.getElementById('userMenu').style.display = 'block';
+        return $('.loginInfoArrowIcon').addClass('loginInfoArrowIconSelected');
+      } else {
+        document.getElementById('userMenu').style.display = 'none';
+        return $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected');
+      }
+    });
+ });

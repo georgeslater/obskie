@@ -11602,11 +11602,11 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
       return $(this).tab("show");
     });
     return $(".ratyTest").each(function(event, ui) {
-      var score;
+      var score, that;
+      that = this;
       score = $(this).data('score');
       return $(this).raty({
         score: score,
-        half: true,
         starOn: '/assets/star-on.png',
         starOff: '/assets/star-off.png',
         path: '',
@@ -11620,10 +11620,11 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
           valText = score;
           $(this).raty({
             readOnly: true,
+            half: false,
             score: score,
             path: "/images",
-            halfShow: true,
             targetType: "score",
+            halfShow: false,
             targetKeep: true,
             hints: [valText, valText, valText, valText, valText]
           }, $.ajax({
@@ -11632,6 +11633,11 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
             data: {
               score: score,
               track: $(this).data('trackid')
+            },
+            success: function(data, textStatus, jqXHR) {
+              console.log(that);
+              console.log(score);
+              return $(that).attr('data-score', score);
             }
           }));
           return false;

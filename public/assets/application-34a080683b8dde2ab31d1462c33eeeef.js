@@ -11602,14 +11602,11 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
       return $(this).tab("show");
     });
     return $(".ratyTest").each(function(event, ui) {
-      var score, scoreText, _base;
+      var score, that;
+      that = this;
       score = $(this).data('score');
-      scoreText = (typeof score === "function" ? score({
-        score: ''
-      }) : void 0) + (typeof (_base = $(this).data('votes')) === "function" ? _base('(' + $(this).data('votes') + {
-        ' votes)': ''
-      }) : void 0);
       return $(this).raty({
+        score: score,
         starOn: '/assets/star-on.png',
         starOff: '/assets/star-off.png',
         path: '',
@@ -11618,16 +11615,16 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
         readOnly: function() {
           return $(this).hasClass("author");
         },
-        hints: [scoreText, scoreText, scoreText, scoreText, scoreText],
         click: function(score, event) {
           var valText;
           valText = score;
           $(this).raty({
             readOnly: true,
+            half: false,
             score: score,
             path: "/images",
-            halfShow: true,
             targetType: "score",
+            halfShow: false,
             targetKeep: true,
             hints: [valText, valText, valText, valText, valText]
           }, $.ajax({
@@ -11636,6 +11633,11 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
             data: {
               score: score,
               track: $(this).data('trackid')
+            },
+            success: function(data, textStatus, jqXHR) {
+              console.log(that);
+              console.log(score);
+              return $(that).attr('data-score', score);
             }
           }));
           return false;
@@ -12753,7 +12755,6 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 $('document').ready(function() {
     $('.loginInfoMenu').click(function() {
       if ($('#userMenu').css('display') === 'none') {
-        alert(document.getElementById('userMenu').style.display);
         document.getElementById('userMenu').style.display = 'block';
         return $('.loginInfoArrowIcon').addClass('loginInfoArrowIconSelected');
       } else {
