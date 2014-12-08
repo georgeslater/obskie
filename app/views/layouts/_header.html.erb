@@ -40,11 +40,12 @@
                             <% if user_signed_in? %>
                                 <div class="loginInfoMenu">
                                     <div class="displayNameArrow">
-                                        <span class="displayName">
-                                        <% if current_user.avatar.present? %>
-                                            <%= image_tag current_user.avatar.url(:thumb), size: "24x24", class: "avatarImage" %>
-                                        <% end %>
-                                        <%= current_user.username %></span>
+                                        <div class="displayName">
+                                            <% if current_user.avatar.present? %>
+                                                <%= image_tag current_user.avatar.url(:thumb), size: "24x24", class: "avatarImage" %>
+                                            <% end %>
+                                            <%= current_user.username %>
+                                        </div>
                                         <div class="loginInfoArrowIcon"></div>
                                     </div>
                                     <div id="userMenu">

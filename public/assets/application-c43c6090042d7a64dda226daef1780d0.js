@@ -11635,9 +11635,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
               track: $(this).data('trackid')
             },
             success: function(data, textStatus, jqXHR) {
-              console.log(that);
-              console.log(score);
-              return $(that).data('score', score);
+              return $(that).attr('data-score', score);
             }
           }));
           return false;
@@ -11685,7 +11683,23 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 
 }).call(this);
 (function() {
+  var $rows, ready;
 
+  ready = function() {};
+
+  $rows = $("#artistsWrapper tr");
+
+  $("#filter").keyup(function() {
+    var val;
+    val = $.trim($(this).val()).replace(RegExp(" +", "g"), " ").toLowerCase();
+    $rows.show().filter(function() {
+      var text;
+      text = $(this).text().replace(/\s+/g, " ").toLowerCase();
+      return !~text.indexOf(val);
+    }).hide();
+  });
+
+  $(document).on('page:load', ready);
 
 }).call(this);
 (function() {

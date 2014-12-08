@@ -1,0 +1,13 @@
+<table>
+
+	<% @nonApproved.each do | albumToApprove | %>
+	
+		<tr>
+			<td><%= albumToApprove.body %></td>
+			<td><%= albumToApprove.user.username %></td>
+			<td><a href="#">Accept</a> | <a href="#">Reject</a></td>
+		</tr>
+
+	<% end %>
+
+</table>

@@ -334,6 +334,15 @@ a {
 	font-weight: bold;
 }
 
+.displayName{
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-right: 35px;
+  margin-top: 2px;
+}
+
 .albumArt img {
   width: 22vw;
 }
@@ -375,7 +384,6 @@ figcaption {
   
   position: relative;
   height: 30px; 
-  width:130px;
 }
 
 .loginInfoArrowIcon.loginInfoArrowIconSelected{
@@ -402,6 +410,8 @@ figcaption {
   text-align: left;
   font-size: 12px;
   padding: 10px;
+  position:absolute;
+  right: 5px;
 }
 
 .displayNameArrow{
@@ -411,6 +421,8 @@ figcaption {
   height: 24px;
   line-height: 24px;
   cursor:pointer;
+  max-width:175px;
+  width:auto;
 }
 
 .displayNameArrow:hover span{

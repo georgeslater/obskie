@@ -1,52 +1,76 @@
 <div id="artistsWrapper">
 	
-	<% @artists.each do | artist |%>
-		
-		<% if artist.albums.size > 0 %>
+    <div id="filterSearch">
+        <input id="filter" type="text" class="form-control" style="width: 200px;" placeholder="Quick Filter">
+    </div>
+	
+	<div>
+		<table class="table">
+			<% @artists.each do | artist |%>
+			
+				<% if artist.albums.size > 0 %>
 
-			<h3> <%= artist.name %> </h3>
+					<% artist.albums.each do | album | %>
 
-			<table class="table">
+						<tr>
+							<td>
+								<%= image_tag album.album_art, :height => '50' %>
+							</td>
 
-				<% artist.albums.each do | album | %>
+							<td>
+								<div class="boldColumn"> <%= artist.name %> </div>
+							</td>
 
-					<tr>
-						<td>
-							<%= image_tag album.album_art, :height => '50' %>
-						</td>
+							<td>
+								<div class="albumTitle boldColumn">
+									<%= album.title %>
+								</div>
+							</td>
+							<td>
+								<%= album.year %>
+							</td>
+							<td>
+								<div class="boldColumn">
+									<%= album.user.username %>
+								</div>
+							</td>
 
-						<td>
-							<div class="albumTitle boldColumn">
-								<%= album.title %>
-							</div>
-						</td>
-						<td>
-							<%= album.year %>
-						</td>
-						<td>
-							<div class="boldColumn">
-								<%= album.user.username %>
-							</div>
-						</td>
+							<td>
 
-						<td>
+								<%= album.created_at.strftime("%A, %d %b %Y") %>
+							</td>
 
-							<%= album.created_at.strftime("%A, %d %b %Y") %>
-						</td>
 
-						<td>
-							<div class="boldColumn">
-								<%= link_to "View", artist_album_path(artist, album)%>
-							</div>
-						</td>
-					</tr>
 
-				<% end %>
+							<td>
+								<div class="boldColumn">
+									<%= link_to "View", artist_album_path(artist, album)%>
+								</div>
+							</td>
+						</tr>
 
-			</table>
+					<% end %>
+
+			<% end %>
+			
 		<% end %>
-		
-	<% end %>
 
-	</table>
+		</table>
+	</div>
 </div>
+<script>
+	
+	$(document).ready(function(){
+
+		var $rows = $('#artistsWrapper tr');
+		$('#filter').keyup(function() {
+		    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+		    $rows.show().filter(function() {
+		        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+		        return !~text.indexOf(val);
+		    }).hide();
+		});
+	});
+
+</script>

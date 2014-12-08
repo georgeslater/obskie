@@ -483,20 +483,30 @@ figcaption {
   margin: 0 20px;
 }
 /* line 7, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
+#artistsWrapper #filterSearch {
+  margin: 20px;
+  margin-right: 4%;
+  float: right;
+}
+/* line 14, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
 #artistsWrapper table {
-  width: 80%;
+  width: 96%;
   margin-bottom: 30px;
 }
-/* line 12, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
+/* line 19, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
 #artistsWrapper table td:not(:first-child) {
   vertical-align: middle !important;
 }
-/* line 17, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
+/* line 24, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
 #artistsWrapper table td:not(:first-child):not(:last-child) {
   text-align: left;
-  width: 25%;
+  width: auto;
 }
-/* line 23, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
+/* line 30, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
+#artistsWrapper table td:first-child {
+  min-width: 67px;
+}
+/* line 35, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
 #artistsWrapper table .boldColumn {
   font-weight: bold;
 }

@@ -4,9 +4,16 @@
 
 #artistsWrapper{
 	
+	#filterSearch{
+
+		margin: 20px;
+		margin-right: 4%;
+		float: right;
+	}
+
 	table{
 		
-		width: 80%;
+		width: 96%;
 		margin-bottom: 30px;
 
 		td:not(:first-child){
@@ -17,7 +24,7 @@
 		td:not(:first-child):not(:last-child){
 
 			text-align: left;
-			width:25%;
+			width:auto;
 		}
 
 		td:first-child{

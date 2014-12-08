@@ -434,14 +434,16 @@ figcaption {
 .loginInfoMenu {
   position: relative;
   height: 30px;
+  max-width: 175px;
+  width: auto;
 }
 
-/* line 389, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 391, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
 .loginInfoArrowIcon.loginInfoArrowIconSelected {
   background-image: url(/images/arrow-up.png);
 }
 
-/* line 394, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 396, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
 .loginInfoArrowIcon {
   background: url(/images/arrow-down.png) no-repeat;
   width: 24px;
@@ -452,7 +454,7 @@ figcaption {
   top: 0;
 }
 
-/* line 405, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 407, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
 #userMenu {
   display: none;
   width: 130px;
@@ -461,8 +463,6 @@ figcaption {
   text-align: left;
   font-size: 12px;
   padding: 10px;
-  position: absolute;
-  right: 5px;
 }
 
 /* line 417, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
@@ -472,21 +472,19 @@ figcaption {
   height: 24px;
   line-height: 24px;
   cursor: pointer;
-  max-width: 175px;
-  width: auto;
 }
 
-/* line 428, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 426, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
 .displayNameArrow:hover span {
   color: lightskyblue !important;
 }
 
-/* line 433, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 431, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
 .menuRow:hover {
   color: lightskyblue;
 }
 
-/* line 438, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 436, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
 .avatarImage {
   margin-right: 5px;
 }

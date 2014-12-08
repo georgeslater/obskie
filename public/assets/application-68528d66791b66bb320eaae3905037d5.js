@@ -11619,11 +11619,9 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
           valText = score;
           $(this).raty({
             readOnly: true,
-            half: false,
             score: score,
             path: "/images",
             targetType: "score",
-            halfShow: false,
             targetKeep: true,
             hints: [valText, valText, valText, valText, valText]
           }, $.ajax({

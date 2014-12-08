@@ -36,7 +36,7 @@ class AlbumsController < ApplicationController
 		
 		when 'Most Obscure'
 
-			@albums = Album.where('published = true and approved = true').order('obscurity_rating DESC')
+			@albums = Album.where('published = true and approved = true and obscurity_rating IS NOT NULL').order('obscurity_rating DESC')
 
 		else
 
@@ -68,6 +68,11 @@ class AlbumsController < ApplicationController
 		@albumTracks = @album.tracks.order('tracks.order')
 
 		#@country = request.location.country_code
+	end
+
+	def approval
+
+		@nonApproved = Album.where("approved = false")
 	end
 
 	def check_edit_permission
