@@ -6,54 +6,68 @@
 	
 	<div>
 		<table class="table">
-			<% @artists.each do | artist |%>
-			
-				<% if artist.albums.size > 0 %>
+			<thead>
+				<tr>
+					<th></th>
+					<th>Artist</th>
+					<th>Album</th>
+					<th>Year</th>
+					<th>Author</th>
+					<th>Date Published</th>
+					<th></th>
+				</tr>
 
-					<% artist.albums.each do | album | %>
+			</thead>
+			<tbody>
+				<% @artists.each do | artist |%>
+				
+					<% if artist.albums.size > 0 %>
 
-						<tr>
-							<td>
-								<%= image_tag album.album_art, :height => '50' %>
-							</td>
+						<% artist.albums.each do | album | %>
 
-							<td>
-								<div class="boldColumn"> <%= artist.name %> </div>
-							</td>
+							<tr>
+								<td>
+									<%= image_tag album.album_art, :height => '50' %>
+								</td>
 
-							<td>
-								<div class="albumTitle boldColumn">
-									<%= album.title %>
-								</div>
-							</td>
-							<td>
-								<%= album.year %>
-							</td>
-							<td>
-								<div class="boldColumn">
-									<%= album.user.username %>
-								</div>
-							</td>
+								<td>
+									<div class="boldColumn"> <%= artist.name %> </div>
+								</td>
 
-							<td>
+								<td>
+									<div class="albumTitle boldColumn">
+										<%= album.title %>
+									</div>
+								</td>
+								<td>
+									<%= album.year %>
+								</td>
+								<td>
+									<div class="boldColumn">
+										<%= album.user.username %>
+									</div>
+								</td>
 
-								<%= album.created_at.strftime("%A, %d %b %Y") %>
-							</td>
+								<td>
+
+									<%= album.created_at.strftime("%A, %d %b %Y") %>
+								</td>
 
 
 
-							<td>
-								<div class="boldColumn">
-									<%= link_to "View", artist_album_path(artist, album)%>
-								</div>
-							</td>
-						</tr>
+								<td>
+									<div class="boldColumn">
+										<%= link_to "View", artist_album_path(artist, album)%>
+									</div>
+								</td>
+							</tr>
 
-					<% end %>
+						<% end %>
 
+				<% end %>
+				
 			<% end %>
-			
-		<% end %>
+		</tbody>
 
 		</table>
 	</div>

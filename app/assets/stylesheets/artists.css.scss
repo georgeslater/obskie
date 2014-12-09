@@ -21,13 +21,13 @@
 			vertical-align: middle !important;	
 		}
 
-		td:not(:first-child):not(:last-child){
+		th, td:not(:first-child):not(:last-child){
 
 			text-align: left;
 			width:auto;
 		}
 
-		td:first-child{
+		th, td:first-child{
 
 			min-width: 67px;
 		}

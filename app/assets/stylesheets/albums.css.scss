@@ -307,7 +307,7 @@ td:not(:first-child), th:not(:first-child) {
   }
 }
 
-a {
+#contentWrapper a {
   color: black !important;
   text-decoration: none !important;
   &:hover {

@@ -50,6 +50,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    amazon-ecs (2.3.0)
+      nokogiri (~> 1.4)
+      ruby-hmac (~> 0.3)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.9)
     bootstrap-sass (3.3.1.0)
@@ -193,6 +196,7 @@ GEM
     rspotify (1.7.0)
       omniauth-oauth2 (~> 1.1)
       rest_client (~> 1.8)
+    ruby-hmac (0.4.0)
     sanitize (2.0.6)
       nokogiri (>= 1.4.4)
     sass (3.2.19)
@@ -246,6 +250,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  amazon-ecs
   coffee-rails (~> 4.0.0)
   coverart (~> 0.0.4)
   devise

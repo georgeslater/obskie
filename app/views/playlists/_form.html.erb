@@ -10,8 +10,7 @@
       </ul>
     </div>
   <% end %>
-
- <div class="field">
+ <div class="field checkboxes">
     <input type="checkbox" class="playlistTypeCb" data-type="spotify"/>
     <label>Spotify</label>
     <input type="checkbox" class="playlistTypeCb" data-type="deezer" />
@@ -19,7 +18,6 @@
     <input type="checkbox" class="playlistTypeCb" data-type="rdio" />
     <label>Rdio</label>
   </div>
-
   <div id="spotifySection" class="field">
     <%= f.label "Spotify URI" %><br>
     <%= f.text_field :spotify_uri %>

@@ -1,15 +1,7 @@
 
-getRandomArbitary = (min, max) ->
-  (Math.random() * (max - min) + min).toFixed 2
-
 ready = ->
 
   $('img.albumArt').lazyload();
-
-  $('#signInLink').click ->
-    $('#loginForm').animate({top: 20, right: 20})
-    $('#signInRegister').hide()
-  return
 
   $("input[name='sync_with_spotify']").click ->
     if $(this).val() == 'Manual' 
@@ -56,7 +48,6 @@ ready = ->
 
 
 $(document).ready(ready)
-$(document).on('page:load', ready)
 
 $("#menuContent").on "show.bs.collapse", ->
   $(".socialMediaLinks").hide()

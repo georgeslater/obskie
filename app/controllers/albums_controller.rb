@@ -58,7 +58,7 @@ class AlbumsController < ApplicationController
 
 		until @relatedAlbums.size == 3 || @relatedAlbums.size == c do 
 
-			relAlbum = Album.offset(rand(c)).first
+			relAlbum = Album.where("published = true and approved = true").offset(rand(c)).first
 
 			unless @relatedAlbums.include?(relAlbum) || relAlbum == @album
 				@relatedAlbums.push(relAlbum)

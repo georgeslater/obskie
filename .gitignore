@@ -15,5 +15,8 @@
 /log/*.log
 /tmp
 
+#ignore database info
+/config/database.yml
+
 .env
 Procfile

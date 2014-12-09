@@ -87,6 +87,7 @@ class SearchesController < ApplicationController
 
 			SpotifyAlbumInfoJob.new.async.perform(newAlbum)
 			ItunesAlbumInfoJob.new.async.perform(newAlbum)
+			AmazonAlbumInfoJob.new.async.perform(newAlbum)
 
         end
 

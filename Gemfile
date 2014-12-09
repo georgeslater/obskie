@@ -67,6 +67,7 @@ gem "itunes-search-api"
 gem "wicked"
 gem 'musicbrainz'
 gem 'coverart', '~> 0.0.4'
+gem 'amazon-ecs'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: :production
