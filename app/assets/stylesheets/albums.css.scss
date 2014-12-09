@@ -404,7 +404,7 @@ figcaption {
 
 #userMenu{
   display: none;
-  width: 130px;
+  width: 140px;
   background-color: #222;
   border-radius: 11px;
   text-align: left;
@@ -438,4 +438,58 @@ figcaption {
 .avatarImage{
   
   margin-right: 5px;
+}
+
+.login{
+  
+  display: inline-block;
+}
+
+.loginField{
+  
+  border-radius: 5px;
+  color: black;
+}
+
+.loginButton{
+  
+  color: black;
+  background-color: #a5b8da;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a5b8da), color-stop(100%, #7089b3));
+  background-image: -webkit-linear-gradient(top, #a5b8da, #7089b3);
+  background-image: -moz-linear-gradient(top, #a5b8da, #7089b3);
+  background-image: -ms-linear-gradient(top, #a5b8da, #7089b3);
+  background-image: -o-linear-gradient(top, #a5b8da, #7089b3);
+  background-image: linear-gradient(top, #a5b8da, #7089b3);
+  border-top: 1px solid #758fba;
+  border-right: 1px solid #6c84ab;
+  border-bottom: 1px solid #5c6f91;
+  border-left: 1px solid #6c84ab;
+  border-radius: 18px;
+  -webkit-box-shadow: inset 0 1px 0 0 #aec3e5;
+  box-shadow: inset 0 1px 0 0 #aec3e5;
+  color: #fff;
+  font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  padding: 4px 0;
+  text-align: center;
+  text-shadow: 0 -1px 1px #64799e;
+  width: 60px;
+}
+
+.loginLinks{
+  
+  margin-top: 3px;
+
+  .forgotPasswordLink{
+
+    float: right;
+  }
+}
+
+#loginForm{
+  
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 0.8em;
 }

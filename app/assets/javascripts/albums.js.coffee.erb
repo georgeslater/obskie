@@ -6,6 +6,11 @@ ready = ->
 
   $('img.albumArt').lazyload();
 
+  $('#signInLink').click ->
+    $('#loginForm').animate({top: 20, right: 20})
+    $('#signInRegister').hide()
+  return
+
   $("input[name='sync_with_spotify']").click ->
     if $(this).val() == 'Manual' 
       $("#manualSection").show()

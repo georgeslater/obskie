@@ -50,15 +50,22 @@
                                     </div>
                                     <div id="userMenu">
                                         <div>
+                                            <%= link_to new_album_path do %>
+                                                <div class="menuRow">Submit a Review</div>
+                                            <% end %>
+                                        </div>
+                                        <div>
                                             <%= link_to user_path(current_user) do %>
                                                 <div class="menuRow">My Reviews</div>
                                             <% end %>
                                         </div>
-                                        <div>
-                                            <%= link_to my_drafts_path(current_user) do %>
-                                                <div class="menuRow">My Drafts</div>
-                                            <% end %>
-                                        </div>
+                                        <% if @hasDrafts %>
+                                            <div>
+                                                <%= link_to my_drafts_path(current_user) do %>
+                                                    <div class="menuRow">My Drafts</div>
+                                                <% end %>
+                                            </div>
+                                        <% end %>
                                         <div>
                                             <%= link_to edit_user_registration_path(current_user) do %> 
                                                 <div class="menuRow">Edit Profile</div>
@@ -73,7 +80,7 @@
                                     </div>
                                 </div>
                             <% else %>
-                                <%= link_to "Sign In/Register", new_user_session_path, :class => 'navbar-link' %>
+                                <%= render 'devise/shared/login' %>
                             <% end %> 
                         </div>
                     </div>
