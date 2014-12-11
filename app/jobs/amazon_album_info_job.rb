@@ -18,7 +18,7 @@ class AmazonAlbumInfoJob < ApplicationController
 			'Title' => album_created.title
 		}
 
-		res = req.item_search(query: params, :headers => { 'User-Agent' => 'Googlebot'}).to_h
+		res = req.item_search(query: params).to_h
 
 		Rails.logger.debug(res)
 	end

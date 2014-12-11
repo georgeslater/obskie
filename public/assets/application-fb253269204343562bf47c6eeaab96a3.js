@@ -11582,11 +11582,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 
 }).call(this);
 (function() {
-  var getRandomArbitary, ready;
-
-  getRandomArbitary = function(min, max) {
-    return (Math.random() * (max - min) + min).toFixed(2);
-  };
+  var ready;
 
   ready = function() {
     $('img.albumArt').lazyload();
@@ -11645,8 +11641,6 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
   };
 
   $(document).ready(ready);
-
-  $(document).on('page:load', ready);
 
   $("#menuContent").on("show.bs.collapse", function() {
     return $(".socialMediaLinks").hide();
