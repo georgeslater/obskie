@@ -729,7 +729,12 @@ textarea {
   min-height: 21px;
 }
 
-/* line 100, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
+/* line 99, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
+input.playlistTypeCb {
+  margin-left: 10px;
+}
+
+/* line 103, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 .triangle-border {
   position: relative;
   padding: 15px;
@@ -744,7 +749,7 @@ textarea {
   margin-left: 30px;
 }
 
-/* line 114, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
+/* line 117, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 .triangle-border.left:before {
   top: 10px;
   bottom: auto;
@@ -753,7 +758,7 @@ textarea {
   border-color: transparent lightgray;
 }
 
-/* line 122, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
+/* line 125, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 .triangle-border:before {
   content: "";
   position: absolute;
@@ -766,7 +771,7 @@ textarea {
   width: 0;
 }
 
-/* line 134, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
+/* line 137, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 .triangle-border.left:after {
   top: 16px;
   bottom: auto;
@@ -775,7 +780,7 @@ textarea {
   border-color: transparent #fff;
 }
 
-/* line 141, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
+/* line 144, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 .triangle-border:after {
   content: "";
   position: absolute;
@@ -788,17 +793,17 @@ textarea {
   width: 0;
 }
 
-/* line 153, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
+/* line 156, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #spotifySection {
   display: none;
 }
 
-/* line 158, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
+/* line 161, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #deezerSection {
   display: none;
 }
 
-/* line 163, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
+/* line 166, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #rdioSection {
   display: none;
 }
