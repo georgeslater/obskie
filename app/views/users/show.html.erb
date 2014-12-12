@@ -28,7 +28,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% @user.albums.each do | album | %>
+			<% @userAlbums.each do | album | %>
 				<tr>
 					<td><%= link_to album.title, artist_album_path(album.artist, album) %></td>
 					<td><%= album.created_at.strftime("%d %b %Y") %></td>

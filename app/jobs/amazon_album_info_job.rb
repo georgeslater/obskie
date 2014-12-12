@@ -6,8 +6,8 @@ class AmazonAlbumInfoJob < ApplicationController
 		req = Vacuum.new
 
 		req.configure(
-			aws_access_key_id: 'AKIAJGOGKCFQO5K2A6XA',
-			aws_secret_access_key: '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',
+			aws_access_key_id: ENV['AMAZON_ACCESS_KEY_ID'],
+			aws_secret_access_key: ENV['AMAZON_SECRET_KEY'],
 			associate_tag: 'obscalbu-20'
 		)
 
@@ -19,7 +19,14 @@ class AmazonAlbumInfoJob < ApplicationController
 		}
 
 		res = req.item_search(query: params).to_h
+ 		Rails.logger.debug('heeeere it is!')
+ 		Rails.logger.debug(res['ItemSearchResponse'])
+ 		Rails.logger.debug(res['ItemSearchResponse']['Items'])
+ 		Rails.logger.debug(res['ItemSearchResponse']['Items']['Item'])
+ 		Rails.logger.debug(res['ItemSearchResponse']['Items']['Item'][0]['DetailPageURL'])
 
-		Rails.logger.debug(res)
+		url = res['ItemSearchResponse']['Items']['Item'][0]['DetailPageURL']
+		
+		album_created.update_attributes(amazon_url: url)
 	end
 end

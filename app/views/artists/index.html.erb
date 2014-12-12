@@ -36,7 +36,7 @@
 
 								<td>
 									<div class="albumTitle boldColumn">
-										<%= album.title %>
+										<%= link_to album.title, artist_album_path(artist, album) %>
 									</div>
 								</td>
 								<td>
@@ -76,7 +76,7 @@
 	
 	$(document).ready(function(){
 
-		var $rows = $('#artistsWrapper tr');
+		var $rows = $('#artistsWrapper tbody tr');
 		$('#filter').keyup(function() {
 		    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
 

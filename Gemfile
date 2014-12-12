@@ -17,6 +17,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'paperclip', '~> 4.2'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 gem 'lazyload-rails'
 
 gem 'rspotify'

@@ -52,6 +52,9 @@
                                     <% if @album.itunes_view_url.present? %>
                                         <a href="<%= @album.itunes_view_url %>" target="itunes_store" class="itunes"></a>
                                     <% end %>
+                                    <% if @album.amazon_url.present? %>
+                                        <a href="<%= @album.amazon_url %>" class="amazon"></a>
+                                    <% end %>
                                 </div>
                                 <div id="obscurometer">
                                     <% if @album.obscurity_rating.present? %>
