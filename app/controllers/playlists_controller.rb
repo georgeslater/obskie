@@ -25,17 +25,23 @@ class PlaylistsController < ApplicationController
   def create
     @playlist = Playlist.new(playlist_params)
     @playlist.user_id = current_user.id
-    @playlist.save
     
-    if @playlist.spotify_uri.present?
-        SpotifyPlaylistJob.new.perform(@playlist)
-    end
+    if @playlist.save
+    
+      if @playlist.spotify_uri.present?
+          SpotifyPlaylistJob.new.perform(@playlist)
+      end
 
-    if @playlist.deezer_uri.present?
-        DeezerPlaylistJob.new.perform(@playlist)
-    end
+      if @playlist.deezer_uri.present?
+          DeezerPlaylistJob.new.perform(@playlist)
+      end
 
-    respond_with(@playlist)
+      redirect_to playlist_path(@playlist)
+    
+    else
+
+      respond_with(@playlist)
+    end
     
   end
 
@@ -50,7 +56,7 @@ class PlaylistsController < ApplicationController
 
   private
     def set_playlist
-      @playlist = Playlist.find(params[:id])
+      @playlist = Playlist.friendly.find(params[:id])
     end
 
     def playlist_params

@@ -7,14 +7,15 @@ h1 {
   display: inline-block;
 }
 
-sup {
-  vertical-align: text-top;
-  color: white;
-}
-
 #manualSection{
   
   display: none;
+}
+
+.jumbotron p{
+  
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 #obscurometer{
@@ -104,6 +105,12 @@ sup {
   
   position: relative;
   margin-top: 30px;
+  margin-left: 10px;
+
+  a{
+
+    text-decoration: none;
+  }
 
   #sortBy{
 

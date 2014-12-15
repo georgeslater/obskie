@@ -2,168 +2,174 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#playlistWrapper{
+#playlistWrapper, #playlistIndexWrapper{
 	
 	margin-left: 30px;
-}
-
-#submittedByInfo{
-	
-	margin-bottom: 40px;
-}
-
-#directLinks{
-	
 	margin-bottom: 20px;
-}
 
-.checkboxes{
-	
-	margin: 25px 0;
-}
+	.lead{
 
-.spotifyPlayNow{
-	
-	background-image: asset-url('/images/spotify.png');
-	background-repeat: no-repeat;
-	background-color: #68b300;
-	background-position: 8px center;
-	border-radius: 15px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 40px;
-	padding-right: 20px;
-	margin-bottom: 40px;
+		margin-top: 20px;
+	}
 
-}
+	#submittedByInfo{
+		
+		margin-bottom: 40px;
+	}
 
-.spotifyPlayNow span{
-	
-	color: white !important;
-	font-size: 14px;
-}
+	#directLinks{
+		
+		margin-bottom: 20px;
+	}
 
-.noSpotify span{
-	
-	font-size: 11px;
-}
+	.checkboxes{
+		
+		margin: 25px 0;
+	}
 
-#spotifyPlayNow 
+	.spotifyPlayNow{
+		
+		background-image: asset-url('/images/spotify.png');
+		background-repeat: no-repeat;
+		background-color: #68b300;
+		background-position: 8px center;
+		border-radius: 15px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		padding-left: 40px;
+		padding-right: 20px;
+		margin-bottom: 40px;
 
-.noSpotify{
-	
-	font-size: 11px;
-}
+	}
 
-.playlistImage{
-  
-  display: inline-block;
-  vertical-align: top;
-  padding: 10px;
-  figure img{
-    width: 200px;
-    height:200px;
-  }
-  figcaption{
-    max-width: 200px;
-    text-align: center;
-    font-size: 14px;
-    background-color: black;
-    color: white
-  }
+	.spotifyPlayNow span{
+		
+		color: white !important;
+		font-size: 14px;
+	}
 
-  .playlistCaption{
+	.noSpotify span{
+		
+		font-size: 11px;
+	}
 
-     padding: 2px 5px;
-  }
+	#spotifyPlayNow 
 
-  .playlistCaptionTitle{
+	.noSpotify{
+		
+		font-size: 11px;
+	}
 
-    font-size: 17px;
-    font-style: italic;
-  }
+	.playlistImage{
+	  
+	  display: inline-block;
+	  vertical-align: top;
+	  padding: 10px;
+	  figure img{
+	    width: 200px;
+	    height:200px;
+	  }
+	  figcaption{
+	    max-width: 200px;
+	    text-align: center;
+	    font-size: 14px;
+	    background-color: black;
+	    color: white
+	  }
 
-  .playlistCaptionArtist{
+	  .playlistCaption{
 
-    font-size: 16px;
-    padding-top: 5px;
-  }
+	     padding: 2px 5px;
+	  }
 
-  .playlistCaptionMediums{
+	  .playlistCaptionTitle{
 
-    font-size: 12px;
-    min-height: 21px;
-  }
-}
+	    font-size: 17px;
+	    font-style: italic;
+	  }
 
-input.playlistTypeCb {
-	margin-left: 10px;
-}
+	  .playlistCaptionArtist{
 
-.triangle-border {
-	position: relative;
-	padding: 15px;
-	margin: 1em 0 3em;
-	border: 5px solid lightgray;
-	color: #333;
-	background: #fff;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	max-width: 50%;
-	margin-left: 30px;
-}
+	    font-size: 16px;
+	    padding-top: 5px;
+	  }
 
-.triangle-border.left:before {
-	top: 10px;
-	bottom: auto;
-	left: -30px;
-	border-width: 15px 30px 15px 0;
-	border-color: transparent lightgray;
-}
+	  .playlistCaptionMediums{
 
-.triangle-border:before {
-	content: "";
-	position: absolute;
-	bottom: -20px;
-	left: 40px;
-	border-width: 20px 20px 0;
-	border-style: solid;
-	border-color: #5a8f00 transparent;
-	display: block;
-	width: 0;
-}
+	    font-size: 12px;
+	    min-height: 21px;
+	  }
+	}
 
-.triangle-border.left:after {
-	top: 16px;
-	bottom: auto;
-	left: -21px;
-	border-width: 9px 21px 9px 0;
-	border-color: transparent #fff;
-}
-.triangle-border:after {
-	content: "";
-	position: absolute;
-	bottom: -13px;
-	left: 47px;
-	border-width: 13px 13px 0;
-	border-style: solid;
-	border-color: #fff transparent;
-	display: block;
-	width: 0;
-}
+	input.playlistTypeCb {
+		margin-left: 10px;
+	}
 
-#spotifySection{
-	
-	display: none;
-}
+	.triangle-border {
+		position: relative;
+		padding: 15px;
+		margin: 1em 0 3em;
+		border: 5px solid lightgray;
+		color: #333;
+		background: #fff;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+		max-width: 50%;
+		margin-left: 30px;
+	}
 
-#deezerSection{
-	
-	display: none;
-}
+	.triangle-border.left:before {
+		top: 10px;
+		bottom: auto;
+		left: -30px;
+		border-width: 15px 30px 15px 0;
+		border-color: transparent lightgray;
+	}
 
-#rdioSection{
-	
-	display: none;
+	.triangle-border:before {
+		content: "";
+		position: absolute;
+		bottom: -20px;
+		left: 40px;
+		border-width: 20px 20px 0;
+		border-style: solid;
+		border-color: #5a8f00 transparent;
+		display: block;
+		width: 0;
+	}
+
+	.triangle-border.left:after {
+		top: 16px;
+		bottom: auto;
+		left: -21px;
+		border-width: 9px 21px 9px 0;
+		border-color: transparent #fff;
+	}
+	.triangle-border:after {
+		content: "";
+		position: absolute;
+		bottom: -13px;
+		left: 47px;
+		border-width: 13px 13px 0;
+		border-style: solid;
+		border-color: #fff transparent;
+		display: block;
+		width: 0;
+	}
+
+	#spotifySection{
+		
+		display: none;
+	}
+
+	#deezerSection{
+		
+		display: none;
+	}
+
+	#rdioSection{
+		
+		display: none;
+	}
 }

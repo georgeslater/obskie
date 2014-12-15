@@ -34,7 +34,6 @@
 		      success: function(result) {
 		      	var html = $(result).find('#albums').html();
 
-		      	console.log(html)
 		      	$('#albums').html(html);
 		      	
 		      	$('figure img').lazyload();

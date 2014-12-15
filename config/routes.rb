@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   match '/search/artists', to: 'searches#get_artists', via: 'get'
   match '/submitAlbum', to: 'searches#submit', via: 'get'
 
-  get 'albums/approval' => 'albums#approval'
+  get 'albums/approval' => 'albums#approval', as: :non_approved
 
   get 'users/:id/albums/my_drafts' => 'users#drafts', as: :my_drafts
 
@@ -48,6 +48,9 @@ Rails.application.routes.draw do
   end
 
   resources :albums do
+    member do
+      patch 'approve'
+    end
     resources :comments
   end
 

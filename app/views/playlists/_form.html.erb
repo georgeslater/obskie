@@ -1,18 +1,11 @@
 <%= form_for(@playlist) do |f| %>
   <% if @playlist.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@playlist.errors.count, "error") %> prohibited this playlist from being saved:</h2>
-
-      <ul>
-      <% @playlist.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+    <%= render 'shared/errorMessages', object: @playlist %>
   <% end %>
  <div class="field checkboxes">
+    <label>Playlist service (at least one)</label>
     <span>
-      <input type="checkbox" class="playlistTypeCb" data-type="spotify"/>
+      <input type="checkbox" class="playlistTypeCb" data-type="spotify" />
       <label>Spotify</label>
     </span>
     <span>

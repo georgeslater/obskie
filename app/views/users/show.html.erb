@@ -4,37 +4,99 @@
 		<%= image_tag @user.avatar.url(:thumb) %>
 	</div>
 
-	<h4><%= @user.first_name %> <%= @user.last_name %></h4>
+	<h4><%= @user.username %></h4>
 
 	<ul>
 		<li>Date Joined: <%= @user.created_at.strftime("%A, %d %b %Y") %></li>
 	</ul>
 
 	<div>
-		<a href="#reviews">Reviews (<%= @user.albums.size %>)</a>
+		<a href="#reviews">Reviews (<%= @userAlbums.size %>)</a>
 	</div>
 	<div>
-		<a href="#comments">Comments (<%= @user.comments.size %>)</a>
+		<a href="#comments">Comments (<%= @userComments.size %>)</a>
 	</div>
 	<div>
-		<a href="#playlists">Playlists (<%= @user.playlists.size %>)</a>
+		<a href="#playlists">Playlists (<%= @userPlaylists.size %>)</a>
 	</div>
-	<table class="table">
-		<thead>
-			<tr>
-				<td>Name</td>
-				<td>Submitted Date</td>
-				<td>Average Track Rating</td>
-			</tr>
-		</thead>
-		<tbody>
-			<% @userAlbums.each do | album | %>
-				<tr>
-					<td><%= link_to album.title, artist_album_path(album.artist, album) %></td>
-					<td><%= album.created_at.strftime("%d %b %Y") %></td>
-					<td><%= avg_track_rating(album.tracks) %></td>
-				</tr>
+	<br />
+	<div id="reviews">
+		<h4>Reviews (<%= @userAlbums.size %>)</h4>
+		<table class="table">
+			<% if @userAlbums.empty? %>
+				<div>No reviews yet</div>
+			<% else %>
+				<thead>
+					<tr>
+						<td>Name</td>
+						<td>Submitted Date</td>
+						<td>Average Track Rating</td>
+						<td>Comments</td>
+					</tr>
+				</thead>
+				<tbody>
+					<% @userAlbums.each do | album | %>
+						<tr>
+							<td><%= link_to album.title, artist_album_path(album.artist, album) %></td>
+							<td><%= album.created_at.strftime("%d %b %Y") %></td>
+							<td><%= avg_track_rating(album.tracks) %></td>
+							<td><%= album.comments.size %></td>
+						</tr>
+					<% end %>
+				</tbody>
 			<% end %>
-		</tbody>
-	</table>
+		</table>
+	</div>
+	<div id="comments">
+		<h4>Comments (<%= @userComments.size %>)</h4>
+		<table class="table">
+			<% if @userComments.empty? %>
+				<div>No comments yet</div>
+			<% else %>
+				<thead>
+					<tr>
+						<td>Album Name</td>
+						<td>Album Author</td>
+						<td>Date Commented</td>
+						<td>Comment</td>
+					</tr>
+				</thead>
+				<tbody>
+					<% @userComments.each do | comment | %>
+						<tr>
+							<td><%= link_to comment.album.title, artist_album_path(comment.album.artist, comment.album) %></td>
+							<td><%= link_to comment.user.username, user_path(comment.user) %></td>
+							<td><%= comment.created_at.strftime("%d %b %Y") %></td>
+							<td><%= comment.body %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			<% end %>
+		</table>
+	</div>
+	<div id="playlists">
+		<h4>Playlists (<%= @userPlaylists.size %>)</h4>
+		<table class="table">
+			<% if @userPlaylists.empty? %>
+				<div>No playlists yet</div>
+			<% else %>
+				<thead>
+					<tr>
+						<td>Playlist Name</td>
+						<td>Description</td>
+						<td>Date Submitted</td>
+					</tr>
+				</thead>
+				<tbody>
+					<% @userPlaylists.each do | playlist | %>
+						<tr>
+							<td><%= link_to playlist.name, playlist_path(playlist) %></td>
+							<td><%= playlist.blurb %></td>
+							<td><%= playlist.created_at.strftime("%d %b %Y") %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			<% end %>
+		</table>
+	</div>	
 </div>

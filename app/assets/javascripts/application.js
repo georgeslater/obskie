@@ -18,7 +18,10 @@
 //= require forem
 
 $('document').ready(function() {
-    $('.loginInfoMenu').click(function() {
+    $('.loginInfoMenu').click(function(e) {
+
+      e.stopPropagation();
+
       if ($('#userMenu').css('display') === 'none') {
         document.getElementById('userMenu').style.display = 'block';
         return $('.loginInfoArrowIcon').addClass('loginInfoArrowIconSelected');
@@ -27,4 +30,9 @@ $('document').ready(function() {
         return $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected');
       }
     });
+
+    $(document).click(function(){
+	  $("#userMenu").hide();
+	  $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected')
+	});
  });

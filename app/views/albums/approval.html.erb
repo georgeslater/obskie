@@ -1,13 +1,22 @@
-<table>
+<% if current_user.try(:admin?) %>
 
-	<% @nonApproved.each do | albumToApprove | %>
-	
-		<tr>
-			<td><%= albumToApprove.body %></td>
-			<td><%= albumToApprove.user.username %></td>
-			<td><a href="#">Accept</a> | <a href="#">Reject</a></td>
-		</tr>
+	<table>
 
-	<% end %>
+		<% @nonApproved.each do | albumToApprove | %>
+		
+			<tr>
+				<td><%= albumToApprove.body %></td>
+				<td><%= albumToApprove.user.username %></td>
+				<td><%= link_to 'Approve', approve_album_path(albumToApprove), method: :patch %> | <a href="#">Reject</a></td>
+			</tr>
 
-</table>
+		<% end %>
+
+	</table>
+<% else %>
+	<div class="alert alert-danger" role="alert">
+	  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+	  <span class="sr-only">Error:</span>
+	  You don't have permission to view this page!
+	</div>
+<% end %>

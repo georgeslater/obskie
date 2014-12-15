@@ -1,13 +1,10 @@
-<div>
-  <h3>Contact Us</h3>
-
+<div id="contactUsForm">
+  <p class="lead">Whether you want to send us love, hate, or Viagra offers, please fill in the form below</p>
   <%= simple_form_for @contact do |f| %>
-    <div>
-      <%= f.label :name %>
-      <%= f.text_field :name, :required => true %>
-    </div>
-    <%= f.input :email, :required => true %>
-    <%= f.input :message, :as => :text, :required => true %>
+    <%= f.input :name, label: "Name (required)" %>
+    <%= f.input :email, label: "Email (required)" %>
+    <br />
+    <%= f.input :message, :as => :text, label: false, placeholder: "Enter your message here" %>
     <div>
       </br>
       <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>

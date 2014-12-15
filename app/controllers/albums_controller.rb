@@ -72,7 +72,19 @@ class AlbumsController < ApplicationController
 
 	def approval
 
-		@nonApproved = Album.where("approved = false")
+		if current_user.try(:admin?)
+			@nonApproved = Album.where("published = true AND approved = false")
+		end
+	end
+
+	def approve
+
+		if current_user.try(:admin?)
+			album = Album.friendly.find(params[:id])
+			album.approved = true
+			album.save!
+			redirect_to non_approved_path
+		end
 	end
 
 	def check_edit_permission

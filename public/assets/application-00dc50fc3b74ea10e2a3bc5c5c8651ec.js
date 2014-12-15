@@ -11582,11 +11582,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 
 }).call(this);
 (function() {
-  var getRandomArbitary, ready;
-
-  getRandomArbitary = function(min, max) {
-    return (Math.random() * (max - min) + min).toFixed(2);
-  };
+  var ready;
 
   ready = function() {
     $('img.albumArt').lazyload();
@@ -11646,8 +11642,6 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 
   $(document).ready(ready);
 
-  $(document).on('page:load', ready);
-
   $("#menuContent").on("show.bs.collapse", function() {
     return $(".socialMediaLinks").hide();
   });
@@ -11683,23 +11677,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 
 }).call(this);
 (function() {
-  var $rows, ready;
 
-  ready = function() {};
-
-  $rows = $("#artistsWrapper tr");
-
-  $("#filter").keyup(function() {
-    var val;
-    val = $.trim($(this).val()).replace(RegExp(" +", "g"), " ").toLowerCase();
-    $rows.show().filter(function() {
-      var text;
-      text = $(this).text().replace(/\s+/g, " ").toLowerCase();
-      return !~text.indexOf(val);
-    }).hide();
-  });
-
-  $(document).on('page:load', ready);
 
 }).call(this);
 (function() {
@@ -12767,7 +12745,10 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 
 
 $('document').ready(function() {
-    $('.loginInfoMenu').click(function() {
+    $('.loginInfoMenu').click(function(e) {
+
+      e.stopPropagation();
+
       if ($('#userMenu').css('display') === 'none') {
         document.getElementById('userMenu').style.display = 'block';
         return $('.loginInfoArrowIcon').addClass('loginInfoArrowIconSelected');
@@ -12776,4 +12757,9 @@ $('document').ready(function() {
         return $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected');
       }
     });
+
+    $(document).click(function(){
+	  $("#userMenu").hide();
+	  $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected')
+	});
  });

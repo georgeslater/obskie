@@ -11,24 +11,5 @@
  * file per style scope.
  *
  *= require_tree .
- *= require_self
  *= require 'forem/base'
  */
-
- #obscureIcon h1{
-
- 	color:white !important;
- }
-
- #menuBar a {
-  list-style: none;
-  text-decoration: none;
-  color: white !important;
-  font-size: 22px;
-  font-family: 'Fauna One', serif;
-}
-
-#menuBar li.activeTab a{
-
-	color: lightskyblue !important;
-}

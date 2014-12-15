@@ -1,0 +1,6 @@
+en:
+  simple_form:
+    required:
+      text: 'required'
+      mark: '*'
+      html: ''

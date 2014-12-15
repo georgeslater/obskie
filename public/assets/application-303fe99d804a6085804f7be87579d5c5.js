@@ -12689,32 +12689,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 
 })(jQuery);
 (function() {
-  $(document).ready(function() {
-    return $("input.playlistTypeCb").click(function() {
-      switch ($(this).data('type')) {
-        case 'spotify':
-          if ($(this).is(':checked')) {
-            return $('#spotifySection').show();
-          } else {
-            return $('#spotifySection').hide();
-          }
-          break;
-        case 'deezer':
-          if ($(this).is(':checked')) {
-            return $('#deezerSection').show();
-          } else {
-            return $('#deezerSection').hide();
-          }
-          break;
-        case 'rdio':
-          if ($(this).is(':checked')) {
-            return $('#rdioSection').show();
-          } else {
-            $('#rdioSection').hide();
-          }
-      }
-    });
-  });
+
 
 }).call(this);
 (function() {
@@ -12747,6 +12722,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 $('document').ready(function() {
     $('.loginInfoMenu').click(function(e) {
 
+      e.stopPropagation();
 
       if ($('#userMenu').css('display') === 'none') {
         document.getElementById('userMenu').style.display = 'block';
@@ -12757,5 +12733,8 @@ $('document').ready(function() {
       }
     });
 
-    
+    $(document).click(function(){
+	  $("#userMenu").hide();
+	  $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected')
+	});
  });

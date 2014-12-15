@@ -1,28 +1,40 @@
-<p class="bg-info" style="padding: 10px;">Note: ObscureAlbums.com uses external services to host its playlists.</p>
+	<p class="bg-info" style="padding: 10px;">Note: ObscureAlbums.com uses external services to host its playlists.</p>
+		<div id="playlistIndexWrapper">
 
-<div id="playlistIndexWrapper">
-	<div id="playlists">
-		 <% @playlists.each do | playlist | %>
-		    <div class="playlistImage">
-				<%= link_to playlist_path(playlist) do %>
-					<figure>
-						<%= image_tag(playlist.image_url, :class => 'albumArt', :width => 200, lazy:true) %>
-					</figure>
-					<figcaption>
-						<div class="playlistCaption albumCaptionArtist"><%= playlist.name %></div>
-						<div class="playlistCaption albumCaptionTitle"><%= playlist.user.username %></div>
-						<div class="playlistCaption playlistCaptionMediums">
-							<% if playlist.spotify_uri.present? %>
-								<img src="/images/spotify.png" title="Available on Spotify"></img>
-							<% end %>
-							<% if playlist.deezer_uri.present? %>
-								<img src="/images/deezer.jpg" title="Available on Deezer"></img>
-							<% end %>
-						</div>
-					</figcaption>
-				<% end %>
+			<div>
+				<div>Show me playlists from: </div>
+				<span>
+					<input id="spotifyToggle" class="playlistTypeCb" type="checkbox" checked="checked"></input>
+					<label>Spotify</label>
+				</span>
+				<span>
+					<input id="deezerToggle" class="playlistTypeCb" type="checkbox" checked="checked"></input>
+					<label>Deezer</label>
+				</span>
 			</div>
-		  <% end %>
-	</div>
-</div>
+
+			<div id="playlists">
+				 <% @playlists.each do | playlist | %>
+				    <div class="playlistImage <% if playlist.spotify_uri.present? %>spotifyPlaylist <% end %><% if playlist.deezer_uri.present? %>deezerPlaylist <% end %>">
+						<%= link_to playlist_path(playlist) do %>
+							<figure>
+								<%= image_tag(playlist.image_url, :class => 'albumArt', :width => 200, lazy:true) %>
+							</figure>
+							<figcaption>
+								<div class="playlistCaption albumCaptionArtist"><%= playlist.name %></div>
+								<div class="playlistCaption albumCaptionTitle"><%= playlist.user.username %></div>
+								<div class="playlistCaption playlistCaptionMediums">
+									<% if playlist.spotify_uri.present? %>
+										<img src="/images/spotify.png" title="Available on Spotify"></img>
+									<% end %>
+									<% if playlist.deezer_uri.present? %>
+										<img src="/images/deezer.jpg" title="Available on Deezer"></img>
+									<% end %>
+								</div>
+							</figcaption>
+						<% end %>
+					</div>
+				  <% end %>
+			</div>
+		</div>
 

@@ -19,11 +19,6 @@ class AmazonAlbumInfoJob < ApplicationController
 		}
 
 		res = req.item_search(query: params).to_h
- 		Rails.logger.debug('heeeere it is!')
- 		Rails.logger.debug(res['ItemSearchResponse'])
- 		Rails.logger.debug(res['ItemSearchResponse']['Items'])
- 		Rails.logger.debug(res['ItemSearchResponse']['Items']['Item'])
- 		Rails.logger.debug(res['ItemSearchResponse']['Items']['Item'][0]['DetailPageURL'])
 
 		url = res['ItemSearchResponse']['Items']['Item'][0]['DetailPageURL']
 		
