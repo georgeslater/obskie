@@ -3,7 +3,14 @@
 	<div class="jumbotron">
 	  <p>Thank you for contributing to ObscureAlbums.com!  Please enter the album information below and select the correct match from the results returned.  If the album you want isn't there or the artist's list is empty, please <%= link_to 'reach out to us', new_contact_path %>.</p>
 	</div>
-	<div class="album_wizard">
+	<div class="album_wizard" style="margin-right: 30px;">
+		  <div id="trackResultsWrapper">
+		  	<div>
+			  	<span style="font-weight: bold;">Track Listing</span>
+			  	<ol id="trackResults" style="padding:0;" >
+				</ol>
+			</div>
+		  </div>
 		  <div class="field">
 		    <label for="artist">Enter Artist Name:</label>
 		    <input id="artist">
@@ -25,12 +32,6 @@
 			  		
 			  </select>
 			  <button onclick="getTracks();">Check Tracks</button>
-		  </div>
-
-		  <div id="trackResultsWrapper" style="display: none;">
-		  	<ul id="trackResults" >
-
-			</ul>
 		  </div>
 
 		<button id="submitAlbum" onclick="submit();" style="display: none;">This is my album!</button>

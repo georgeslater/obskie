@@ -1,32 +1,34 @@
-<div id="rateTracks">
-	<h3>Rate the tracks</h3>
+<div id="albumEditWrapper">
+	<div id="rateTracks">
+		<h3>Rate the tracks</h3>
 
-	<table class="table-striped table-condensed">
-	    <tbody>
-	        <% @albumTracks.each do | track | %>
-	            <tr>
-	                <td><%= track.name %></td>
-	                <td><div class="ratyTest" data-trackid="<%= track.id %>" data-score="<%= track.author_rating %>"></div></td>	             
-	            </tr>
-	        <% end %>                               
-	    </tbody>
-	</table>
+		<table class="table-striped table-condensed">
+		    <tbody>
+		        <% @albumTracks.each do | track | %>
+		            <tr>
+		                <td><%= track.name %></td>
+		                <td><div class="ratyTest" data-trackid="<%= track.id %>" data-score="<%= track.author_rating %>"></div></td>	             
+		            </tr>
+		        <% end %>                               
+		    </tbody>
+		</table>
 
-</div>
+	</div>
 
-<div>
+	<div>
 
-	<h3>Review the album</h3>
+		<h3>Review the album</h3>
 
-	<%= form_for(@album) do |f| %>
+		<%= form_for(@album) do |f| %>
 
-		<%= f.text_area :body, :cols => "100", :rows => "30" %>
-		<div>
-			<%= f.button "Save Draft", name: "type", value: "save" %> 
-			<%= f.button "Submit", name: "type", value: "publish", :onclick => "return checkSubmit();" %> 
-		</div>
-	<% end %>
+			<%= f.text_area :body, :cols => "100", :rows => "30" %>
+			<div>
+				<%= f.button "Save Draft", name: "type", value: "save" %> 
+				<%= f.button "Submit", name: "type", value: "publish", :onclick => "return checkSubmit();" %> 
+			</div>
+		<% end %>
 
+	</div>
 </div>
 
 <script>

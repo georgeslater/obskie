@@ -511,6 +511,20 @@ figcaption {
   font-size: 0.8em;
 }
 
+#draftsWrapper{
+  
+  #unfinishedDrafts{
+
+    margin-left: 30px;
+  }
+}
+
+#albumEditWrapper{
+  
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
 #basic_info{
   
   .album_wizard{
@@ -518,14 +532,19 @@ figcaption {
     margin-left: 30px;
   }
   
+  #trackResultsWrapper{
+
+    display: none; 
+    float:right; 
+    padding: 20px 40px; 
+    border: 2px black solid;
+    box-shadow: 10px 10px 5px #888;
+    width: 25%;
+  }
+
   label{
 
     width: 150px;
     margin-bottom: 10px;
-  }
-
-  #trackResults li{
-
-    list-style: none;
   }
 }

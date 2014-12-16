@@ -1,5 +1,23 @@
-<% @unfinishedAlbums.each do | album | %>
-	
-	<%= link_to "Link", edit_artist_album_path(album.artist, album) %>
 
-<% end %>
+<div id="draftsWrapper">
+
+	<% if @unfinishedAlbums.any? %>
+		
+		<div id="unfinishedDrafts">
+
+			<h4>My Saved Drafts</h4>
+
+			<% @unfinishedAlbums.each do | album | %>			
+				
+				<%= link_to get_album_text(album.artist.name, album.title), edit_artist_album_path(album.artist, album) %>
+
+			<% end %>
+		</div>
+
+	<% else %>
+
+		<div class="alert alert-warning">You don't have any drafts!</div>
+
+	<% end %>
+
+</div>

@@ -32,7 +32,8 @@ $('document').ready(function() {
     });
 
     $(document).click(function(){
-	  $("#userMenu").hide();
-	  $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected')
-	});
+      console.log('click!')
+  	  $("#userMenu").hide();
+  	  $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected')
+  	});
  });
