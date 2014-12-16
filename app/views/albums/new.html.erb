@@ -3,39 +3,40 @@
 	<div class="jumbotron">
 	  <p>Thank you for contributing to ObscureAlbums.com!  Please enter the album information below and select the correct match from the results returned.  If the album you want isn't there or the artist's list is empty, please <%= link_to 'reach out to us', new_contact_path %>.</p>
 	</div>
+	<div class="album_wizard">
+		  <div class="field">
+		    <label for="artist">Enter Artist Name:</label>
+		    <input id="artist">
+			 <button onclick="getArtists();">Search</button>
+		  </div>
 
-	  <div class="field">
-	    <div>Artist Name</div>
-	    <input id="artist">
-	  </div>
-	  <button onclick="getArtists();">Search</button>
+		  <div id="artistResultsWrapper" style="display: none;">
+		  	<label for="artistResults">Select Artist:</label>
+		  	<select id="artistResults">
 
-	  <div id="artistResultsWrapper" style="display: none;">
-	  	<select id="artistResults">
+		  	</select>
+		  	<button onclick="getAlbums();">Get Album List</button>
+		  </div>
 
-	  	</select>
-	  	<button onclick="getAlbums();">Get Albums</button>
-	  </div>
+		  <div id="albumResultsWrapper"  style="display: none;">
+			  <label for="albumResults">Albums:</label>
+			  <select id="albumResults">
 
-	  <div id="albumResultsWrapper"  style="display: none;">
-		  <select id="albumResults">
+			  		
+			  </select>
+			  <button onclick="getTracks();">Check Tracks</button>
+		  </div>
 
-		  		
-		  </select>
-		  <button onclick="getTracks();">See Tracks</button>
-	  </div>
+		  <div id="trackResultsWrapper" style="display: none;">
+		  	<ul id="trackResults" >
 
-	  <div id="trackResultsWrapper" style="display: none;">
-	  	<ul id="trackResults" >
+			</ul>
+		  </div>
 
-		</ul>
-	  </div>
+		<button id="submitAlbum" onclick="submit();" style="display: none;">This is my album!</button>
+		<input id="artistName" type="hidden">
+	</div>
 </div>
-
-<button id="submitAlbum" onclick="submit();" style="display: none;">This is my album!</button>
-<%= link_to 'Back', albums_path %>
-
-<input id="artistName" type="hidden">
 
 <script>
 	
@@ -160,6 +161,9 @@
 		      	$('#trackResults').empty();
 		      	$('#albumResults').empty();
 		      	$('#artistResultsWrapper').css('display', 'block');
+		      	$('#albumResultsWrapper').css('display', 'none');
+		      	$('#trackResultsWrapper').css('display', 'none');
+		      	$('#submitAlbum').css('display', 'none');
 		      }
 		   });
 

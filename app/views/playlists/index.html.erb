@@ -15,7 +15,7 @@
 
 			<div id="playlists">
 				 <% @playlists.each do | playlist | %>
-				    <div class="playlistImage <% if playlist.spotify_uri.present? %>spotifyPlaylist <% end %><% if playlist.deezer_uri.present? %>deezerPlaylist <% end %>">
+				    <div class="playlistItem playlistImage <% if playlist.spotify_uri.present? %>spotifyPlaylist <% end %><% if playlist.deezer_uri.present? %>deezerPlaylist <% end %>">
 						<%= link_to playlist_path(playlist) do %>
 							<figure>
 								<%= image_tag(playlist.image_url, :class => 'albumArt', :width => 200, lazy:true) %>

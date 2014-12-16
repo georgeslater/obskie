@@ -45,15 +45,15 @@
                                 <h4><%= @album.year %></h4>
                                 <div class="streamBuyLinks">                           
                                     <% if @album.spotify_identifier.present? %>
-                                        <a href="spotify:album:<%= @album.spotify_identifier %>" title="Stream Album on Spotify">
+                                        <a href="spotify:album:<%= @album.spotify_identifier %>" title="Spotify">
                                             <span class="spotify albumLinkIcons"></span>
                                         </a>
                                     <% end %>
                                     <% if @album.itunes_view_url.present? %>
-                                        <a href="<%= @album.itunes_view_url %>" target="itunes_store" class="itunes"></a>
+                                        <a href="<%= @album.itunes_view_url %>" target="itunes_store" class="itunes" title="iTunes"></a>
                                     <% end %>
                                     <% if @album.amazon_url.present? %>
-                                        <a href="<%= @album.amazon_url %>" class="amazon"></a>
+                                        <a href="<%= @album.amazon_url %>" class="amazon" title="Amazon"></a>
                                     <% end %>
                                 </div>
                                 <div id="obscurometer">
