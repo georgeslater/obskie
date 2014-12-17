@@ -56,7 +56,7 @@ class AlbumsController < ApplicationController
 		@relatedAlbums = Array.new
 		c = Album.where("published = true and approved = true").count
 
-		until @relatedAlbums.size == 3 || @relatedAlbums.size == c do 
+		until @relatedAlbums.size == 3 || @relatedAlbums.size >= c-1 do 
 
 			relAlbum = Album.where("published = true and approved = true").offset(rand(c)).first
 
