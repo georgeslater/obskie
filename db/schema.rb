@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217023758) do
+ActiveRecord::Schema.define(version: 20141217033119) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20141217023758) do
     t.string   "itunes_identifier"
     t.string   "itunes_view_url"
     t.boolean  "published",              default: false, null: false
-    t.boolean  "approved",               default: false, null: false
+    t.boolean  "approved",               default: true,  null: false
     t.string   "amazon_url"
   end
 
