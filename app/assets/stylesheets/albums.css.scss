@@ -266,13 +266,7 @@ td:not(:first-child), th:not(:first-child) {
   margin-bottom: 15px;
 }
 
-@media (max-width: 420px) {
-  .albumArt {
-    display: none;
-  }
-}
-
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   #menuBar {
     margin: 20px 0 0 50px !important;
     li {
@@ -281,7 +275,7 @@ td:not(:first-child), th:not(:first-child) {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .rightPanel {
     display: none;
   }
@@ -289,17 +283,6 @@ td:not(:first-child), th:not(:first-child) {
     border-right: none;
     max-width: 100%;
     margin-left: 2%;
-  }
-  .socialMediaLinks {
-    position: absolute;
-    right: 0px;
-    top: 100px;
-    li {
-      float: none;
-    }
-    a {
-      margin-bottom: 20px;
-    }
   }
   #menuBar li {
     display: block !important;

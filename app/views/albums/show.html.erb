@@ -44,8 +44,8 @@
                                 <h5><%= link_to @album.artist.name, artist_path(@album.artist) %></h5>
                                 <h4><%= @album.year %></h4>
                                 <div class="streamBuyLinks">                           
-                                    <% if @album.spotify_identifier.present? %>
-                                        <a href="spotify:album:<%= @album.spotify_identifier %>" title="Spotify">
+                                    <% if @album.spotify_link.present? %>
+                                        <a href="<%= @album.spotify_link %>" title="Spotify">
                                             <span class="spotify albumLinkIcons"></span>
                                         </a>
                                     <% end %>

@@ -11615,7 +11615,9 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
           var valText;
           valText = score;
           $(this).raty({
-            readOnly: true,
+            cancel: true,
+            cancelOn: '/assets/cancel-on.png',
+            cancelOff: '/assets/cancel-off.png',
             half: false,
             score: score,
             path: "/images",

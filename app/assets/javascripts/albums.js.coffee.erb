@@ -19,6 +19,7 @@ ready = ->
     score = $(this).data('score')
     $(this).raty
       score: score
+      targetType: "score"
       starOn: '<%= image_path('star-on.png') %>'
       starOff: '<%= image_path('star-off.png') %>'
       path: ''
@@ -28,23 +29,14 @@ ready = ->
         $(this).hasClass "author"
 
       click: (score, event) ->
-        valText = score
-        $(this).raty
-          readOnly: true
-          half: false
-          score: score
-          path: "/images"
-          targetType: "score"
-          halfShow: false
-          targetKeep: true
-          hints: [ valText, valText, valText, valText, valText ]
-          $.ajax
-            type: 'POST'
-            url: '/ratings'
-            data: score: score, track: $(this).data('trackid')
-            success: (data, textStatus, jqXHR) ->
-              $(that).attr('data-score', score) 
-        false
+        
+        $.ajax
+          type: 'POST'
+          url: '/ratings'
+          data: score: score, track: $(this).data('trackid')
+          success: (data, textStatus, jqXHR) ->
+            $(that).attr('data-score', score) 
+      false
 
 
 $(document).ready(ready)

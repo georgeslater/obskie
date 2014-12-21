@@ -11602,7 +11602,11 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
       that = this;
       score = $(this).data('score');
       return $(this).raty({
+        cancel: true,
+        cancelOn: '/assets/cancel-on.png',
+        cancelOff: '/assets/cancel-off.png',
         score: score,
+        targetType: "score",
         starOn: '/assets/star-on.png',
         starOff: '/assets/star-off.png',
         path: '',
@@ -11612,18 +11616,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
           return $(this).hasClass("author");
         },
         click: function(score, event) {
-          var valText;
-          valText = score;
-          $(this).raty({
-            readOnly: true,
-            half: false,
-            score: score,
-            path: "/images",
-            targetType: "score",
-            halfShow: false,
-            targetKeep: true,
-            hints: [valText, valText, valText, valText, valText]
-          }, $.ajax({
+          return $.ajax({
             type: 'POST',
             url: '/ratings',
             data: {
@@ -11633,10 +11626,9 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
             success: function(data, textStatus, jqXHR) {
               return $(that).attr('data-score', score);
             }
-          }));
-          return false;
+          });
         }
-      });
+      }, false);
     });
   };
 
@@ -12694,25 +12686,40 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
       switch ($(this).data('type')) {
         case 'spotify':
           if ($(this).is(':checked')) {
-            return $('#spotifySection').show();
+            $('#spotifySection').show();
           } else {
-            return $('#spotifySection').hide();
+            $('#spotifySection').hide();
           }
           break;
         case 'deezer':
           if ($(this).is(':checked')) {
-            return $('#deezerSection').show();
+            $('#deezerSection').show();
           } else {
-            return $('#deezerSection').hide();
+            $('#deezerSection').hide();
           }
           break;
         case 'rdio':
           if ($(this).is(':checked')) {
-            return $('#rdioSection').show();
+            $('#rdioSection').show();
           } else {
             $('#rdioSection').hide();
+            return;
           }
       }
+      $('#spotifyToggle, #deezerToggle').click(function() {});
+      return $(".playlistItem").show().each(function() {
+        console.log($("#spotifyToggle").is(":checked"));
+        console.log($(this).hasClass("spotifyPlaylist"));
+        console.log($("#deezerToggle").is(":checked"));
+        console.log($(this).hasClass("deezerPlaylist"));
+        console.log('ohhh');
+        if (!$("#spotifyToggle").is(":checked") && $(this).hasClass("spotifyPlaylist") && (!$("#deezerToggle").is(":checked") || !$(this).hasClass("deezerPlaylist"))) {
+          $(this).hide();
+        }
+        if (!$("#deezerToggle").is(":checked") && $(this).hasClass("deezerPlaylist") && (!$("#spotifyToggle").is(":checked") || !$(this).hasClass("spotifyPlaylist"))) {
+          $(this).hide();
+        }
+      });
     });
   });
 
@@ -12759,7 +12766,8 @@ $('document').ready(function() {
     });
 
     $(document).click(function(){
-	  $("#userMenu").hide();
-	  $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected')
-	});
+      console.log('click!')
+  	  $("#userMenu").hide();
+  	  $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected')
+  	});
  });

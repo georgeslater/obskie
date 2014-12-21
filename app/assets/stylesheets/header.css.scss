@@ -14,3 +14,37 @@
 
 	color: lightskyblue !important;
 }
+
+@media(min-width: 1024px){
+
+	.loginInfo{
+
+		display: block;
+	}
+
+	.signInMobile{
+
+		display: none !important;
+	}
+}
+
+@media(max-width: 623px){
+	
+	h1{
+
+		font-size: 24px;
+	}
+}
+
+@media(max-width: 1024px){
+	
+	.signInMobile{
+
+		display: block;
+	}
+
+	.loginInfo{
+
+		display: none;
+	}
+}

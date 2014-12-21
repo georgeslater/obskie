@@ -1,0 +1,20 @@
+<div id="contributeWrapper">
+	<p>Becoming an ObscureAlbums.com contributor brings great power, but with that power comes great responsibility.  Here are our five golden rules you will need to follow:<p>
+	<ul>
+		<li>As you may have guessed from the name of the site, we review obscure albums.  An obscure album is an album that slipped under the radar.  The artist themselves don't necessarily need to be obscure.  It could be that weird 80s syth album by a world-famous artist that nobody bought, or an album that is so obscure every the people who made it have forgotten all about it.</li>
+		<li>We don't currently allow multiple reviews on the same album.  If you disagree with the author, why not leave a comment?</li>
+		<li>Your album can be from anywhere in the world, but please write it in English.</li>
+		<li>Please don't review your best friend's album in the hope of shifting a few extra copies.  It's not cool.</li>
+		<li>In the same vein, if your review is not balanced and objective, it won't make the grade.  We encourage you not to review that one album you've been listening to for months on end, as you probably won't have a negative thing to say about it.</li>
+		<li>We expect you to take time and effort over your reviews.  You don't have to be George Starostin, but a little writing flair is always a good thing.  Paragraphs and punctuation are a must (we reserve the right to correct spelling and punctuation errors).</li>
+	</ul>
+
+	<p>Still keen?  Great!  Fill out the form below and you'll be approved in no time!</p>
+	<%= simple_form_for @contact do |f| %>
+	    <%= f.input :message, :as => :text, label: false, placeholder: "Tell us about yourself, and why you want to review for ObscureAlbums!" %>
+	    <div>
+	      </br>
+	      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+	    </div>
+  <% end %>
+</div>

@@ -300,7 +300,7 @@ td:not(:first-child), th:not(:first-child) {
     display: none;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   /* line 276, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
   #menuBar {
     margin: 20px 0 0 50px !important;
@@ -310,7 +310,7 @@ td:not(:first-child), th:not(:first-child) {
     display: inline-block;
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   /* line 285, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
   .rightPanel {
     display: none;
@@ -324,59 +324,44 @@ td:not(:first-child), th:not(:first-child) {
   }
 
   /* line 293, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
-  .socialMediaLinks {
-    position: absolute;
-    right: 0px;
-    top: 100px;
-  }
-  /* line 297, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
-  .socialMediaLinks li {
-    float: none;
-  }
-  /* line 300, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
-  .socialMediaLinks a {
-    margin-bottom: 20px;
-  }
-
-  /* line 304, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
   #menuBar li {
     display: block !important;
     padding: 10px;
   }
-  /* line 307, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+  /* line 296, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
   #menuBar li:not(:last-child) {
     border-bottom: 1px solid lightgray;
     width: 80%;
   }
 
-  /* line 312, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+  /* line 301, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
   .socialMediaLinks {
     float: left;
   }
 }
-/* line 317, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 306, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #contentWrapper a {
   color: black !important;
   text-decoration: none !important;
 }
-/* line 320, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 309, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #contentWrapper a:hover {
   color: #428bca;
 }
 
-/* line 325, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 314, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #menuContent a {
   list-style: none;
   text-decoration: none;
   color: white !important;
 }
 
-/* line 331, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 320, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #albumsLinks {
   float: right;
 }
 
-/* line 335, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 324, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginInfo {
   color: white;
   float: right;
@@ -385,7 +370,7 @@ td:not(:first-child), th:not(:first-child) {
   font-weight: bold;
 }
 
-/* line 344, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 333, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .displayName {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -394,33 +379,33 @@ td:not(:first-child), th:not(:first-child) {
   margin-top: 2px;
 }
 
-/* line 353, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 342, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumArt img {
   width: 22vw;
 }
 
-/* line 357, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 346, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #mostList li.active {
   font-weight: bold;
 }
 
-/* line 361, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 350, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 figcaption {
   font-family: 'Vollkorn', serif;
   font-size: 18px;
 }
 
-/* line 366, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 355, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .mostRow {
   line-height: 2em;
 }
 
-/* line 370, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 359, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .mouldingImage {
   height: 35px;
 }
 
-/* line 375, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 364, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .itunes {
   display: inline-block;
   overflow: hidden;
@@ -430,7 +415,7 @@ figcaption {
   background-size: 32px;
 }
 
-/* line 385, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 374, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .amazon {
   display: inline-block;
   overflow: hidden;
@@ -440,23 +425,23 @@ figcaption {
   background-size: 32px;
 }
 
-/* line 395, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 384, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .menuRow {
   padding: 10px;
 }
 
-/* line 400, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 389, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginInfoMenu {
   position: relative;
   height: 30px;
 }
 
-/* line 406, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 395, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginInfoArrowIcon.loginInfoArrowIconSelected {
   background-image: url(/images/arrow-up.png);
 }
 
-/* line 411, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 400, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginInfoArrowIcon {
   background: url(/images/arrow-down.png) no-repeat;
   width: 24px;
@@ -467,7 +452,7 @@ figcaption {
   top: 0;
 }
 
-/* line 422, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 411, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #userMenu {
   display: none;
   width: 140px;
@@ -480,7 +465,7 @@ figcaption {
   right: 5px;
 }
 
-/* line 434, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 423, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .displayNameArrow {
   font-size: 1.1em;
   color: #fff;
@@ -491,33 +476,33 @@ figcaption {
   width: auto;
 }
 
-/* line 445, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 434, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .displayNameArrow:hover span {
   color: lightskyblue !important;
 }
 
-/* line 450, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 439, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .menuRow:hover {
   color: lightskyblue;
 }
 
-/* line 455, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 444, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .avatarImage {
   margin-right: 5px;
 }
 
-/* line 460, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 449, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .login {
   display: inline-block;
 }
 
-/* line 465, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 454, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginField {
   border-radius: 5px;
   color: black;
 }
 
-/* line 471, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 460, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginButton {
   color: black;
   background-color: #a5b8da;
@@ -542,21 +527,51 @@ figcaption {
   width: 60px;
 }
 
-/* line 496, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 485, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginLinks {
   margin-top: 3px;
 }
-/* line 500, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 489, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginLinks .forgotPasswordLink {
   float: right;
 }
 
-/* line 506, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+/* line 495, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #loginForm {
   position: absolute;
   top: 20px;
   right: 20px;
   font-size: 0.8em;
+}
+
+/* line 505, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+#draftsWrapper #unfinishedDrafts {
+  margin-left: 30px;
+}
+
+/* line 511, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+#albumEditWrapper {
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+/* line 519, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+#basic_info .album_wizard {
+  margin-left: 30px;
+}
+/* line 524, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+#basic_info #trackResultsWrapper {
+  display: none;
+  float: right;
+  padding: 20px 40px;
+  border: 2px black solid;
+  box-shadow: 10px 10px 5px #888;
+  width: 25%;
+}
+/* line 534, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
+#basic_info label {
+  width: 150px;
+  margin-bottom: 10px;
 }
 /* line 5, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/artists.css.scss */
 #artistsWrapper {
@@ -630,6 +645,29 @@ textarea {
 /* line 13, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/header.css.scss */
 #menuBar li.activeTab a {
   color: lightskyblue !important;
+}
+
+@media (min-width: 1024px) {
+  /* line 20, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/header.css.scss */
+  .loginInfo {
+    display: block;
+  }
+
+  /* line 25, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/header.css.scss */
+  .signInMobile {
+    display: none !important;
+  }
+}
+@media (max-width: 1024px) {
+  /* line 33, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/header.css.scss */
+  .signInMobile {
+    display: block;
+  }
+
+  /* line 38, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/header.css.scss */
+  .loginInfo {
+    display: none;
+  }
 }
 .cancel-on-png, .cancel-off-png, .star-on-png, .star-off-png, .star-half-png {
   font-size: 2em;

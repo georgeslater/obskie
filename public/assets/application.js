@@ -11603,6 +11603,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
       score = $(this).data('score');
       return $(this).raty({
         score: score,
+        targetType: "score",
         starOn: '/assets/star-on.png',
         starOff: '/assets/star-off.png',
         path: '',
@@ -11612,18 +11613,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
           return $(this).hasClass("author");
         },
         click: function(score, event) {
-          var valText;
-          valText = score;
-          $(this).raty({
-            readOnly: true,
-            half: false,
-            score: score,
-            path: "/images",
-            targetType: "score",
-            halfShow: false,
-            targetKeep: true,
-            hints: [valText, valText, valText, valText, valText]
-          }, $.ajax({
+          return $.ajax({
             type: 'POST',
             url: '/ratings',
             data: {
@@ -11633,10 +11623,9 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
             success: function(data, textStatus, jqXHR) {
               return $(that).attr('data-score', score);
             }
-          }));
-          return false;
+          });
         }
-      });
+      }, false);
     });
   };
 

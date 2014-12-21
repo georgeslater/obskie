@@ -6,8 +6,8 @@
                 <td><%= formatTime(track.duration_milli) %></td>
                 <td><div class="ratyTest author" data-score="<%= track.author_rating %>"></div></td>
                 <td>
-                    <% if track.spotify_identifier.present? %>
-                    	<a href="spotify:track:<%= track.spotify_identifier %>" title="Stream Track on Spotify">
+                    <% if track.spotify_link.present? %>
+                    	<a href="<%= track.spotify_link %>" title="Stream Track on Spotify">
                         	<span class="spotify albumLinkIcons"></span>
                         </a>
                     <% end %>

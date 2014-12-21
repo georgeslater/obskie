@@ -26,4 +26,8 @@ class UsersController < ApplicationController
 
 		render :nothing => true
 	end
+
+	def become_contributor
+
+	end
 end

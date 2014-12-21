@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :tracks
 
   devise_for :users, :controllers => { registrations: 'registrations' }
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -33,6 +34,8 @@ Rails.application.routes.draw do
   get 'albums/approval' => 'albums#approval', as: :non_approved
 
   get 'users/:id/albums/my_drafts' => 'users#drafts', as: :my_drafts
+
+  get '/contribute' => 'contacts#become_contributor', as: :become_contributor
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

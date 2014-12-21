@@ -15,11 +15,13 @@ class SpotifyAlbumInfoJob
 
       for album in albums
         if album.artists[0].name == artist
-    
+            
+            spotify_link = album.external_urls['spotify']
+
             year = album.release_date
             obscurity = ((100 - album.artists[0].popularity) * (100 - album.popularity)) / 100
 
-            albumCreated.update_columns(spotify_identifier: album.id, year: year, obscurity_rating: obscurity)
+            albumCreated.update_columns(spotify_link: spotify_link, spotify_identifier: album.id, year: year, obscurity_rating: obscurity)
 
             if albumCreated.album_art.nil?
 
@@ -39,7 +41,8 @@ class SpotifyAlbumInfoJob
                 Rails.logger.debug(albumTracks[index].name)
 
                 if track.name.casecmp(albumTracks[index].name) == 0
-                  albumTracks[index].update_attributes(spotify_identifier: track.id)
+                  spotify_link = track.external_urls['spotify']
+                  albumTracks[index].update_attributes(spotify_identifier: track.id, spotify_link: spotify_link)
                 end
               end
             end

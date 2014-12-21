@@ -28,6 +28,9 @@
                             <li class="<%= 'activeTab' if current_page?(playlists_path) %>">
                                 <%= link_to "Playlists", playlists_path %>
                             </li>
+                            <li class="signInMobile">
+                                <%= link_to "Login", new_session_path(resource_name) %>
+                            </li>
 
                             <!--<li>
                                 <%= link_to "Forum", forem_path %>
@@ -49,9 +52,15 @@
                                     </div>
                                     <div id="userMenu">
                                         <div>
-                                            <%= link_to new_album_path do %>
-                                                <div class="menuRow">Submit a Review</div>
-                                            <% end %>
+                                            <!--<% if current_user.albums.any? %>-->
+                                                <%= link_to new_album_path do %>
+                                                    <div class="menuRow">Submit a Review</div>
+                                                <% end %>
+                                            <!--<% else %>
+                                                <%= link_to become_contributor_path do %>
+                                                    <div class="menuRow">Become a Contributor</div>
+                                                <% end %>
+                                            <% end %> -->
                                         </div>
                                         <div>
                                             <%= link_to new_playlist_path do %>
@@ -76,7 +85,7 @@
                                             <% end %>
                                         </div>
                                         <div>
-                                            <%= link_to destroy_user_session_path, method: :delete   do %>
+                                            <%= link_to destroy_user_session_path do %>
                                                     <div class="menuRow">Sign Out</div>
                                             <% end %>
                                         </div>

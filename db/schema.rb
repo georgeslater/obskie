@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217033119) do
+ActiveRecord::Schema.define(version: 20141221185047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20141217033119) do
     t.boolean  "published",              default: false, null: false
     t.boolean  "approved",               default: true,  null: false
     t.string   "amazon_url"
+    t.string   "spotify_link"
   end
 
   add_index "albums", ["artist_id"], name: "index_albums_on_artist_id", using: :btree
@@ -248,6 +249,7 @@ ActiveRecord::Schema.define(version: 20141217033119) do
     t.float    "author_rating"
     t.integer  "duration_milli"
     t.string   "spotify_identifier"
+    t.string   "spotify_link"
   end
 
   add_index "tracks", ["album_id"], name: "index_tracks_on_album_id", using: :btree

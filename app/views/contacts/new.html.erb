@@ -1,13 +1,4 @@
 <div id="contactUsForm">
   <p class="lead">Whether you want to send us love, hate, or Viagra offers, please fill in the form below</p>
-  <%= simple_form_for @contact do |f| %>
-    <%= f.input :name, label: "Name (required)" %>
-    <%= f.input :email, label: "Email (required)" %>
-    <br />
-    <%= f.input :message, :as => :text, label: false, placeholder: "Enter your message here" %>
-    <div>
-      </br>
-      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
-    </div>
-  <% end %>
+  <%= render 'form' %>
 </div>

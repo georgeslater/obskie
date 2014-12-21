@@ -11,10 +11,10 @@
 					<th></th>
 					<th>Artist</th>
 					<th>Album</th>
-					<th>Year</th>
-					<th>Author</th>
-					<th>Date Published</th>
-					<th></th>
+					<th class="noMobile">Year</th>
+					<th class="noMobile">Author</th>
+					<th class="noMobile">Date Published</th>
+					<th class="noMobile"></th>
 				</tr>
 
 			</thead>
@@ -39,23 +39,23 @@
 										<%= link_to album.title, artist_album_path(artist, album) %>
 									</div>
 								</td>
-								<td>
+								<td class="noMobile">
 									<%= album.year %>
 								</td>
-								<td>
+								<td class="noMobile">
 									<div class="boldColumn">
 										<%= album.user.username %>
 									</div>
 								</td>
 
-								<td>
+								<td class="noMobile">
 
 									<%= album.created_at.strftime("%A, %d %b %Y") %>
 								</td>
 
 
 
-								<td>
+								<td class="noMobile">
 									<div class="boldColumn">
 										<%= link_to "View", artist_album_path(artist, album)%>
 									</div>
