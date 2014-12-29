@@ -77,32 +77,30 @@ class SearchesController < ApplicationController
 
 	    newAlbum.artist_id = album_artist.id
 
-		if newAlbum.save
+		newAlbum.save!
 
-			link_to_album = edit_artist_album_path(newAlbum.artist, newAlbum)
+		link_to_album = edit_artist_album_path(newAlbum.artist, newAlbum)
 
-			@mbTracks = releaseGroup.releases.first.tracks
+		@mbTracks = releaseGroup.releases.first.tracks
 
-			tracks = Array.new
+		tracks = Array.new
 
-            for track in @mbTracks
-              new_track = Track.new
-              new_track.name = track.title
-              new_track.musicbrainz_identifier = track.recording_id
-              new_track.album_id = newAlbum.id
-              new_track.order = track.position
-              new_track.duration_milli = track.length
-              tracks.push(new_track.as_json)
-            end
-
-            Track.create(tracks)
-
-			SpotifyAlbumInfoJob.new.async.perform(newAlbum)
-			ItunesAlbumInfoJob.new.async.perform(newAlbum)
-			AmazonAlbumInfoJob.new.async.perform(newAlbum)
-			RdioAlbumInfoJob.new.async.perform(newAlbum)
-
+        for track in @mbTracks
+          new_track = Track.new
+          new_track.name = track.title
+          new_track.musicbrainz_identifier = track.recording_id
+          new_track.album_id = newAlbum.id
+          new_track.order = track.position
+          new_track.duration_milli = track.length
+          tracks.push(new_track.as_json)
         end
+
+        Track.create(tracks)
+
+		SpotifyAlbumInfoJob.new.async.perform(newAlbum)
+		ItunesAlbumInfoJob.new.async.perform(newAlbum)
+		AmazonAlbumInfoJob.new.async.perform(newAlbum)
+		RdioAlbumInfoJob.new.async.perform(newAlbum)
 
         Rails.logger.debug(link_to_album.to_json)
 

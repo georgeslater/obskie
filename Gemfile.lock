@@ -264,6 +264,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cancancan (~> 1.9)
   coffee-rails (~> 4.0.0)
   coverart (~> 0.0.4)
   devise
@@ -299,3 +300,4 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   vacuum
   wicked
+  workflow

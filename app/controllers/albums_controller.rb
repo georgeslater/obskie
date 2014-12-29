@@ -2,7 +2,8 @@ class AlbumsController < ApplicationController
 
  	before_action :set_album, only: [:show, :edit, :update, :destroy]
  	before_action :authenticate_user!, only: [:create]
- 	before_filter :check_edit_permission, only: [:edit]
+ 	load_and_authorize_resource
+
  	before_filter :check_published_approved, only: [:show]
 
 	impressionist :actions=>[:show]
@@ -73,7 +74,7 @@ class AlbumsController < ApplicationController
 	def approval
 
 		if current_user.try(:admin?)
-			@nonApproved = Album.where("published = true AND approved = false")
+			@nonApproved = Album.where("published = true AND workflow_state = awaiting_review")
 		end
 	end
 
@@ -81,31 +82,25 @@ class AlbumsController < ApplicationController
 
 		if current_user.try(:admin?)
 			album = Album.friendly.find(params[:id])
-			album.approved = true
-			album.save!
+			album.accept!
 			redirect_to non_approved_path
 		end
 	end
 
-	def check_edit_permission
+	def reject
 
-		album = Album.friendly.find(params[:id])
-		
-		if album.published
-
-			redirect_to artist_album_path(album.artist, album)
-		
-		elsif current_user.nil? || album.user.id != current_user.id
-
-			redirect_to root_path
-		end 
+		if current_user.try(:admin?)
+			album = Album.friendly.find(params[:id])
+			album.reject!
+			redirect_to non_approved_path
+		end
 	end
 
 	def check_published_approved
 
 		album = Album.friendly.find(params[:id])
 
-		if !album.published || !album.approved
+		if album.workflow_state != 'accepted'
 
 			redirect_to root_path
 		end
@@ -131,8 +126,10 @@ class AlbumsController < ApplicationController
 
 			if params[:type] == 'publish'
 
-				redirect_to root_path
 				@album.update(album_params.merge(:published => true))
+				@album.submit!
+				redirect_to root_path
+
 			else
 				redirect_to my_drafts_path(current_user)
 				@album.update(album_params)

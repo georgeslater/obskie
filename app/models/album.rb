@@ -1,8 +1,7 @@
 class Album < ActiveRecord::Base
-	
+	include Workflow
   extend FriendlyId
   friendly_id :title, :use => :scoped, :scope => :artist
-  validates_uniqueness_of :title, :scope => :artist
 
 	belongs_to :artist
 	belongs_to :user
@@ -20,6 +19,23 @@ class Album < ActiveRecord::Base
 	attr_accessor :artist_name
 
   is_impressionable :counter_cache => true
+
+  workflow do
+
+    state :new, :meta => {:label => "Draft"} do
+      event :submit, :transitions_to => :awaiting_review
+    end
+    state :awaiting_review, :meta => {:label => "Review Pending"} do
+      event :accept, :transitions_to => :accepted
+      event :reject, :transitions_to => :rejected
+    end
+
+    state :accepted, :meta => {:label => "Approved"}
+    
+    state :rejected, :meta => {:label => "Not Approved"} do
+        event :submit, :transitions_to => :awaiting_review
+    end
+  end
 
 	require 'openssl'
 

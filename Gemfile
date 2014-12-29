@@ -71,6 +71,8 @@ gem 'musicbrainz'
 gem 'coverart', '~> 0.0.4'
 gem 'vacuum'
 gem 'rdio_api'
+gem 'cancancan', '~> 1.9'
+gem 'workflow'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: :production

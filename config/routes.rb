@@ -53,6 +53,7 @@ Rails.application.routes.draw do
   resources :albums do
     member do
       patch 'approve'
+      patch 'reject'
     end
     resources :comments
   end

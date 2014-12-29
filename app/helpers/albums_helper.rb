@@ -9,4 +9,11 @@ module AlbumsHelper
 
 		artistName + ' - '+albumName
 	end
+
+	def get_state_label(state)
+
+		if state
+			Album.workflow_spec.states[state.to_sym].meta[:label]
+		end
+	end
 end

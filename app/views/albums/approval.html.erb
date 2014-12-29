@@ -7,7 +7,7 @@
 			<tr>
 				<td><%= albumToApprove.body %></td>
 				<td><%= albumToApprove.user.username %></td>
-				<td><%= link_to 'Approve', approve_album_path(albumToApprove), method: :patch %> | <a href="#">Reject</a></td>
+				<td><%= link_to 'Approve', approve_album_path(albumToApprove), method: :patch %> | <%= link_to 'Reject', reject_album_path(albumToApprove), method: :patch %></td>
 			</tr>
 
 		<% end %>

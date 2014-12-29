@@ -32,6 +32,9 @@
 						<td>Submitted Date</td>
 						<td>Average Track Rating</td>
 						<td>Comments</td>
+						<% if @user == current_user %>
+							<td>Status</td>
+						<% end %>
 					</tr>
 				</thead>
 				<tbody>
@@ -41,6 +44,9 @@
 							<td><%= album.created_at.strftime("%d %b %Y") %></td>
 							<td><%= avg_track_rating(album.tracks) %></td>
 							<td><%= album.comments.size %></td>
+							<% if @user == current_user %>
+								<td><%= get_state_label(album.workflow_state) %></td>
+							<% end %>
 						</tr>
 					<% end %>
 				</tbody>
