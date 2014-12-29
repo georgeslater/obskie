@@ -12,10 +12,10 @@
       <input type="checkbox" class="playlistTypeCb" data-type="deezer" />
       <label>Deezer</label>
     </span>
-    <!--<span>
+    <span>
       <input type="checkbox" class="playlistTypeCb" data-type="rdio" />
       <label>Rdio</label>
-    </span>-->
+    </span>
   </div>
   <div id="spotifySection" class="field">
     <%= f.label "Spotify URI" %><br>
@@ -27,12 +27,11 @@
     <%= f.text_field :deezer_uri %>
     <p class="help-block">The Deezer playlist id is the number at the end of the URL.  For example, the id for a playlist with the URL as "http://www.deezer.com/playlist/515330663" would be 515330663.</p>
   </div>
-  <!--
   <div id="rdioSection" class="field">
-    <%= f.label "Rdio URI" %><br>
+    <%= f.label "Rdio Playlist URI" %><br>
     <%= f.text_field :rdio_uri %>
+    <p class="help-block">To get the Rdio Playlist URI, click on the share button below the picture and copy the URI next to "Share this Playlist" in the popup.  It should look something like: http://rd.io/x/Rl70vrIvTk2I/ </p>
   </div>
-  -->
   <br />
   <div class="field">
     <%= f.label "Explain what you like about this playlist" %><br>

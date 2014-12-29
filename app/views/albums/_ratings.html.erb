@@ -11,6 +11,11 @@
                         	<span class="spotify albumLinkIcons"></span>
                         </a>
                     <% end %>
+                    <% if track.rdio_url.present? %>
+                        <a href="http://rdio.com<%= track.rdio_url %>" title="Stream Track on Rdio">
+                            <span class="rdio_small albumLinkIcons"></span>
+                        </a>
+                    <% end %>
                  </td>
             </tr>
         <% end %>                               

@@ -133,19 +133,25 @@ h1 {
 }
 
 .spotify {
-  background-image: url(https://cdn4.iconfinder.com/data/icons/free-colorful-icons/128/spotify.png);
+    background:asset-url('/images/spotify.png') no-repeat;
 }
+
+.rdio_small{
+  
+  background:asset-url('/images/rdio_small.png') no-repeat;
+}  
 
 .streamBuyLinks {
   height: 35px;
 }
 
 .albumLinkIcons {
-  background-size: 32px;
+  background-size: 16px;
   background-repeat: no-repeat;
-  height: 32px;
-  width: 32px;
+  height: 16px;
+  width: 16px;
   float: left;
+  margin-left: 4px;
 }
 
 .rightPanel {
@@ -355,24 +361,29 @@ figcaption {
   height: 35px;
 }
 
-.itunes{
+
+.externalLink{
   
   display: inline-block;
   overflow:hidden;
+  width:24px;
+  height:24px;
+  background-size:24px;
+}
+
+.itunes{
+
   background:asset-url('/images/itunes.png') no-repeat;
-  width:32px;
-  height:32px;
-  background-size:32px;
 }
 
 .amazon{
-  
-  display: inline-block;
-  overflow:hidden;
-  background:asset-url('/images/amazon.png') no-repeat;
-  width:32px;
-  height:32px;
-  background-size:32px;
+
+    background:asset-url('/images/amazon.png') no-repeat;
+}
+
+.rdio{
+
+    background:asset-url('/images/rdio.png') no-repeat;
 }
 
 .menuRow{

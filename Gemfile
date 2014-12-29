@@ -70,6 +70,7 @@ gem "wicked"
 gem 'musicbrainz'
 gem 'coverart', '~> 0.0.4'
 gem 'vacuum'
+gem 'rdio_api'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: :production

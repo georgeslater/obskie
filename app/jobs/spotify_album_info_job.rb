@@ -40,7 +40,9 @@ class SpotifyAlbumInfoJob
                 Rails.logger.debug(track.name)
                 Rails.logger.debug(albumTracks[index].name)
 
-                if track.name.casecmp(albumTracks[index].name) == 0
+                apostrophe_changed_name = track.name "'", "’"
+
+                if track.name.casecmp(apostrophe_changed_name) == 0
                   spotify_link = track.external_urls['spotify']
                   albumTracks[index].update_attributes(spotify_identifier: track.id, spotify_link: spotify_link)
                 end

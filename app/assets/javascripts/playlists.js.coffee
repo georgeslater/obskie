@@ -24,16 +24,12 @@ $(document).ready ->
 					$('#rdioSection').hide()
 	    return
 
-	 $('#spotifyToggle, #deezerToggle').click ->
+	 $('#spotifyToggle, #deezerToggle, #rdioToggle').click ->
 
 		$(".playlistItem").show().each ->
-		  console.log($("#spotifyToggle").is(":checked"))
-		  console.log($(this).hasClass("spotifyPlaylist"))
-		  console.log($("#deezerToggle").is(":checked"))
-		  console.log($(this).hasClass("deezerPlaylist"))
-		  console.log('ohhh')
-		  $(this).hide()  if not $("#spotifyToggle").is(":checked") and $(this).hasClass("spotifyPlaylist") and (not $("#deezerToggle").is(":checked") or not $(this).hasClass("deezerPlaylist"))
-		  $(this).hide()  if not $("#deezerToggle").is(":checked") and $(this).hasClass("deezerPlaylist") and (not $("#spotifyToggle").is(":checked") or not $(this).hasClass("spotifyPlaylist"))
+		  $(this).hide()  if not $("#spotifyToggle").is(":checked") and $(this).hasClass("spotifyPlaylist") and (not $("#deezerToggle").is(":checked") or not $(this).hasClass("deezerPlaylist")) and (not $("#rdioToggle").is(":checked") or not $(this).hasClass("rdioPlaylist"))
+		  $(this).hide()  if not $("#deezerToggle").is(":checked") and $(this).hasClass("deezerPlaylist") and (not $("#spotifyToggle").is(":checked") or not $(this).hasClass("spotifyPlaylist")) and (not $("#rdioToggle").is(":checked") or not $(this).hasClass("rdioPlaylist"))
+		  $(this).hide()  if not $("#rdioToggle").is(":checked") and $(this).hasClass("rdioPlaylist") and (not $("#spotifyToggle").is(":checked") or not $(this).hasClass("spotifyPlaylist")) and (not $("#deezerToggle").is(":checked") or not $(this).hasClass("deezerPlaylist"))
 		  return
 
 

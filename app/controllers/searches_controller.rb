@@ -52,8 +52,20 @@ class SearchesController < ApplicationController
 			yearPart = releaseGroup.releases.first.date.year
 		end
 
+		for releasee in releaseGroup.releases
+
+			Rails.logger.debug(releasee.inspect)
+
+			if releasee.country == 'US'
+
+				newAlbum.upc_barcode = releasee.barcode
+				#break
+			end
+		end
+
 		newAlbum.year = yearPart
 
+		newAlbum.musicbrainz_identifier = release
 		album_artist = Artist.find_by(name: artist)
 
 		if album_artist.blank?
@@ -74,9 +86,9 @@ class SearchesController < ApplicationController
 			tracks = Array.new
 
             for track in @mbTracks
-
               new_track = Track.new
               new_track.name = track.title
+              new_track.musicbrainz_identifier = track.recording_id
               new_track.album_id = newAlbum.id
               new_track.order = track.position
               new_track.duration_milli = track.length
@@ -88,6 +100,7 @@ class SearchesController < ApplicationController
 			SpotifyAlbumInfoJob.new.async.perform(newAlbum)
 			ItunesAlbumInfoJob.new.async.perform(newAlbum)
 			AmazonAlbumInfoJob.new.async.perform(newAlbum)
+			RdioAlbumInfoJob.new.async.perform(newAlbum)
 
         end
 

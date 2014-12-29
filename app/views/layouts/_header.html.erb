@@ -52,15 +52,15 @@
                                     </div>
                                     <div id="userMenu">
                                         <div>
-                                            <!--<% if current_user.albums.any? %>-->
+                                            <% if current_user.albums.any? %>
                                                 <%= link_to new_album_path do %>
                                                     <div class="menuRow">Submit a Review</div>
                                                 <% end %>
-                                            <!--<% else %>
+                                            <% else %>
                                                 <%= link_to become_contributor_path do %>
                                                     <div class="menuRow">Become a Contributor</div>
                                                 <% end %>
-                                            <% end %> -->
+                                            <% end %>
                                         </div>
                                         <div>
                                             <%= link_to new_playlist_path do %>

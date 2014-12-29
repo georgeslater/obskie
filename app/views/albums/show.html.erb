@@ -46,14 +46,17 @@
                                 <div class="streamBuyLinks">                           
                                     <% if @album.spotify_link.present? %>
                                         <a href="<%= @album.spotify_link %>" title="Spotify">
-                                            <span class="spotify albumLinkIcons"></span>
+                                            <span class="externalLink spotify"></span>
                                         </a>
                                     <% end %>
                                     <% if @album.itunes_view_url.present? %>
-                                        <a href="<%= @album.itunes_view_url %>" target="itunes_store" class="itunes" title="iTunes"></a>
+                                        <a href="<%= @album.itunes_view_url %>" target="itunes_store" class="externalLink itunes" title="iTunes"></a>
                                     <% end %>
                                     <% if @album.amazon_url.present? %>
-                                        <a href="<%= @album.amazon_url %>" class="amazon" title="Amazon"></a>
+                                        <a href="<%= @album.amazon_url %>" target="_blank" class="externalLink amazon" title="Amazon"></a>
+                                    <% end %>
+                                    <% if @album.rdio_url.present? %>
+                                        <a href="http://rdio.com<%= @album.rdio_url %>" class="externalLink rdio" target="_blank" title="Rdio"></a>
                                     <% end %>
                                 </div>
                                 <div id="obscurometer">

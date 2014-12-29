@@ -11385,9 +11385,9 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
       this.elementSelector = elementSelector;
       this._trickle = __bind(this._trickle, this);
       this.value = 0;
-      this.opacity = 1;
       this.content = '';
       this.speed = 300;
+      this.opacity = 0.99;
       this.install();
     }
 
@@ -11429,6 +11429,8 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
     };
 
     ProgressBar.prototype._reset = function() {
+      var originalOpacity;
+      originalOpacity = this.opacity;
       setTimeout((function(_this) {
         return function() {
           _this.opacity = 0;
@@ -11438,7 +11440,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
       return setTimeout((function(_this) {
         return function() {
           _this.value = 0;
-          _this.opacity = 1;
+          _this.opacity = originalOpacity;
           return _this._withSpeed(0, function() {
             return _this._updateStyle(true);
           });
@@ -11603,6 +11605,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
       score = $(this).data('score');
       return $(this).raty({
         score: score,
+        targetType: "score",
         starOn: '/assets/star-on.png',
         starOff: '/assets/star-off.png',
         path: '',
@@ -11612,20 +11615,7 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
           return $(this).hasClass("author");
         },
         click: function(score, event) {
-          var valText;
-          valText = score;
-          $(this).raty({
-            cancel: true,
-            cancelOn: '/assets/cancel-on.png',
-            cancelOff: '/assets/cancel-off.png',
-            half: false,
-            score: score,
-            path: "/images",
-            targetType: "score",
-            halfShow: false,
-            targetKeep: true,
-            hints: [valText, valText, valText, valText, valText]
-          }, $.ajax({
+          return $.ajax({
             type: 'POST',
             url: '/ratings',
             data: {
@@ -11635,10 +11625,9 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
             success: function(data, textStatus, jqXHR) {
               return $(that).attr('data-score', score);
             }
-          }));
-          return false;
+          });
         }
-      });
+      }, false);
     });
   };
 
@@ -12716,17 +12705,15 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
             return;
           }
       }
-      $('#spotifyToggle, #deezerToggle').click(function() {});
+      $('#spotifyToggle, #deezerToggle, #rdioToggle').click(function() {});
       return $(".playlistItem").show().each(function() {
-        console.log($("#spotifyToggle").is(":checked"));
-        console.log($(this).hasClass("spotifyPlaylist"));
-        console.log($("#deezerToggle").is(":checked"));
-        console.log($(this).hasClass("deezerPlaylist"));
-        console.log('ohhh');
-        if (!$("#spotifyToggle").is(":checked") && $(this).hasClass("spotifyPlaylist") && (!$("#deezerToggle").is(":checked") || !$(this).hasClass("deezerPlaylist"))) {
+        if (!$("#spotifyToggle").is(":checked") && $(this).hasClass("spotifyPlaylist") && (!$("#deezerToggle").is(":checked") || !$(this).hasClass("deezerPlaylist")) && (!$("#rdioToggle").is(":checked") || !$(this).hasClass("rdioPlaylist"))) {
           $(this).hide();
         }
-        if (!$("#deezerToggle").is(":checked") && $(this).hasClass("deezerPlaylist") && (!$("#spotifyToggle").is(":checked") || !$(this).hasClass("spotifyPlaylist"))) {
+        if (!$("#deezerToggle").is(":checked") && $(this).hasClass("deezerPlaylist") && (!$("#spotifyToggle").is(":checked") || !$(this).hasClass("spotifyPlaylist")) && (!$("#rdioToggle").is(":checked") || !$(this).hasClass("rdioPlaylist"))) {
+          $(this).hide();
+        }
+        if (!$("#rdioToggle").is(":checked") && $(this).hasClass("rdioPlaylist") && (!$("#spotifyToggle").is(":checked") || !$(this).hasClass("spotifyPlaylist")) && (!$("#deezerToggle").is(":checked") || !$(this).hasClass("deezerPlaylist"))) {
           $(this).hide();
         }
       });

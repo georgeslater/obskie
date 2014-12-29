@@ -36,6 +36,10 @@ class PlaylistsController < ApplicationController
           DeezerPlaylistJob.new.perform(@playlist)
       end
 
+      if @playlist.rdio_uri.present?
+          RdioPlaylistJob.new.perform(@playlist)
+      end
+
       redirect_to playlist_path(@playlist)
     
     else
