@@ -5,7 +5,6 @@ class RdioAlbumInfoJob < ApplicationController
 	require 'rdio'
 	
 	def perform(album_created)
-
 		
 		unless album_created.upc_barcode.nil? || album_created.upc_barcode.blank?
 

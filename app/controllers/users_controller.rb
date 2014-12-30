@@ -3,9 +3,18 @@ class UsersController < ApplicationController
 	def show
 		
 		@user = User.friendly.find(params[:id])
-		@userAlbums = @user.albums.order('created_at DESC')
-		@userComments = @user.comments.order('created_at DESC')
-		@userPlaylists = @user.playlists.order('created_at DESC')
+
+		if  @user == current_user 
+
+			@userAlbums = @user.albums.order('created_at DESC')
+			@userComments = @user.comments.order('created_at DESC')
+			@userPlaylists = @user.playlists.order('created_at DESC')
+		else
+
+			@userAlbums = @user.albums.order('created_at DESC').select { | album | album.workflow_state == "accepted" }
+			@userComments = @user.comments.order('created_at DESC')
+			@userPlaylists = @user.playlists.order('created_at DESC')
+		end
 	end
 
 	def drafts

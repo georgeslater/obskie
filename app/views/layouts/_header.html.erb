@@ -52,6 +52,11 @@
                                     </div>
                                     <div id="userMenu">
                                         <div>
+                                            <%= link_to edit_user_registration_path(current_user) do %> 
+                                                <div class="menuRow">Edit Profile</div>
+                                            <% end %>
+                                        </div>
+                                        <div>
                                             <% if can? :create, Album %>
                                                 <%= link_to new_album_path do %>
                                                     <div class="menuRow">Submit a Review</div>
@@ -79,11 +84,13 @@
                                                 <% end %>
                                             </div>
                                         <% end %>
-                                        <div>
-                                            <%= link_to edit_user_registration_path(current_user) do %> 
-                                                <div class="menuRow">Edit Profile</div>
-                                            <% end %>
-                                        </div>
+                                        <% if can? :approve, Album %>
+                                            <div>
+                                                <%= link_to non_approved_path do %>
+                                                    <div class="menuRow">Submission Queue</div>
+                                                <% end %>
+                                            </div>
+                                        <% end %>
                                         <div>
                                             <%= link_to destroy_user_session_path do %>
                                                     <div class="menuRow">Sign Out</div>

@@ -120,18 +120,6 @@ h1 {
   }
 }
 
-.fbLink {
-  background-image: url(https://cdn2.iconfinder.com/data/icons/New-Social-Media-Icon-Set-V11/64/facebook.png);
-  background-size: 32px;
-  background-repeat: no-repeat;
-}
-
-.twitterLink {
-  background-image: url(https://cdn2.iconfinder.com/data/icons/New-Social-Media-Icon-Set-V11/64/twitter.png);
-  background-size: 32px;
-  background-repeat: no-repeat;
-}
-
 .spotify {
     background:asset-url('/images/spotify.png') no-repeat;
 }
@@ -415,7 +403,7 @@ figcaption {
 
 #userMenu{
   display: none;
-  width: 140px;
+  width: 150px;
   background-color: #222;
   border-radius: 11px;
   text-align: left;
@@ -540,5 +528,29 @@ figcaption {
 
     width: 150px;
     margin-bottom: 10px;
+  }
+}
+
+#contributeWrapper{
+  
+  margin-left: 30px;
+  margin-right: 40px;
+  margin-top: 20px;
+
+  .list-group{
+
+    border: 2px black solid;
+    border-radius: 5px;
+    margin: 25px 0;
+  }
+
+  .list-group-item{
+
+    font-weight: bold;
+  }
+  
+  li:nth-child(odd){
+
+    background-color: aliceblue;
   }
 }

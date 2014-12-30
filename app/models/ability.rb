@@ -14,6 +14,7 @@ class Ability
 
     if user.admin?
         can :manage, Album
+        can :approve, Album
     end
 
     # Define abilities for the passed in user here. For example:

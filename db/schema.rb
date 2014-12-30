@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141229200708) do
+ActiveRecord::Schema.define(version: 20141229215930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,12 +37,12 @@ ActiveRecord::Schema.define(version: 20141229200708) do
     t.string   "itunes_identifier"
     t.string   "itunes_view_url"
     t.boolean  "published",              default: false, null: false
-    t.boolean  "approved",               default: false, null: false
     t.string   "amazon_url"
     t.string   "spotify_link"
     t.string   "musicbrainz_identifier"
     t.string   "upc_barcode"
     t.string   "rdio_url"
+    t.string   "status"
     t.string   "workflow_state"
   end
 
@@ -236,17 +236,14 @@ ActiveRecord::Schema.define(version: 20141229200708) do
 
   create_table "reviews", force: true do |t|
     t.text     "body"
-    t.integer  "user_id_id"
-    t.integer  "impressions_count"
-    t.boolean  "published"
-    t.boolean  "approved"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "album_id_id"
+    t.boolean  "submitted",  default: false, null: false
+    t.boolean  "approved",   default: false, null: false
   end
 
-  add_index "reviews", ["album_id_id"], name: "index_reviews_on_album_id_id", using: :btree
-  add_index "reviews", ["user_id_id"], name: "index_reviews_on_user_id_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "tracks", force: true do |t|
     t.string   "name"

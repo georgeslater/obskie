@@ -9,14 +9,16 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(params[:contact])
-    @contact.request = request
-    
-    if @contact.deliver
-      flash.now[:notice] = 'Thank you for your message. We will contact you soon!'
-      render :new
-    else
-      flash.now[:error] = 'Cannot send message.'
-      render :new
+
+    if @contact.name.nil?
+
+      @contact.name = current_user.username+" - Contributor request"
+      @contact.email = current_user.email
     end
+
+    @contact.request = request
+
+    @contact.deliver!
+    redirect_to root_path
   end
 end
