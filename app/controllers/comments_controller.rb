@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 
 		elsif params[:playlist_id].present?
 
-			@playlist = Playlist.find(params[:playlist_id])
+			@playlist = Playlist.friendly.find(params[:playlist_id])
 			@comment = @playlist.comments.create(comment_params.merge(:user_id => current_user.id))
 			redirect_to playlist_path(@playlist)
 

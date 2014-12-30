@@ -22,7 +22,7 @@
 	<br />
 	<div id="reviews">
 		<h4>Reviews (<%= @userAlbums.size %>)</h4>
-		<table class="table">
+		<table id="userReviewsTable" class="table">
 			<% if @userAlbums.empty? %>
 				<div>No reviews yet</div>
 			<% else %>
@@ -45,7 +45,7 @@
 							<td><%= avg_track_rating(album.tracks) %></td>
 							<td><%= album.comments.size %></td>
 							<% if @user == current_user %>
-								<td><%= get_state_label(album.workflow_state) %></td>
+								<td class="<%= album.workflow_state %>"><%= get_state_label(album.workflow_state) %></td>
 							<% end %>
 						</tr>
 					<% end %>
@@ -61,17 +61,37 @@
 			<% else %>
 				<thead>
 					<tr>
-						<td>Album Name</td>
-						<td>Album Author</td>
+						<td>Parent Name</td>
+						<td>Parent Type</td>
+						<td>Parent Author</td>
 						<td>Date Commented</td>
 						<td>Comment</td>
 					</tr>
 				</thead>
 				<tbody>
 					<% @userComments.each do | comment | %>
-						<tr>
-							<td><%= link_to comment.album.title, artist_album_path(comment.album.artist, comment.album) %></td>
-							<td><%= link_to comment.user.username, user_path(comment.user) %></td>
+						<tr>						
+							<td>
+								<% if comment.album.present? %>
+									<%= link_to comment.album.title, artist_album_path(comment.album.artist, comment.album) %>
+								<% elsif comment.playlist.present? %>
+									<%= link_to comment.playlist.name, playlist_path(comment.playlist) %>
+								<% end %>
+							</td>
+							<td>
+								<% if comment.album.present? %>
+									Album
+								<% elsif comment.playlist.present? %>
+									Playlist
+								<% end %>
+							</td>
+							<td>
+								<% if comment.album.present? %>
+									<%= link_to comment.album.user.username, user_path(comment.album.user) %>
+								<% elsif comment.playlist.present? %>
+									<%= link_to comment.playlist.user.username, user_path(comment.playlist.user) %>
+								<% end %>
+							</td>
 							<td><%= comment.created_at.strftime("%d %b %Y") %></td>
 							<td><%= comment.body %></td>
 						</tr>

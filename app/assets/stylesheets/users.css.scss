@@ -1,6 +1,21 @@
 #userWrapper{
 	
 	margin-left: 15px;
+
+	td.accepted{
+
+		color: green;
+	}
+
+	td.rejected{
+
+		color:red;
+	}
+
+	td.pending_review{
+
+		color:orange;
+	}
 }
 
 #newUserWrapper{ 

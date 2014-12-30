@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20141229215930) do
     t.string   "musicbrainz_identifier"
     t.string   "upc_barcode"
     t.string   "rdio_url"
-    t.string   "status"
     t.string   "workflow_state"
+    t.string   "workflow_status"
   end
 
   add_index "albums", ["artist_id"], name: "index_albums_on_artist_id", using: :btree
@@ -236,14 +236,17 @@ ActiveRecord::Schema.define(version: 20141229215930) do
 
   create_table "reviews", force: true do |t|
     t.text     "body"
-    t.integer  "user_id"
+    t.integer  "user_id_id"
+    t.integer  "impressions_count"
+    t.boolean  "published"
+    t.boolean  "approved"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "submitted",  default: false, null: false
-    t.boolean  "approved",   default: false, null: false
+    t.integer  "album_id_id"
   end
 
-  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
+  add_index "reviews", ["album_id_id"], name: "index_reviews_on_album_id_id", using: :btree
+  add_index "reviews", ["user_id_id"], name: "index_reviews_on_user_id_id", using: :btree
 
   create_table "tracks", force: true do |t|
     t.string   "name"

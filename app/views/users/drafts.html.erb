@@ -7,11 +7,26 @@
 
 			<h4>My Saved Drafts</h4>
 
-			<% @unfinishedAlbums.each do | album | %>			
-				
-				<%= link_to get_album_text(album.artist.name, album.title), edit_artist_album_path(album.artist, album) %>
-
-			<% end %>
+			<table class="table table-responsive">
+				<thead>
+					<tr>
+						<td>Artist</td>
+						<td>Album</td>
+						<td>Review</td>
+						<td>Saved Date</td>
+						<td></td>
+					</tr>
+				</thead>
+				<% @unfinishedAlbums.each do | album | %>			
+					<tr>
+						<td><%= album.artist.name %></td>
+						<td><%= link_to album.title, edit_artist_album_path(album.artist, album) %></td>
+						<td><%= truncate_album_body(album.body) %></td>
+						<td><%= album.updated_at.strftime("%A, %d %b %Y") %></td>
+						<td><%= link_to "Edit", edit_artist_album_path(album.artist, album) %> | <%= link_to "Discard", artist_album_path(album.artist, album), data: { confirm: "Are you sure you want to discard this review?" }, :method => :delete %> </td>
+					</tr>
+				<% end %>
+			</table
 		</div>
 
 	<% else %>

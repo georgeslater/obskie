@@ -6,8 +6,6 @@ class AlbumsController < ApplicationController
 
  	before_filter :check_published_approved, only: [:show]
 
-	impressionist :actions=>[:show]
-
   	respond_to :html
 
 	def index
@@ -107,11 +105,6 @@ class AlbumsController < ApplicationController
 		end
 	end
 
-	def new_step2
-	    
-	    @album = @Album.new
-  	end
-
 	def edit
 
 		@album = Album.friendly.find(params[:id])
@@ -123,26 +116,31 @@ class AlbumsController < ApplicationController
 		Rails.logger.debug('YEEEE')
 		Rails.logger.debug(params[:type])
 
-		if @album.tracks.select { | track | track.author_rating == nil }.size == 0
+		if params[:type] == 'publish'
 
-			if params[:type] == 'publish'
+			if @album.tracks.select { | track | track.author_rating == nil }.size == 0
 
 				@album.update(album_params.merge(:published => true))
 				@album.submit!
-				redirect_to root_path
-
-			else
-				redirect_to my_drafts_path(current_user)
-				@album.update(album_params)
 			end
-	    end
 
+			redirect_to root_path
+
+		else
+			redirect_to my_drafts_path(current_user)
+			@album.update(album_params)
+		end
 	end
 
 	def destroy
-	    @track.destroy
-	    respond_with(@track)
-	  end
+		
+		if @album.user == current_user && @album.workflow_state != 'accepted'
+	    	@album.destroy!
+	    end
+
+	    redirect_to my_drafts_path(current_user)
+
+	end
 
 	def rate_track
 

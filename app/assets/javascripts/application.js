@@ -32,7 +32,6 @@ $('document').ready(function() {
     });
 
     $(document).click(function(){
-      console.log('click!')
   	  $("#userMenu").hide();
   	  $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected')
   	});

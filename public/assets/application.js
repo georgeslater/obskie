@@ -11668,6 +11668,16 @@ Copyright (c) 2012-2013 Sasha Koss & Rico Sta. Cruz
 
 }).call(this);
 (function() {
+  $(document).on('page:change', function() {
+    if (window._gaq != null) {
+      return _gaq.push(['_trackPageview']);
+    } else if (window.pageTracker != null) {
+      return pageTracker._trackPageview();
+    }
+  });
+
+}).call(this);
+(function() {
 
 
 }).call(this);
@@ -12763,7 +12773,6 @@ $('document').ready(function() {
     });
 
     $(document).click(function(){
-      console.log('click!')
   	  $("#userMenu").hide();
   	  $('.loginInfoArrowIcon').removeClass('loginInfoArrowIconSelected')
   	});
