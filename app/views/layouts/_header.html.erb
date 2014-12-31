@@ -87,7 +87,7 @@
                                         <% if can? :approve, Album %>
                                             <div>
                                                 <%= link_to non_approved_path do %>
-                                                    <div class="menuRow">Submission Queue</div>
+                                                    <div class="menuRow">Pending Approval (<%= get_pending_submission_count %>)</div>
                                                 <% end %>
                                             </div>
                                         <% end %>

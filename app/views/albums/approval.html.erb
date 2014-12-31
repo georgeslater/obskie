@@ -1,18 +1,40 @@
-<% if current_user.try(:admin?) %>
+<% if can? :approve, Album %>
+	
+	<% if @nonApproved.any? %>
 
-	<table>
+		<table class="table table-responsive table-striped">
+			<thead>
+				<tr>
+					<td>Artist</td>
+					<td>Album</td>
+					<td>Year</td>
+					<td>Author</td>
+					<td>Review</td>
+				</tr>
+			</thead>
+			<tbody>
+				<% @nonApproved.each do | albumToApprove | %>
+				
+					<tr>
+						<td><%= albumToApprove.artist.name %></td>
+						<td><%= albumToApprove.title %></td>
+						<td><%= albumToApprove.year %></td>
+						<td><%= link_to albumToApprove.user.username, user_path(albumToApprove.user.username) %></td>
+						<td><%= albumToApprove.body %></td>
+						<td><%= link_to 'Approve', approve_album_path(albumToApprove), method: :patch %> | <%= link_to 'Reject', reject_album_path(albumToApprove), method: :patch %></td>
+					</tr>
 
-		<% @nonApproved.each do | albumToApprove | %>
-		
-			<tr>
-				<td><%= albumToApprove.body %></td>
-				<td><%= albumToApprove.user.username %></td>
-				<td><%= link_to 'Approve', approve_album_path(albumToApprove), method: :patch %> | <%= link_to 'Reject', reject_album_path(albumToApprove), method: :patch %></td>
-			</tr>
+				<% end %>
+			</tbody>
+		</table>
 
-		<% end %>
+	<% else %>
 
-	</table>
+		<div class="alert alert-info" role="alert">
+			Great!  There are no submissions pending.
+		</div>
+
+	<% end %>
 <% else %>
 	<div class="alert alert-danger" role="alert">
 	  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
