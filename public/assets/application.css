@@ -1,47 +1,47 @@
-/* line 1, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 1, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 body {
   padding-top: 70px;
 }
 
-/* line 5, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 5, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 h1 {
   font-family: 'Fauna One', serif;
   display: inline-block;
 }
 
-/* line 10, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 10, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #manualSection {
   display: none;
 }
 
-/* line 15, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 15, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .jumbotron p {
   margin-left: 30px;
   margin-right: 30px;
 }
 
-/* line 21, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 21, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #obscurometer {
   display: inline-block;
 }
-/* line 25, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 25, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #obscurometer h6 {
   display: inline-block;
   margin-right: 5px;
 }
 
-/* line 32, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 32, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumImage {
   display: inline-block;
   vertical-align: top;
   padding: 10px;
 }
-/* line 37, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 37, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumImage figure img {
   width: 200px;
   height: 200px;
 }
-/* line 41, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 41, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumImage figcaption {
   max-width: 200px;
   text-align: center;
@@ -49,56 +49,56 @@ h1 {
   background-color: black;
   color: white;
 }
-/* line 49, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 49, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumImage .albumCaption {
   padding: 2px 5px;
 }
-/* line 54, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 54, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumImage .albumCaptionTitle {
   font-size: 17px;
   font-style: italic;
 }
-/* line 60, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 60, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumImage .albumCaptionArtist {
   font-size: 16px;
   padding-top: 5px;
 }
-/* line 66, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 66, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumImage .albumCaptionYear {
   font-size: 12px;
   min-height: 21px;
 }
 
-/* line 73, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 73, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumInfo td {
   font-size: 14px;
 }
 
-/* line 77, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 77, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumInfo td:first-child {
   max-width: 200px;
 }
 
-/* line 82, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 82, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumInfo table {
   width: 100%;
 }
 
-/* line 86, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 86, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumHeader {
   display: inline-block;
   width: 38%;
 }
 
-/* line 91, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 91, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .socialMediaLinks {
   margin-top: 25px;
 }
-/* line 93, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 93, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .socialMediaLinks li {
   float: right;
 }
-/* line 96, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 96, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .socialMediaLinks a {
   height: 32px;
   width: 32px;
@@ -106,39 +106,39 @@ h1 {
   float: right;
 }
 
-/* line 104, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 104, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #albumIndexWrapper {
   position: relative;
   margin-top: 30px;
   margin-left: 10px;
 }
-/* line 110, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 110, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #albumIndexWrapper a {
   text-decoration: none;
 }
-/* line 115, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 115, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #albumIndexWrapper #sortBy {
   position: absolute;
   top: -20px;
   right: 10px;
 }
 
-/* line 123, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 123, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .spotify {
   background: url(/images/spotify.png) no-repeat;
 }
 
-/* line 127, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 127, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .rdio_small {
   background: url(/images/rdio_small.png) no-repeat;
 }
 
-/* line 132, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 132, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .streamBuyLinks {
   height: 35px;
 }
 
-/* line 136, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 136, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumLinkIcons {
   background-size: 16px;
   background-repeat: no-repeat;
@@ -148,31 +148,31 @@ h1 {
   margin-left: 4px;
 }
 
-/* line 145, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 145, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .rightPanel {
   width: 33%;
   margin-right: 2%;
   float: right;
 }
 
-/* line 151, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 151, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumArt img {
   float: left;
   padding-right: 5%;
 }
 
-/* line 156, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 156, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .trackTitle {
   float: left;
 }
 
-/* line 160, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 160, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .title {
   float: left;
   color: white;
 }
 
-/* line 165, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 165, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .icon {
   background-image: url("/images/vinyl_oh.png");
   width: 27px;
@@ -180,7 +180,7 @@ h1 {
   display: inline-block;
 }
 
-/* line 172, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 172, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .content {
   text-align: justify;
   font-size: 16px;
@@ -189,12 +189,12 @@ h1 {
   min-height: 175px;
 }
 
-/* line 180, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 180, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #contentWrapper {
   margin-left: 3%;
 }
 
-/* line 185, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 185, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #leftPanel {
   float: left;
   max-width: 63%;
@@ -202,12 +202,12 @@ h1 {
   padding-right: 3%;
 }
 
-/* line 192, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 192, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #authorNumReviews {
   margin-left: -2px;
 }
 
-/* line 196, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 196, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #authorInfo {
   float: right;
   border-radius: 5px;
@@ -216,42 +216,42 @@ h1 {
   margin-top: 20px;
 }
 
-/* line 204, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 204, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .authorIcons {
   margin-top: 5px;
 }
 
-/* line 209, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 209, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .authorIcon {
   margin-right: 3px;
 }
 
-/* line 214, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 214, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .authorName {
   font-weight: bold;
 }
 
-/* line 218, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 218, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .authorDetail {
   float: left;
   margin-left: 5px;
 }
 
-/* line 223, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 223, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumInfo {
   margin: 40px 0 40px 0;
 }
 
-/* line 227, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 227, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .postTitle {
   margin-top: 15px;
 }
 
-/* line 231, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 231, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #relatedPostsImages {
   text-align: center;
 }
-/* line 233, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 233, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #relatedPostsImages figure {
   width: 29%;
   height: auto;
@@ -260,94 +260,94 @@ h1 {
   display: inline-block;
   vertical-align: top;
 }
-/* line 241, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 241, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #relatedPostsImages img {
   width: 60%;
 }
 
-/* line 246, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 246, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #authorPhoto {
   width: 50px;
   height: 50px;
   float: left;
 }
 
-/* line 252, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 252, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 td:not(:first-child), th:not(:first-child) {
   text-align: center;
 }
 
-/* line 256, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 256, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #mostList {
   margin-bottom: 15px;
 }
-/* line 257, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 257, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #mostList a {
   color: black !important;
 }
 
 @media (min-width: 768px) {
-  /* line 264, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+  /* line 264, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
   #menuBar {
     margin: 20px 0 0 50px !important;
   }
-  /* line 266, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+  /* line 266, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
   #menuBar li {
     display: inline-block;
   }
 }
 @media (max-width: 768px) {
-  /* line 273, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+  /* line 273, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
   .rightPanel {
     display: none;
   }
 
-  /* line 276, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+  /* line 276, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
   #leftPanel {
     border-right: none;
     max-width: 100%;
     margin-left: 2%;
   }
 
-  /* line 281, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+  /* line 281, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
   #menuBar li {
     display: block !important;
     padding: 10px;
   }
-  /* line 284, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+  /* line 284, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
   #menuBar li:not(:last-child) {
     border-bottom: 1px solid lightgray;
     width: 80%;
   }
 
-  /* line 289, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+  /* line 289, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
   .socialMediaLinks {
     float: left;
   }
 }
-/* line 294, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 294, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #contentWrapper a {
   color: black !important;
   text-decoration: none !important;
 }
-/* line 297, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 297, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #contentWrapper a:hover {
   color: #428bca;
 }
 
-/* line 302, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 302, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #menuContent a {
   list-style: none;
   text-decoration: none;
   color: white !important;
 }
 
-/* line 308, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 308, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #albumsLinks {
   float: right;
 }
 
-/* line 312, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 312, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginInfo {
   color: white;
   float: right;
@@ -356,7 +356,7 @@ td:not(:first-child), th:not(:first-child) {
   font-weight: bold;
 }
 
-/* line 321, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 321, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .displayName {
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -365,33 +365,33 @@ td:not(:first-child), th:not(:first-child) {
   margin-top: 2px;
 }
 
-/* line 330, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 330, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .albumArt img {
   width: 22vw;
 }
 
-/* line 334, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 334, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #mostList li.active {
   font-weight: bold;
 }
 
-/* line 338, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 338, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 figcaption {
   font-family: 'Vollkorn', serif;
   font-size: 18px;
 }
 
-/* line 343, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 343, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .mostRow {
   line-height: 2em;
 }
 
-/* line 347, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 347, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .mouldingImage {
   height: 35px;
 }
 
-/* line 353, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 353, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .externalLink {
   display: inline-block;
   overflow: hidden;
@@ -400,38 +400,38 @@ figcaption {
   background-size: 24px;
 }
 
-/* line 362, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 362, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .itunes {
   background: url(/images/itunes.png) no-repeat;
 }
 
-/* line 367, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 367, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .amazon {
   background: url(/images/amazon.png) no-repeat;
 }
 
-/* line 372, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 372, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .rdio {
   background: url(/images/rdio.png) no-repeat;
 }
 
-/* line 377, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 377, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .menuRow {
   padding: 10px;
 }
 
-/* line 382, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 382, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginInfoMenu {
   position: relative;
   height: 30px;
 }
 
-/* line 388, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 388, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginInfoArrowIcon.loginInfoArrowIconSelected {
   background-image: url(/images/arrow-up.png);
 }
 
-/* line 393, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 393, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginInfoArrowIcon {
   background: url(/images/arrow-down.png) no-repeat;
   width: 24px;
@@ -442,10 +442,10 @@ figcaption {
   top: 0;
 }
 
-/* line 404, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 404, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #userMenu {
   display: none;
-  width: 150px;
+  width: 160px;
   background-color: #222;
   border-radius: 11px;
   text-align: left;
@@ -455,7 +455,7 @@ figcaption {
   right: 5px;
 }
 
-/* line 416, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 416, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .displayNameArrow {
   font-size: 1.1em;
   color: #fff;
@@ -466,33 +466,33 @@ figcaption {
   width: auto;
 }
 
-/* line 427, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 427, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .displayNameArrow:hover span {
   color: lightskyblue !important;
 }
 
-/* line 432, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 432, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .menuRow:hover {
   color: lightskyblue;
 }
 
-/* line 437, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 437, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .avatarImage {
   margin-right: 5px;
 }
 
-/* line 442, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 442, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .login {
   display: inline-block;
 }
 
-/* line 447, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 447, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginField {
   border-radius: 5px;
   color: black;
 }
 
-/* line 453, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 453, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginButton {
   color: black;
   background-color: #a5b8da;
@@ -517,16 +517,16 @@ figcaption {
   width: 60px;
 }
 
-/* line 478, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 478, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginLinks {
   margin-top: 3px;
 }
-/* line 482, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 482, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 .loginLinks .forgotPasswordLink {
   float: right;
 }
 
-/* line 488, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 488, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #loginForm {
   position: absolute;
   top: 20px;
@@ -534,22 +534,22 @@ figcaption {
   font-size: 0.8em;
 }
 
-/* line 498, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 498, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #draftsWrapper #unfinishedDrafts {
   margin-left: 30px;
 }
 
-/* line 504, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 504, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #albumEditWrapper {
   margin-left: 40px;
   margin-bottom: 20px;
 }
 
-/* line 512, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 512, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #basic_info .album_wizard {
   margin-left: 30px;
 }
-/* line 517, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 517, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #basic_info #trackResultsWrapper {
   display: none;
   float: right;
@@ -558,72 +558,72 @@ figcaption {
   box-shadow: 10px 10px 5px #888;
   width: 25%;
 }
-/* line 527, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 527, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #basic_info label {
   width: 150px;
   margin-bottom: 10px;
 }
 
-/* line 534, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 534, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #contributeWrapper {
   margin-left: 30px;
   margin-right: 40px;
   margin-top: 20px;
 }
-/* line 540, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 540, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #contributeWrapper .list-group {
   border: 2px black solid;
   border-radius: 5px;
   margin: 25px 0;
 }
-/* line 547, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 547, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #contributeWrapper .list-group-item {
   font-weight: bold;
 }
-/* line 552, /Users/georgeslater/Documents/oa/app/assets/stylesheets/albums.css.scss */
+/* line 552, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/albums.css.scss */
 #contributeWrapper li:nth-child(odd) {
   background-color: aliceblue;
 }
-/* line 5, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
+/* line 5, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/artists.css.scss */
 #artistsWrapper {
   margin: 0 20px;
 }
-/* line 7, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
+/* line 7, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/artists.css.scss */
 #artistsWrapper #filterSearch {
   margin: 20px;
   margin-right: 4%;
   float: right;
 }
-/* line 14, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
+/* line 14, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/artists.css.scss */
 #artistsWrapper table {
   width: 96%;
   margin-bottom: 30px;
 }
-/* line 19, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
+/* line 19, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/artists.css.scss */
 #artistsWrapper table td:not(:first-child) {
   vertical-align: middle !important;
 }
-/* line 24, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
+/* line 24, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/artists.css.scss */
 #artistsWrapper table th, #artistsWrapper table td:not(:first-child):not(:last-child) {
   text-align: left;
   width: auto;
 }
-/* line 30, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
+/* line 30, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/artists.css.scss */
 #artistsWrapper table th, #artistsWrapper table td:first-child {
   min-width: 67px;
 }
-/* line 35, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
+/* line 35, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/artists.css.scss */
 #artistsWrapper table .boldColumn {
   font-weight: bold;
 }
 
 @media (max-width: 768px) {
-  /* line 46, /Users/georgeslater/Documents/oa/app/assets/stylesheets/artists.css.scss */
+  /* line 46, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/artists.css.scss */
   .noMobile {
     display: none;
   }
 }
-/* line 5, /Users/georgeslater/Documents/oa/app/assets/stylesheets/comments.css.scss */
+/* line 5, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/comments.css.scss */
 textarea {
   resize: none;
   height: 200px;
@@ -631,64 +631,64 @@ textarea {
   border-radius: 5px;
   border: 1.5px solid lightgray;
 }
-/* line 1, /Users/georgeslater/Documents/oa/app/assets/stylesheets/contact.css.scss */
+/* line 1, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/contact.css.scss */
 #contactUsForm {
   margin-left: 30px;
 }
-/* line 5, /Users/georgeslater/Documents/oa/app/assets/stylesheets/contact.css.scss */
+/* line 5, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/contact.css.scss */
 #contactUsForm .lead {
   margin-top: 20px;
 }
-/* line 10, /Users/georgeslater/Documents/oa/app/assets/stylesheets/contact.css.scss */
+/* line 10, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/contact.css.scss */
 #contactUsForm label {
   width: 150px;
 }
-/* line 14, /Users/georgeslater/Documents/oa/app/assets/stylesheets/contact.css.scss */
+/* line 14, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/contact.css.scss */
 #contactUsForm .contact-form-name-label {
   margin-left: -4px;
 }
-/* line 1, /Users/georgeslater/Documents/oa/app/assets/stylesheets/header.css.scss */
+/* line 1, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/header.css.scss */
 #menuBar a {
   font-size: 22px;
   font-family: 'Fauna One', serif;
 }
 
-/* line 6, /Users/georgeslater/Documents/oa/app/assets/stylesheets/header.css.scss */
+/* line 6, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/header.css.scss */
 .navbar-header a {
   list-style: none;
   text-decoration: none;
   color: white !important;
 }
 
-/* line 13, /Users/georgeslater/Documents/oa/app/assets/stylesheets/header.css.scss */
+/* line 13, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/header.css.scss */
 #menuBar li.activeTab a {
   color: lightskyblue !important;
 }
 
 @media (min-width: 1024px) {
-  /* line 20, /Users/georgeslater/Documents/oa/app/assets/stylesheets/header.css.scss */
+  /* line 20, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/header.css.scss */
   .loginInfo {
     display: block;
   }
 
-  /* line 25, /Users/georgeslater/Documents/oa/app/assets/stylesheets/header.css.scss */
+  /* line 25, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/header.css.scss */
   .signInMobile {
     display: none !important;
   }
 }
 @media (max-width: 623px) {
-  /* line 33, /Users/georgeslater/Documents/oa/app/assets/stylesheets/header.css.scss */
+  /* line 33, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/header.css.scss */
   h1 {
     font-size: 24px;
   }
 }
 @media (max-width: 1024px) {
-  /* line 41, /Users/georgeslater/Documents/oa/app/assets/stylesheets/header.css.scss */
+  /* line 41, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/header.css.scss */
   .signInMobile {
     display: block;
   }
 
-  /* line 46, /Users/georgeslater/Documents/oa/app/assets/stylesheets/header.css.scss */
+  /* line 46, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/header.css.scss */
   .loginInfo {
     display: none;
   }
@@ -739,28 +739,28 @@ textarea {
 .star-half-png:before {
   content: "\f123";
 }
-/* line 5, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 5, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper, #playlistIndexWrapper {
   margin-left: 30px;
   margin-bottom: 20px;
 }
-/* line 10, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 10, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .lead, #playlistIndexWrapper .lead {
   margin-top: 20px;
 }
-/* line 15, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 15, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper #submittedByInfo, #playlistIndexWrapper #submittedByInfo {
   margin-bottom: 40px;
 }
-/* line 20, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 20, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper #directLinks, #playlistIndexWrapper #directLinks {
   margin-bottom: 20px;
 }
-/* line 25, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 25, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .checkboxes, #playlistIndexWrapper .checkboxes {
   margin: 25px 0;
 }
-/* line 30, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 30, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .spotifyPlayNow, #playlistIndexWrapper .spotifyPlayNow {
   background-image: url(/images/spotify.png);
   background-repeat: no-repeat;
@@ -773,33 +773,33 @@ textarea {
   padding-right: 20px;
   margin-bottom: 40px;
 }
-/* line 45, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 45, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .spotifyPlayNow span, #playlistIndexWrapper .spotifyPlayNow span {
   color: white !important;
   font-size: 14px;
 }
-/* line 51, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 51, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .noSpotify span, #playlistIndexWrapper .noSpotify span {
   font-size: 11px;
 }
-/* line 58, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 58, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper #spotifyPlayNow
 .noSpotify, #playlistIndexWrapper #spotifyPlayNow
 .noSpotify {
   font-size: 11px;
 }
-/* line 63, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 63, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .playlistImage, #playlistIndexWrapper .playlistImage {
   display: inline-block;
   vertical-align: top;
   padding: 10px;
 }
-/* line 68, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 68, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .playlistImage figure img, #playlistIndexWrapper .playlistImage figure img {
   width: 200px;
   height: 200px;
 }
-/* line 72, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 72, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .playlistImage figcaption, #playlistIndexWrapper .playlistImage figcaption {
   max-width: 200px;
   text-align: center;
@@ -807,30 +807,30 @@ textarea {
   background-color: black;
   color: white;
 }
-/* line 80, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 80, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .playlistImage .playlistCaption, #playlistIndexWrapper .playlistImage .playlistCaption {
   padding: 2px 5px;
 }
-/* line 85, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 85, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .playlistImage .playlistCaptionTitle, #playlistIndexWrapper .playlistImage .playlistCaptionTitle {
   font-size: 17px;
   font-style: italic;
 }
-/* line 91, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 91, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .playlistImage .playlistCaptionArtist, #playlistIndexWrapper .playlistImage .playlistCaptionArtist {
   font-size: 16px;
   padding-top: 5px;
 }
-/* line 97, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 97, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .playlistImage .playlistCaptionMediums, #playlistIndexWrapper .playlistImage .playlistCaptionMediums {
   font-size: 12px;
   min-height: 21px;
 }
-/* line 104, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 104, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper input.playlistTypeCb, #playlistIndexWrapper input.playlistTypeCb {
   margin-left: 10px;
 }
-/* line 108, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 108, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .triangle-border, #playlistIndexWrapper .triangle-border {
   position: relative;
   padding: 15px;
@@ -844,7 +844,7 @@ textarea {
   max-width: 50%;
   margin-left: 30px;
 }
-/* line 122, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 122, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .triangle-border.left:before, #playlistIndexWrapper .triangle-border.left:before {
   top: 10px;
   bottom: auto;
@@ -852,7 +852,7 @@ textarea {
   border-width: 15px 30px 15px 0;
   border-color: transparent lightgray;
 }
-/* line 130, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 130, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .triangle-border:before, #playlistIndexWrapper .triangle-border:before {
   content: "";
   position: absolute;
@@ -864,7 +864,7 @@ textarea {
   display: block;
   width: 0;
 }
-/* line 142, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 142, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .triangle-border.left:after, #playlistIndexWrapper .triangle-border.left:after {
   top: 16px;
   bottom: auto;
@@ -872,7 +872,7 @@ textarea {
   border-width: 9px 21px 9px 0;
   border-color: transparent #fff;
 }
-/* line 149, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 149, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper .triangle-border:after, #playlistIndexWrapper .triangle-border:after {
   content: "";
   position: absolute;
@@ -884,45 +884,45 @@ textarea {
   display: block;
   width: 0;
 }
-/* line 161, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 161, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper #spotifySection, #playlistIndexWrapper #spotifySection {
   display: none;
 }
-/* line 166, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 166, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper #deezerSection, #playlistIndexWrapper #deezerSection {
   display: none;
 }
-/* line 171, /Users/georgeslater/Documents/oa/app/assets/stylesheets/playlists.css.scss */
+/* line 171, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/playlists.css.scss */
 #playlistWrapper #rdioSection, #playlistIndexWrapper #rdioSection {
   display: none;
 }
-/* line 1, /Users/georgeslater/Documents/oa/app/assets/stylesheets/users.css.scss */
+/* line 1, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/users.css.scss */
 #userWrapper {
   margin-left: 15px;
 }
-/* line 5, /Users/georgeslater/Documents/oa/app/assets/stylesheets/users.css.scss */
+/* line 5, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/users.css.scss */
 #userWrapper td.accepted {
   color: green;
 }
-/* line 10, /Users/georgeslater/Documents/oa/app/assets/stylesheets/users.css.scss */
+/* line 10, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/users.css.scss */
 #userWrapper td.rejected {
   color: red;
 }
-/* line 15, /Users/georgeslater/Documents/oa/app/assets/stylesheets/users.css.scss */
+/* line 15, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/users.css.scss */
 #userWrapper td.pending_review {
   color: orange;
 }
 
-/* line 21, /Users/georgeslater/Documents/oa/app/assets/stylesheets/users.css.scss */
+/* line 21, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/users.css.scss */
 #newUserWrapper {
   margin-left: 30px;
 }
-/* line 25, /Users/georgeslater/Documents/oa/app/assets/stylesheets/users.css.scss */
+/* line 25, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/users.css.scss */
 #newUserWrapper form {
   width: 75%;
 }
 
-/* line 31, /Users/georgeslater/Documents/oa/app/assets/stylesheets/users.css.scss */
+/* line 31, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/users.css.scss */
 #loginPage {
   margin-left: 40px;
   width: 80%;
@@ -930,7 +930,7 @@ textarea {
 /*
 Version: 3.5.1 Timestamp: Tue Jul 22 18:58:56 EDT 2014
 */
-/* line 5, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 5, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container {
   margin: 0;
   position: relative;
@@ -941,7 +941,7 @@ Version: 3.5.1 Timestamp: Tue Jul 22 18:58:56 EDT 2014
   vertical-align: middle;
 }
 
-/* line 18, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 18, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container,
 .select2-drop,
 .select2-search,
@@ -959,7 +959,7 @@ Version: 3.5.1 Timestamp: Tue Jul 22 18:58:56 EDT 2014
   /* css3 */
 }
 
-/* line 29, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 29, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container .select2-choice {
   display: block;
   height: 26px;
@@ -986,12 +986,12 @@ Version: 3.5.1 Timestamp: Tue Jul 22 18:58:56 EDT 2014
   background-image: linear-gradient(to top, #eeeeee 0%, white 50%);
 }
 
-/* line 60, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 60, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 html[dir="rtl"] .select2-container .select2-choice {
   padding: 0 8px 0 0;
 }
 
-/* line 64, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 64, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container.select2-drop-above .select2-choice {
   border-bottom-color: #aaa;
   border-radius: 0 0 4px 4px;
@@ -1002,12 +1002,12 @@ html[dir="rtl"] .select2-container .select2-choice {
   background-image: linear-gradient(to bottom, #eeeeee 0%, white 90%);
 }
 
-/* line 76, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 76, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container.select2-allowclear .select2-choice .select2-chosen {
   margin-right: 42px;
 }
 
-/* line 80, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 80, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container .select2-choice > .select2-chosen {
   margin-right: 26px;
   display: block;
@@ -1018,13 +1018,13 @@ html[dir="rtl"] .select2-container .select2-choice {
   width: auto;
 }
 
-/* line 92, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 92, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
   margin-left: 26px;
   margin-right: 0;
 }
 
-/* line 97, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 97, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container .select2-choice abbr {
   display: none;
   width: 12px;
@@ -1040,18 +1040,18 @@ html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
   outline: 0;
 }
 
-/* line 114, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 114, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container.select2-allowclear .select2-choice abbr {
   display: inline-block;
 }
 
-/* line 118, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 118, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container .select2-choice abbr:hover {
   background-position: right -11px;
   cursor: pointer;
 }
 
-/* line 123, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 123, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-drop-mask {
   border: 0;
   margin: 0;
@@ -1070,7 +1070,7 @@ html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
   filter: alpha(opacity=0);
 }
 
-/* line 141, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 141, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-drop {
   width: 100%;
   margin-top: -1px;
@@ -1086,7 +1086,7 @@ html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.15);
 }
 
-/* line 159, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 159, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-drop.select2-drop-above {
   margin-top: 1px;
   border-top: 1px solid #aaa;
@@ -1096,29 +1096,29 @@ html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
   box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.15);
 }
 
-/* line 170, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 170, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-drop-active {
   border: 1px solid #5897fb;
   border-top: none;
 }
 
-/* line 175, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 175, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-drop.select2-drop-above.select2-drop-active {
   border-top: 1px solid #5897fb;
 }
 
-/* line 179, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 179, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-drop-auto-width {
   border-top: 1px solid #aaa;
   width: auto;
 }
 
-/* line 184, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 184, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-drop-auto-width .select2-search {
   padding-top: 4px;
 }
 
-/* line 188, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 188, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container .select2-choice .select2-arrow {
   display: inline-block;
   width: 18px;
@@ -1137,7 +1137,7 @@ html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
   background-image: linear-gradient(to top, #cccccc 0%, #eeeeee 60%);
 }
 
-/* line 209, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 209, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 html[dir="rtl"] .select2-container .select2-choice .select2-arrow {
   left: 0;
   right: auto;
@@ -1146,7 +1146,7 @@ html[dir="rtl"] .select2-container .select2-choice .select2-arrow {
   border-radius: 4px 0 0 4px;
 }
 
-/* line 218, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 218, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container .select2-choice .select2-arrow b {
   display: block;
   width: 100%;
@@ -1154,12 +1154,12 @@ html[dir="rtl"] .select2-container .select2-choice .select2-arrow {
   background: url(/assets/select2.png) no-repeat 0 1px;
 }
 
-/* line 225, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 225, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 html[dir="rtl"] .select2-container .select2-choice .select2-arrow b {
   background-position: 2px 1px;
 }
 
-/* line 229, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 229, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-search {
   display: inline-block;
   width: 100%;
@@ -1172,7 +1172,7 @@ html[dir="rtl"] .select2-container .select2-choice .select2-arrow b {
   white-space: nowrap;
 }
 
-/* line 243, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 243, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-search input {
   width: 100%;
   height: auto !important;
@@ -1193,7 +1193,7 @@ html[dir="rtl"] .select2-container .select2-choice .select2-arrow b {
   background: url(/assets/select2.png) no-repeat 100% -22px, linear-gradient(to bottom, white 85%, #eeeeee 99%) 0 0;
 }
 
-/* line 267, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 267, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 html[dir="rtl"] .select2-search input {
   padding: 4px 5px 4px 20px;
   background: white url(/assets/select2.png) no-repeat -37px -22px;
@@ -1203,12 +1203,12 @@ html[dir="rtl"] .select2-search input {
   background: url(/assets/select2.png) no-repeat -37px -22px, linear-gradient(to bottom, white 85%, #eeeeee 99%) 0 0;
 }
 
-/* line 277, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 277, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-drop.select2-drop-above .select2-search input {
   margin-top: 4px;
 }
 
-/* line 281, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 281, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-search input.select2-active {
   background: white url(/assets/select2-spinner.gif) no-repeat 100%;
   background: url(/assets/select2-spinner.gif) no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
@@ -1217,7 +1217,7 @@ html[dir="rtl"] .select2-search input {
   background: url(/assets/select2-spinner.gif) no-repeat 100%, linear-gradient(to bottom, white 85%, #eeeeee 99%) 0 0;
 }
 
-/* line 290, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 290, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-active .select2-choice,
 .select2-container-active .select2-choices {
   border: 1px solid #5897fb;
@@ -1226,7 +1226,7 @@ html[dir="rtl"] .select2-search input {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-/* line 298, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 298, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-dropdown-open .select2-choice {
   border-bottom-color: transparent;
   -webkit-box-shadow: 0 1px 0 #fff inset;
@@ -1241,7 +1241,7 @@ html[dir="rtl"] .select2-search input {
   background-image: linear-gradient(to top, white 0%, #eeeeee 50%);
 }
 
-/* line 315, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 315, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-dropdown-open.select2-drop-above .select2-choice,
 .select2-dropdown-open.select2-drop-above .select2-choices {
   border: 1px solid #5897fb;
@@ -1253,29 +1253,29 @@ html[dir="rtl"] .select2-search input {
   background-image: linear-gradient(to bottom, white 0%, #eeeeee 50%);
 }
 
-/* line 326, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 326, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-dropdown-open .select2-choice .select2-arrow {
   background: transparent;
   border-left: none;
   filter: none;
 }
 
-/* line 331, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 331, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 html[dir="rtl"] .select2-dropdown-open .select2-choice .select2-arrow {
   border-right: none;
 }
 
-/* line 335, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 335, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-dropdown-open .select2-choice .select2-arrow b {
   background-position: -18px 1px;
 }
 
-/* line 339, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 339, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 html[dir="rtl"] .select2-dropdown-open .select2-choice .select2-arrow b {
   background-position: -16px 1px;
 }
 
-/* line 343, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 343, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-hidden-accessible {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1288,7 +1288,7 @@ html[dir="rtl"] .select2-dropdown-open .select2-choice .select2-arrow b {
 }
 
 /* results */
-/* line 355, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 355, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results {
   max-height: 200px;
   padding: 0 0 0 4px;
@@ -1299,31 +1299,31 @@ html[dir="rtl"] .select2-dropdown-open .select2-choice .select2-arrow b {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/* line 365, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 365, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 html[dir="rtl"] .select2-results {
   padding: 0 4px 0 0;
   margin: 4px 0 4px 4px;
 }
 
-/* line 370, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 370, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results ul.select2-result-sub {
   margin: 0;
   padding-left: 0;
 }
 
-/* line 375, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 375, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results li {
   list-style: none;
   display: list-item;
   background-image: none;
 }
 
-/* line 381, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 381, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results li.select2-result-with-children > .select2-result-label {
   font-weight: bold;
 }
 
-/* line 385, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 385, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results .select2-result-label {
   padding: 3px 7px 4px;
   margin: 0;
@@ -1336,65 +1336,65 @@ html[dir="rtl"] .select2-results {
   user-select: none;
 }
 
-/* line 399, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 399, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results-dept-1 .select2-result-label {
   padding-left: 20px;
 }
 
-/* line 400, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 400, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results-dept-2 .select2-result-label {
   padding-left: 40px;
 }
 
-/* line 401, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 401, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results-dept-3 .select2-result-label {
   padding-left: 60px;
 }
 
-/* line 402, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 402, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results-dept-4 .select2-result-label {
   padding-left: 80px;
 }
 
-/* line 403, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 403, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results-dept-5 .select2-result-label {
   padding-left: 100px;
 }
 
-/* line 404, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 404, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results-dept-6 .select2-result-label {
   padding-left: 110px;
 }
 
-/* line 405, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 405, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results-dept-7 .select2-result-label {
   padding-left: 120px;
 }
 
-/* line 407, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 407, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results .select2-highlighted {
   background: #3875d7;
   color: #fff;
 }
 
-/* line 412, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 412, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results li em {
   background: #feffde;
   font-style: normal;
 }
 
-/* line 417, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 417, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results .select2-highlighted em {
   background: transparent;
 }
 
-/* line 421, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 421, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results .select2-highlighted ul {
   background: #fff;
   color: #000;
 }
 
-/* line 429, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 429, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results .select2-no-results,
 .select2-results .select2-searching,
 .select2-results .select2-ajax-error,
@@ -1407,7 +1407,7 @@ html[dir="rtl"] .select2-results {
 /*
 disabled look for disabled choices in the results dropdown
 */
-/* line 438, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 438, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results .select2-disabled.select2-highlighted {
   color: #666;
   background: #f4f4f4;
@@ -1415,36 +1415,36 @@ disabled look for disabled choices in the results dropdown
   cursor: default;
 }
 
-/* line 444, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 444, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results .select2-disabled {
   background: #f4f4f4;
   display: list-item;
   cursor: default;
 }
 
-/* line 450, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 450, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results .select2-selected {
   display: none;
 }
 
-/* line 454, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 454, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-more-results.select2-active {
   background: #f4f4f4 url(/assets/select2-spinner.gif) no-repeat 100%;
 }
 
-/* line 458, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 458, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-results .select2-ajax-error {
   background: rgba(255, 50, 50, 0.2);
 }
 
-/* line 462, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 462, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-more-results {
   background: #f4f4f4;
   display: list-item;
 }
 
 /* disabled styles */
-/* line 469, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 469, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container.select2-container-disabled .select2-choice {
   background-color: #f4f4f4;
   background-image: none;
@@ -1452,20 +1452,20 @@ disabled look for disabled choices in the results dropdown
   cursor: default;
 }
 
-/* line 476, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 476, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container.select2-container-disabled .select2-choice .select2-arrow {
   background-color: #f4f4f4;
   background-image: none;
   border-left: 0;
 }
 
-/* line 482, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 482, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container.select2-container-disabled .select2-choice abbr {
   display: none;
 }
 
 /* multiselect */
-/* line 489, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 489, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi .select2-choices {
   height: auto !important;
   height: 1%;
@@ -1482,22 +1482,22 @@ disabled look for disabled choices in the results dropdown
   background-image: linear-gradient(to bottom, #eeeeee 1%, white 15%);
 }
 
-/* line 507, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 507, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 html[dir="rtl"] .select2-container-multi .select2-choices {
   padding: 0 0 0 5px;
 }
 
-/* line 511, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 511, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-locked {
   padding: 3px 5px 3px 5px !important;
 }
 
-/* line 515, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 515, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi .select2-choices {
   min-height: 26px;
 }
 
-/* line 519, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 519, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi.select2-container-active .select2-choices {
   border: 1px solid #5897fb;
   outline: none;
@@ -1505,25 +1505,25 @@ html[dir="rtl"] .select2-container-multi .select2-choices {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-/* line 526, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 526, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi .select2-choices li {
   float: left;
   list-style: none;
 }
 
-/* line 531, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 531, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 html[dir="rtl"] .select2-container-multi .select2-choices li {
   float: right;
 }
 
-/* line 534, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 534, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi .select2-choices .select2-search-field {
   margin: 0;
   padding: 0;
   white-space: nowrap;
 }
 
-/* line 540, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 540, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi .select2-choices .select2-search-field input {
   padding: 5px;
   margin: 1px 0;
@@ -1537,17 +1537,17 @@ html[dir="rtl"] .select2-container-multi .select2-choices li {
   background: transparent !important;
 }
 
-/* line 554, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 554, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi .select2-choices .select2-search-field input.select2-active {
   background: white url(/assets/select2-spinner.gif) no-repeat 100% !important;
 }
 
-/* line 558, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 558, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-default {
   color: #999 !important;
 }
 
-/* line 562, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 562, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi .select2-choices .select2-search-choice {
   padding: 3px 5px 3px 18px;
   margin: 3px 0 3px 5px;
@@ -1573,23 +1573,23 @@ html[dir="rtl"] .select2-container-multi .select2-choices li {
   background-image: linear-gradient(to top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
 }
 
-/* line 593, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 593, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 html[dir="rtl"] .select2-container-multi .select2-choices .select2-search-choice {
   margin: 3px 5px 3px 0;
   padding: 3px 18px 3px 5px;
 }
 
-/* line 597, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 597, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi .select2-choices .select2-search-choice .select2-chosen {
   cursor: default;
 }
 
-/* line 600, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 600, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi .select2-choices .select2-search-choice-focus {
   background: #d4d4d4;
 }
 
-/* line 604, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 604, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-search-choice-close {
   display: block;
   width: 12px;
@@ -1602,35 +1602,35 @@ html[dir="rtl"] .select2-container-multi .select2-choices .select2-search-choice
   background: url(/assets/select2.png) right top no-repeat;
 }
 
-/* line 616, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 616, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 html[dir="rtl"] .select2-search-choice-close {
   right: auto;
   left: 3px;
 }
 
-/* line 621, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 621, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi .select2-search-choice-close {
   left: 3px;
 }
 
-/* line 625, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 625, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
   left: auto;
   right: 2px;
 }
 
-/* line 630, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 630, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi .select2-choices .select2-search-choice .select2-search-choice-close:hover {
   background-position: right -11px;
 }
 
-/* line 633, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 633, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi .select2-choices .select2-search-choice-focus .select2-search-choice-close {
   background-position: right -11px;
 }
 
 /* disabled styles */
-/* line 638, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 638, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi.select2-container-disabled .select2-choices {
   background-color: #f4f4f4;
   background-image: none;
@@ -1638,7 +1638,7 @@ html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
   cursor: default;
 }
 
-/* line 645, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 645, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice {
   padding: 3px 5px 3px 5px;
   border: 1px solid #ddd;
@@ -1646,20 +1646,20 @@ html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
   background-color: #f4f4f4;
 }
 
-/* line 652, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 652, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice .select2-search-choice-close {
   display: none;
   background: none;
 }
 
 /* end multiselect */
-/* line 659, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 659, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-result-selectable .select2-match,
 .select2-result-unselectable .select2-match {
   text-decoration: underline;
 }
 
-/* line 663, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 663, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-offscreen, .select2-offscreen:focus {
   clip: rect(0 0 0 0) !important;
   width: 1px !important;
@@ -1674,12 +1674,12 @@ html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
   top: 0px !important;
 }
 
-/* line 677, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 677, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-display-none {
   display: none;
 }
 
-/* line 681, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+/* line 681, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
 .select2-measure-scrollbar {
   position: absolute;
   top: -10000px;
@@ -1691,7 +1691,7 @@ html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
 
 /* Retina-ize icons */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 2dppx) {
-  /* line 696, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+  /* line 696, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
   .select2-search input,
   .select2-search-choice-close,
   .select2-container .select2-choice abbr,
@@ -1701,7 +1701,7 @@ html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
     background-size: 60px 40px !important;
   }
 
-  /* line 702, /Users/georgeslater/.tokaido/Gems/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
+  /* line 702, /Users/georgeslater/.rbenv/versions/2.1.3/lib/ruby/gems/2.1.0/gems/select2-rails-3.5.9.1/vendor/assets/stylesheets/select2.scss */
   .select2-search input {
     background-position: 100% -21px !important;
   }
