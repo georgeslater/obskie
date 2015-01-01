@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141231135125) do
+ActiveRecord::Schema.define(version: 20150101174931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,8 +42,8 @@ ActiveRecord::Schema.define(version: 20141231135125) do
     t.string   "musicbrainz_identifier"
     t.string   "upc_barcode"
     t.string   "rdio_url"
+    t.string   "status"
     t.string   "workflow_state"
-    t.string   "workflow_status"
   end
 
   add_index "albums", ["artist_id"], name: "index_albums_on_artist_id", using: :btree
@@ -236,17 +236,14 @@ ActiveRecord::Schema.define(version: 20141231135125) do
 
   create_table "reviews", force: true do |t|
     t.text     "body"
-    t.integer  "user_id_id"
-    t.integer  "impressions_count"
-    t.boolean  "published"
-    t.boolean  "approved"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "album_id_id"
+    t.boolean  "submitted",  default: false, null: false
+    t.boolean  "approved",   default: false, null: false
   end
 
-  add_index "reviews", ["album_id_id"], name: "index_reviews_on_album_id_id", using: :btree
-  add_index "reviews", ["user_id_id"], name: "index_reviews_on_user_id_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "tracks", force: true do |t|
     t.string   "name"
@@ -288,7 +285,7 @@ ActiveRecord::Schema.define(version: 20141231135125) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.boolean  "admin",                   default: false
-    t.boolean  "is_approved_contributor"
+    t.boolean  "is_approved_contributor", default: false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
