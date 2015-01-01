@@ -57,6 +57,8 @@ gem 'friendly_id', '~> 5.0.0'
 # Use Capistrano for deployment
 #gem 'capistrano', '~> 3.3.0'
 
+gem 'newrelic_rpm'
+
 gem 'mail_form'
 gem 'simple_form'
 
