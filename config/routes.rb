@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :tracks
 
   devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_scope :user do
+      get 'users/sign_up_success', as: :check_email
+  end
 
   get 'welcome/index'
 

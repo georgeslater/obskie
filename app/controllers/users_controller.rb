@@ -39,4 +39,8 @@ class UsersController < ApplicationController
 	def become_contributor
 
 	end
+
+	def sign_up_success
+
+	end
 end

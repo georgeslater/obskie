@@ -1,6 +1,11 @@
 
 class RegistrationsController < Devise::RegistrationsController
- 
+  
+  def after_inactive_sign_up_path_for(resource)
+
+  	check_email_path
+  end
+  
   private
  
   def sign_up_params
