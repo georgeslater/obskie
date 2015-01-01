@@ -5,7 +5,7 @@ require 'rspotify'
 
 	def perform(playlistCreated)
 
-		RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID', ENV['SPOTIFY_CLIENT_SECRET'])
+		RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_CLIENT_SECRET'])
 
 		uri_keys = playlistCreated.spotify_uri.split(':')
 		user = uri_keys[2]
