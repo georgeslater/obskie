@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 ruby "2.1.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+gem 'responders', '~> 2.0'
 gem 'paperclip', '~> 4.2'
 
 gem 'dotenv-rails', :groups => [:development, :test]
