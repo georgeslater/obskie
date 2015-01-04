@@ -10,9 +10,7 @@
   <%= render "layouts/head" %>
    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
-<body <% if content_for?(:body_attributes) %>
-    <%= yield(:body_attributes) %> 
-  <% end %>>>
+<body>
 <%= render "layouts/header" %>
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
