@@ -62,7 +62,7 @@ gem 'newrelic_rpm'
 
 gem 'mail_form'
 gem 'simple_form'
-
+gem 'shareable'
 gem 'impressionist'
 
 gem "non-stupid-digest-assets"

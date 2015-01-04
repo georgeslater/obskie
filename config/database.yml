@@ -9,10 +9,10 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
+  pool: 8
 
 development:
   adapter: postgresql
   encoding: unicode
-  pool: 5
+  pool: 8
   username: georgeslater

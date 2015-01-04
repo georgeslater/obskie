@@ -169,12 +169,24 @@ h1 {
   display: inline-block;
 }
 
+//shareable
+nav.share {display:inline-block;position:absolute;bottom:0;} /* shareable's nav tag */
+nav.share div {float:left;}
+nav.share iframe {border:0; margin-top:0; padding-top:0;left:-8px;margin-right:-30px;} /* if using medium sized buttons */
+#___plusone_0 {font-size: default !important;}
+.fb_iframe_widget span { vertical-align: top !important; }
+.fb_edge_widget_with_comment { vertical-align: top !important;}
+.fb-like{display:inline-block}
+* html .fb-like{display:inline}/* ie6 inline block fix*/
+*+html .fb-like{display:inline}/* ie7 inline block fix*/
+
 .content {
   text-align: justify;
   font-size: 16px;
   line-height: 1.7em;
   margin-top: 30px;
   min-height:175px;
+  position:relative;
 }
 
 #contentWrapper{

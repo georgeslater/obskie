@@ -16,6 +16,14 @@ class Album < ActiveRecord::Base
     end
   end
 
+  def last_7_days_count
+    self.impressionist_count(:start_date => 7.days.ago, :filter=>:all)
+  end
+
+  def last_30_days_count
+    self.impressionist_count(:start_date => 30.days.ago, :filter=>:all)
+  end
+
 	attr_accessor :artist_name
 
   is_impressionable :counter_cache => true

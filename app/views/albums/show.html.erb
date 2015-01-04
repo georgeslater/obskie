@@ -1,3 +1,4 @@
+
         <div id="contentWrapper">
             <section id="leftPanel">
                 <div class="postContent">
@@ -78,14 +79,7 @@
                             <%= @album.body %>
                         </article>
                         <br /><br />
-                        <div id="fb-root"></div>
-                                <div id="shareBtns" style="display: none;">
-                                    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
-                                    <div style="display: inline-block; position: relative; top: 8px;">
-                                        <a href="https://twitter.com/share" class="twitter-share-button" data-via="obscurealbums" data-count="none" data-hashtags="obscurealbums" data-dnt="true">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                                <div class="g-plusone" data-size="medium" data-annotation="none"></div>                       
-                                </div>
+                        <%= render_shareable :buttons=> ['facebook', 'twitter', 'pinterest', 'google_plus']%>
                     </div>
                     <hr />
                     <div id="relatedPosts">

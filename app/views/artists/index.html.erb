@@ -27,7 +27,7 @@
 
 							<tr>
 								<td>
-									<%= image_tag album.album_art, :height => '50' %>
+									<%= image_tag(album.album_art, :class => 'albumArt', :height => 50, lazy:true) %>
 								</td>
 
 								<td>

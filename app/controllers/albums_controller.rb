@@ -15,31 +15,31 @@ class AlbumsController < ApplicationController
 		case order
 		when 'Newest first'
 
-			@albums = Album.where("published = true and workflow_state = 'accepted'").order('created_at DESC')
+			@albums = Album.where("workflow_state = 'accepted'").order('created_at DESC')
 		
 		when 'Oldest first'
 
-			@albums = Album.where("published = true and workflow_state = 'accepted'").order('created_at ASC')
+			@albums = Album.where("workflow_state = 'accepted'").order('created_at ASC')
 		
 		when 'Album name'
 
-			@albums = Album.where("published = true and workflow_state = 'accepted'").order('title ASC')
+			@albums = Album.where("workflow_state = 'accepted'").order('title ASC')
 
 		when 'Artist name'
 
-			@albums = Album.joins(:artist).where("published = true and workflow_state = 'accepted'").order('artists.name ASC')
+			@albums = Album.joins(:artist).where("workflow_state = 'accepted'").order('artists.name ASC')
 
 		when 'Year'
 
-			@albums = Album.where("published = true and workflow_state = 'accepted'").order('year ASC')
+			@albums = Album.where("workflow_state = 'accepted'").order('year ASC')
 		
 		when 'Most Obscure'
 
-			@albums = Album.where("published = true and workflow_state = 'accepted' and obscurity_rating IS NOT NULL").order('obscurity_rating DESC')
+			@albums = Album.where("workflow_state = 'accepted' and obscurity_rating IS NOT NULL").order('obscurity_rating DESC')
 
 		else
 
-			@albums = Album.where("published = true and workflow_state = 'accepted'").order('created_at DESC')
+			@albums = Album.where("workflow_state = 'accepted'").order('created_at DESC')
 		end
 
 		respond_with(@albums)
@@ -49,15 +49,15 @@ class AlbumsController < ApplicationController
 	def show
 		@album = Album.friendly.find(params[:id])
 		impressionist(@album)
-		@mostReadAlbums = Album.where("impressions_count > 0 and published = true and workflow_state = 'accepted'").order("impressions_count DESC").limit(20)
-		@mostCommentedAlbums = Album.where("comments_count > 0 and published = true and workflow_state = 'accepted'").order("comments_count DESC").limit(20)
+		@mostReadAlbums = Album.where("impressions_count > 0 and workflow_state = 'accepted'").order("impressions_count DESC").limit(20)
+		@mostCommentedAlbums = Album.where("comments_count > 0 and workflow_state = 'accepted'").order("comments_count DESC").limit(20)
 
 		@relatedAlbums = Array.new
-		c = Album.where("published = true and workflow_state = 'accepted'").count
+		c = Album.where("workflow_state = 'accepted'").count
 
 		until @relatedAlbums.size == 3 || @relatedAlbums.size >= c-1 do 
 
-			relAlbum = Album.where("published = true and workflow_state = 'accepted'").offset(rand(c)).first
+			relAlbum = Album.where("workflow_state = 'accepted'").offset(rand(c)).first
 
 			unless @relatedAlbums.include?(relAlbum) || relAlbum == @album
 				@relatedAlbums.push(relAlbum)
@@ -72,7 +72,7 @@ class AlbumsController < ApplicationController
 	def approval
 
 		if current_user.try(:admin?)
-			@nonApproved = Album.where("published = true AND workflow_state = 'awaiting_review'")
+			@nonApproved = Album.where("workflow_state = 'awaiting_review'")
 		end
 	end
 

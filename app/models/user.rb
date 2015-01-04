@@ -34,12 +34,21 @@ class User < ActiveRecord::Base
   end
 
   def self.find_first_by_auth_conditions(warden_conditions)
-  conditions = warden_conditions.dup
-  if login = conditions.delete(:login)
-    where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
-  else
-    where(conditions).first
-  end
+    
+    #this is a nasty hack, but it's the only way I've been able to solve http://stackoverflow.com/questions/26695166/devise-activemodelforbiddenattributeserror-when-sending-reset-password-instr
+    begin  
+      conditions = warden_conditions.permit!.dup
+
+    rescue NoMethodError
+
+      conditions = warden_conditions.dup
+    end
+
+    if login = conditions.delete(:login)
+      where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    else
+      where(conditions).first
+    end
 end
 
 end
