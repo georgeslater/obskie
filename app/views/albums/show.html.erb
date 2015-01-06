@@ -76,7 +76,7 @@
                     </div>
                     <div class="content">
                         <article>
-                            <%= @album.body %>
+                            <%= simple_format(@album.body) %>
                         </article>
                         <br /><br />
                         <%= render_shareable :buttons=> ['facebook', 'twitter', 'pinterest', 'google_plus']%>
