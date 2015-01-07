@@ -1,4 +1,6 @@
-
+<% title get_title_text(@album) %>
+<% meta_description get_meta_description(@album) %>
+<% meta_keywords get_meta_keywords(@album) %>
         <div id="contentWrapper">
             <section id="leftPanel">
                 <div class="postContent">
@@ -7,7 +9,6 @@
                             <img src="<%= @album.album_art %>" />
                         </div>
                         <div class="albumTitle">
-
                             <div id="authorInfo">
                                 <%= link_to user_path(@album.user.username), :title => "Profile page", :class => "authorName" do %>
                                     <div id="authorPhoto">

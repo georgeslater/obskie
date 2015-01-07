@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Obscure Albums</title>
+  <title><%= title %></title>
+  <meta name="keywords" content="<%= meta_keywords %>" /> 
+  <meta name="description" content="<%= meta_description %>" />
   <%= favicon_link_tag 'favicon.ico' %>
   <link href="//netdna.bootstrapcdn.com/bootstrap/<%= bootstrap_version %>/css/bootstrap.min.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>

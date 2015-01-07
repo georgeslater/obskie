@@ -26,4 +26,33 @@ module AlbumsHelper
 			body
 		end
 	end
+
+	def get_title_text(album)
+
+		res = album.artist.name + ' - '+album.title
+
+		if album.year.present?
+
+			res += ' ('+album.year.to_s+')'
+		end
+
+		res
+	end
+
+	def get_meta_keywords(album)
+
+		album_year = if album.year.present? then album.year.to_s+", " else "" end
+		album.artist.name+', '+album.title+', '+album_year+'obscure albums, forgotten albums, lost classics, album reviews, music reviews'
+	end
+
+	def get_meta_description(album)
+
+		if album.body && album.body.size > 155
+
+			album.body[0..155]+"..."
+
+		else
+			album.body
+		end
+	end
 end
