@@ -17,7 +17,9 @@
 /tmp
 
 #ignore database info
-/config/database.yml
+config/database.yml
+
+config/aws.yml
 
 .env
 Procfile

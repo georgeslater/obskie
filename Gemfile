@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'responders', '~> 2.0'
 gem 'paperclip', '~> 4.2'
-
+gem 'aws-sdk'
 gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'lazyload-rails'

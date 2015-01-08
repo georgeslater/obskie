@@ -13,8 +13,17 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  #def lookup_ip_location
+   # if Rails.env.development?
+    #  Geocoder.search(request.remote_ip).first
+    #else
+     # request.location
+    #end
+  #end
+
   helper_method :forem_user
   helper_method :has_drafts
+  #helper_method :lookup_ip_location
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.

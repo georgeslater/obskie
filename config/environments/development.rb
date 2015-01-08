@@ -51,4 +51,17 @@ password: ENV['GMAIL_PASSWORD']
   # config.action_view.raise_on_missing_translations = true
   Paperclip.options[:image_magick_path] = "/usr/local/bin"
   Paperclip.options[:command_path] = "/usr/local/bin"
+
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => 'obscurealbums'
+  }
+}
+
+  class ActionDispatch::Request
+    def remote_ip
+      "84.34.156.155" # fake ip for example                                                                                                                                                                                                                                                                                    
+    end
+  end
 end
