@@ -22,4 +22,3 @@ config/database.yml
 config/aws.yml
 
 .env
-Procfile
