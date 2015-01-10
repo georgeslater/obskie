@@ -44,7 +44,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Tokaido uses the puma webserver
-gem 'puma'
+#gem 'puma'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -53,7 +53,7 @@ gem 'devise'
 gem 'friendly_id', '~> 5.0.0'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 #gem 'capistrano', '~> 3.3.0'
