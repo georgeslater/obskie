@@ -5,13 +5,13 @@
 	</div>
 	<div id="albums">
 		 <% @albums.each do | album | %>
-		    <div class="albumImage">
-				<%= link_to artist_album_path(album.artist, album) do %>
+		    <div itemscope itemtype="http://schema.org/MusicAlbum" class="albumImage">
+				<%= link_to artist_album_path(album.artist, album), :itemprop => "url" do %>
 					<figure>
 						<%= image_tag(album.album_art, :class => 'albumArt', :width => 200, lazy:true) %>
 					</figure>
 					<figcaption>
-						<div class="albumCaption albumCaptionArtist"><%= album.artist.name %></div>
+						<div class="albumCaption albumCaptionArtist" itemprop="byArtist"><%= album.artist.name %></div>
 						<div class="albumCaption albumCaptionTitle"><%= album.title %></div>
 						<div class="albumCaption albumCaptionYear"><%= album.year %></div>
 					</figcaption>

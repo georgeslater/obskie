@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150102004345) do
+ActiveRecord::Schema.define(version: 20150111145516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150102004345) do
     t.string   "rdio_url",               limit: 255
     t.string   "status",                 limit: 255
     t.string   "workflow_state",         limit: 255
+    t.date     "date_released"
   end
 
   add_index "albums", ["artist_id"], name: "index_albums_on_artist_id", using: :btree

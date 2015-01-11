@@ -48,9 +48,7 @@ class SearchesController < ApplicationController
 		api = CoverArt::Client.new
 		newAlbum.album_art = api.group release
 
-		if releaseGroup.releases.first.date.present?
-			yearPart = releaseGroup.releases.first.date.year
-		end
+		albumEarliestDate = releaseGroup.first_release_date
 
 		for releasee in releaseGroup.releases
 
@@ -59,11 +57,15 @@ class SearchesController < ApplicationController
 			if releasee.country == 'US'
 
 				newAlbum.upc_barcode = releasee.barcode
-				#break
+				break
 			end
 		end
 
-		newAlbum.year = yearPart
+		newAlbum.date_released = albumEarliestDate
+
+		unless albumEarliestDate.nil?
+			newAlbum.year = albumEarliestDate.year
+		end
 
 		newAlbum.musicbrainz_identifier = release
 		album_artist = Artist.find_by(name: artist)

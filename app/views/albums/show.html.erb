@@ -2,7 +2,6 @@
 <% meta_description get_meta_description(@album) %>
 <% meta_keywords get_meta_keywords(@album) %>
         <div id="contentWrapper" itemscope itemtype="http://schema.org/MusicAlbum">
-            <meta itemprop="dateCreated" content="<%= @album.created_at.to_time.iso8601 %>" />
             <section id="leftPanel">
                 <div class="postContent">
                     <div class="postTitle">
@@ -82,6 +81,7 @@
                         </div>                            
                     </div>
                     <div class="content" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                        <meta itemprop="dateCreated" content="<%= @album.created_at.to_time.iso8601 %>" />
                         <article itemprop="reviewBody">
                             <%= simple_format(@album.body) %>
                         </article>
