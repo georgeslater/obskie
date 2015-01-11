@@ -1,13 +1,18 @@
 <table class="table-striped table-condensed">
     <tbody>
         <% @albumTracks.each do | track | %>
-            <tr>
-                <td><%= track.name %></td>
-                <td><%= formatTime(track.duration_milli) %></td>
-                <td><div class="ratyTest author" data-score="<%= track.author_rating %>"></div></td>
+            <tr itemprop="track" itemscope itemtype="http://schema.org/MusicRecording">
+                <td><span itemprop="name"><%= track.name %></span></td>
+                <td>
+                    <span><%= formatTime(track.duration_milli) %></span>
+                    <meta itemprop="duration" content="<%= get_schema_duration(track.duration_milli) %>" />
+                </td>
+                <td>
+                    <div class="ratyTest author" data-score="<%= track.author_rating %>"></div>                  
+                </td>
                 <td>
                     <% if track.spotify_link.present? %>
-                    	<a href="<%= track.spotify_link %>" title="Stream Track on Spotify">
+                    	<a itemprop="url" href="<%= track.spotify_link %>" title="Stream Track on Spotify">
                         	<span class="spotify albumLinkIcons"></span>
                         </a>
                     <% end %>

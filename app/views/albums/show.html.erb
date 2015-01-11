@@ -1,16 +1,17 @@
 <% title get_title_text(@album) %>
 <% meta_description get_meta_description(@album) %>
 <% meta_keywords get_meta_keywords(@album) %>
-        <div id="contentWrapper">
+        <div id="contentWrapper" itemscope itemtype="http://schema.org/MusicAlbum">
+            <meta itemprop="dateCreated" content="<%= @album.created_at.to_time.iso8601 %>" />
             <section id="leftPanel">
                 <div class="postContent">
                     <div class="postTitle">
                         <div class="albumArt">
-                            <img src="<%= @album.album_art %>" />
+                            <img itemprop="image" src="<%= @album.album_art %>" />
                         </div>
                         <div class="albumTitle">
                             <div id="authorInfo">
-                                <%= link_to user_path(@album.user.username), :title => "Profile page", :class => "authorName" do %>
+                                <%= link_to user_path(@album.user.username), :title => "Profile page", :class => "authorName", :rel => "author" do %>
                                     <div id="authorPhoto">
                                         <%= image_tag @album.user.avatar.url(:thumb), size: "50x50" %>
                                     </div>
@@ -42,9 +43,14 @@
                                 <% end %>
                             </div>                                       
                             <div class="albumHeader">
-                                <h2><%= @album.title %></h2>
-                                <h5><%= link_to @album.artist.name, artist_path(@album.artist) %></h5>
+                                <h2 itemprop="name"><%= @album.title %></h2>
+                                <h5 itemprop="byArtist" itemscope itemtype="http://schema.org/MusicGroup">
+                                    <%= link_to artist_path(@album.artist) do %>
+                                        <span itemprop="name"><%= @album.artist.name %></span>
+                                    <% end %>
+                                </h5>
                                 <h4><%= @album.year %></h4>
+                                <meta itemprop="numTracks" content="<%= @album.tracks.size %>" />
                                 <div class="streamBuyLinks">                           
                                     <% if @album.spotify_link.present? %>
                                         <a href="<%= @album.spotify_link %>" title="Spotify">
@@ -75,8 +81,8 @@
                             </div>                          
                         </div>                            
                     </div>
-                    <div class="content">
-                        <article>
+                    <div class="content" itemprop="review" itemscope itemtype="http://schema.org/Review">
+                        <article itemprop="reviewBody">
                             <%= simple_format(@album.body) %>
                         </article>
                         <br /><br />
@@ -90,7 +96,7 @@
                     
                     <div id="albumComments">
                         <h3>
-                            <%= pluralize(@album.comments_count, "Comment") %>                            
+                            <%= pluralize(@album.comments_count, "Comment") %>
                         </h3>
 
                         <% if @album.comments_count == 0 %>
