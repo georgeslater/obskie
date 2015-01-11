@@ -50,7 +50,9 @@
                                 </h5>
                                 <h4><%= @album.year %></h4>
                                 <meta itemprop="numTracks" content="<%= @album.tracks.size %>" />
-                                <meta itemprop="datePublished" content="<%= @album.date_released.to_time.iso8601 %>" />
+                                <% if @album.date_released.present? %>
+                                    <meta itemprop="datePublished" content="<%= @album.date_released.to_time.iso8601 %>" />
+                                <% end %>
                                 <div class="streamBuyLinks">                           
                                     <% if @album.spotify_link.present? %>
                                         <a href="<%= @album.spotify_link %>" title="Spotify">
