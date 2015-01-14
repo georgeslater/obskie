@@ -63,6 +63,10 @@ def meta_keywords(tags = nil)
 
       album.amazon_url_uk
     
+    when "CA"
+
+      album.amazon_url_ca
+
     else
 
       album.amazon_url

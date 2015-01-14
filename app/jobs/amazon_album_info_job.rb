@@ -30,7 +30,8 @@ class AmazonAlbumInfoJob < ApplicationController
 
 		amazon_url_us = requestAlbumLink('US', 'obscalbu-20', album_created)
 		amazon_url_uk = requestAlbumLink('GB', 'obscalbu-21', album_created)
+		amazon_url_ca = requestAlbumLink('CA', 'obscalbu0c-20', album_created)
 
-		album_created.update_attributes(amazon_url: amazon_url_us, amazon_url_uk: amazon_url_uk)
+		album_created.update_attributes(amazon_url: amazon_url_us, amazon_url_uk: amazon_url_uk, amazon_url_ca: amazon_url_ca)
 	end
 end
