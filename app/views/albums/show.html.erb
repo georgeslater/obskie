@@ -88,7 +88,7 @@
                         <article itemprop="reviewBody">
                             <%= simple_format(@album.body) %>
                         </article>
-                        <input type="hidden" value="<%= @country %>" />
+                        <input type="hidden" value="<%= get_user_country_code %>" />
                         <br /><br />
                         <%= render_shareable :buttons=> ['facebook', 'twitter', 'pinterest', 'google_plus']%>
                     </div>

@@ -241,6 +241,7 @@ GEM
     rdoc (4.2.0)
       json (~> 1.4)
     redcarpet (3.0.0)
+    redis (3.2.0)
     responders (2.0.2)
       railties (>= 4.2.0.alpha, < 5)
     rest_client (1.8.2)
@@ -338,6 +339,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   rails_12factor
   rdio_api
+  redis
   responders (~> 2.0)
   rspotify
   sass-rails (~> 4.0.3)

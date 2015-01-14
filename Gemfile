@@ -69,7 +69,10 @@ gem 'impressionist'
 
 gem "non-stupid-digest-assets"
 gem 'httparty'
+
 gem "geocoder"
+gem "redis"
+
 gem "itunes-search-api"
 gem "wicked"
 gem 'musicbrainz'

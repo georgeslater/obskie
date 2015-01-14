@@ -65,12 +65,6 @@ class AlbumsController < ApplicationController
 		end
 
 		@albumTracks = @album.tracks.order('tracks.order')
-
-		unless request.nil? || request.location.nil?
-			@country = request.location.country_code
-		else
-			@country = "Unknown"
-		end
 	end
 
 	def approval

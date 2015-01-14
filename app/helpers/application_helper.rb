@@ -41,4 +41,11 @@ def meta_keywords(tags = nil)
     end
   end
 
+  def get_user_country_code
+    if Rails.env.development?
+      'GB'
+    else
+      request.location.country_code
+    end
+  end
 end
