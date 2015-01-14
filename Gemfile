@@ -26,9 +26,11 @@ gem 'rspotify'
 
 gem 'sucker_punch', '~> 1.0'
 
+#forem stuff
 gem 'forem', :git => "https://github.com/radar/forem.git", :branch => "rails4"
 gem 'kaminari', '0.15.1'
 gem 'forem-bootstrap',:git => "https://github.com/radar/forem-bootstrap.git"
+gem 'forem-redcarpet', github: "radar/forem-redcarpet"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

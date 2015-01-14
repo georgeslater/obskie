@@ -8,12 +8,12 @@
 		    <div itemscope itemtype="http://schema.org/MusicAlbum" class="albumImage">
 				<%= link_to artist_album_path(album.artist, album), :itemprop => "url" do %>
 					<figure>
-						<%= image_tag(album.album_art, :class => 'albumArt', :width => 200, lazy:true) %>
+						<%= image_tag(album.album_art, :alt => album.title, :class => 'albumArt', :width => 200, lazy:true) %>
 					</figure>
 					<figcaption>
 						<div class="albumCaption albumCaptionArtist" itemprop="byArtist"><%= album.artist.name %></div>
-						<div class="albumCaption albumCaptionTitle"><%= album.title %></div>
-						<div class="albumCaption albumCaptionYear"><%= album.year %></div>
+						<div class="albumCaption albumCaptionTitle" itemprop="name"><%= album.title %></div>
+						<div class="albumCaption albumCaptionYear" ><%= album.year %></div>
 					</figcaption>
 				<% end %>
 			</div>

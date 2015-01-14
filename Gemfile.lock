@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/radar/forem-redcarpet.git
+  revision: c53be9a5c3e97d65546f3f56b53f82669f3a5af5
+  specs:
+    forem-redcarpet (1.0.2)
+      nokogiri
+      pygments.rb (= 0.5.4)
+      redcarpet (= 3.0.0)
+
+GIT
   remote: https://github.com/radar/forem-bootstrap.git
   revision: 10be50afc1d0a22af1306076e41624c55fc585be
   specs:
@@ -185,6 +194,10 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.17.1)
+    posix-spawn (0.3.9)
+    pygments.rb (0.5.4)
+      posix-spawn (~> 0.3.6)
+      yajl-ruby (~> 1.1.0)
     rack (1.6.0)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -227,6 +240,7 @@ GEM
       simple_oauth (~> 0.1.5)
     rdoc (4.2.0)
       json (~> 1.4)
+    redcarpet (3.0.0)
     responders (2.0.2)
       railties (>= 4.2.0.alpha, < 5)
     rest_client (1.8.2)
@@ -290,6 +304,7 @@ GEM
     wicked (1.1.0)
       rails (>= 3.0.7)
     workflow (1.0.0)
+    yajl-ruby (1.1.0)
 
 PLATFORMS
   ruby
@@ -303,6 +318,7 @@ DEPENDENCIES
   dotenv-rails
   forem!
   forem-bootstrap!
+  forem-redcarpet!
   friendly_id (~> 5.0.0)
   geocoder
   httparty
