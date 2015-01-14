@@ -42,10 +42,30 @@ def meta_keywords(tags = nil)
   end
 
   def get_user_country_code
-    if Rails.env.development?
-      'GB'
+      if Rails.env.development?
+        'GB'
+      else
+        request.location.country_code
+      end
+    end
+
+  def get_amazon_link(album)
+
+    country_code = get_user_country_code
+
+    case country_code
+
+    when "US"
+
+      album.amazon_url
+
+    when "GB"
+
+      album.amazon_url_uk
+    
     else
-      request.location.country_code
+
+      album.amazon_url
     end
   end
 end

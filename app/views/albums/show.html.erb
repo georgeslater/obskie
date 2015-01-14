@@ -62,8 +62,8 @@
                                     <% if @album.itunes_view_url.present? %>
                                         <a href="<%= @album.itunes_view_url %>" target="itunes_store" class="externalLink itunes" title="iTunes"></a>
                                     <% end %>
-                                    <% if @album.amazon_url.present? %>
-                                        <a href="<%= @album.amazon_url %>" target="_blank" class="externalLink amazon" title="Amazon"></a>
+                                    <% if get_amazon_link(@album).present? %>
+                                        <a href="<%= get_amazon_link(@album) %>" target="_blank" class="externalLink amazon" title="Amazon"></a>
                                     <% end %>
                                     <% if @album.rdio_url.present? %>
                                         <a href="http://rdio.com<%= @album.rdio_url %>" class="externalLink rdio" target="_blank" title="Rdio"></a>
@@ -88,7 +88,6 @@
                         <article itemprop="reviewBody">
                             <%= simple_format(@album.body) %>
                         </article>
-                        <input type="hidden" value="<%= get_user_country_code %>" />
                         <br /><br />
                         <%= render_shareable :buttons=> ['facebook', 'twitter', 'pinterest', 'google_plus']%>
                     </div>
