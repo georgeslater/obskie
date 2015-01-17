@@ -73,6 +73,8 @@ gem 'httparty'
 gem "geocoder"
 gem "redis"
 
+gem "tinymce-rails"
+
 gem "itunes-search-api"
 gem "wicked"
 gem 'musicbrainz'

@@ -21,16 +21,16 @@
 
 		<%= form_for(@album) do |f| %>
 
-			<%= f.text_area :body, :cols => "100", :rows => "30" %>
+			<%= f.text_area :body, :class => "tinymce", :cols => "120", :rows => "40" %>
 			<div>
 				<%= f.button "Save Draft", name: "type", value: "save" %> 
 				<%= f.button "Submit", name: "type", value: "publish", :onclick => "return checkSubmit();" %> 
 			</div>
+			<%= tinymce %>
 		<% end %>
 
 	</div>
 </div>
-
 <script>
 	
 	function checkSubmit(){

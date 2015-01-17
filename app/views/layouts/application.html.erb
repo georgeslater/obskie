@@ -12,7 +12,7 @@
   <%= render "layouts/head" %>
    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body<% if controller.controller_name == 'albums' %> data-no-turbolink<% end %>>
 <%= render "layouts/header" %>
 <% if alert %>
   <p class="alert alert-danger"><%= alert %></p>
