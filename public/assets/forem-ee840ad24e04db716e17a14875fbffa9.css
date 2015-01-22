@@ -93,5 +93,6 @@
 }
 /* line 112, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
 #new_post input[type="submit"] {
-  margin: 15px 0 30px 5%;
+  margin-left: 5%;
+  margin: 15px 0;
 }

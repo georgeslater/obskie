@@ -18,6 +18,7 @@
 
     <div class='contents'>
       <div class='user col-md-2'>
+        <div class='icon'><%= forem_avatar(post.user, :size => 60) %></div>
         <div class='username'>
           <% if post.user.is_a?(Forem::NilUser) %>
             <%= t(:deleted) %>
@@ -25,13 +26,13 @@
             <%= link_to_if Forem.user_profile_links, post.user.forem_name, [main_app, post.user] %>
           <% end %>
         </div>
-        <div class='icon'><%= forem_avatar(post.user, :size => 60) %></div>
       </div>
 
       <div class='contents col-md-7'>
         <a href='#post-<%= post.id %>'>
           <%= post_time_tag(post) %>
         </a>
+        <br/><br/>
         <%= forem_format(post.text) %>
 
         <% if post.reply_to %>
@@ -50,7 +51,7 @@
             <% end %>
             <% if post.owner_or_admin?(forem_user) %>
               <% if can?(:edit_post, post.topic.forum) %>
-                <%= link_to t('edit', :scope => 'forem.post'), forem.edit_forum_topic_post_path(post.forum, post.topic, post), :class => "btn btn-info" %>
+                <%= link_to 'Edit', forem.edit_forum_topic_post_path(post.forum, post.topic, post), :class => "btn btn-info" %>
               <% end %>
               <% if can?(:destroy_post, post.topic.forum) %>
                 <%= link_to t('delete', :scope => 'forem.topic'), forem.forum_topic_post_path(post.forum, post.topic, post), :method => :delete, data: { :confirm => t("are_you_sure") }, :class => "btn btn-danger" %>

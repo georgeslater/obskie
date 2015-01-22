@@ -9,7 +9,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <div class="title">
+                    <div class="oaTitle">
                         <a id="obscureIcon" href="/">
                             <span class="icon"></span>
                             <h1>bscure albums</h1>
@@ -19,22 +19,22 @@
                 <div id="menuContent" class="collapse navbar-collapse">
                     <div id="siteLinks">
                         <ul id="menuBar" class="nav navbar-nav">
-                            <li class="<%= 'activeTab' if current_page?(albums_path) || current_page?(root_path) %>">
-                                <%= link_to "Albums", albums_path %>
+                            <li class="<%= 'activeTab' if current_page?(main_app.albums_path) || current_page?(main_app.root_path) %>">
+                                <%= link_to "Albums", main_app.albums_path %>
                             </li>
-                            <li class="<%= 'activeTab' if current_page?(artists_path) %>">
-                                <%= link_to "A-Z", artists_path %>
+                            <li class="<%= 'activeTab' if current_page?(main_app.artists_path) %>">
+                                <%= link_to "A-Z", main_app.artists_path %>
                             </li>
-                            <li class="<%= 'activeTab' if current_page?(playlists_path) %>">
-                                <%= link_to "Playlists", playlists_path %>
+                            <li class="<%= 'activeTab' if current_page?(main_app.playlists_path) %>">
+                                <%= link_to "Playlists", main_app.playlists_path %>
                             </li>
                             <li class="signInMobile">
                                 <%= link_to "Login", new_session_path(resource_name) %>
                             </li>
 
-                            <!--<li>
-                                <%= link_to "Forum", forem_path %>
-                            </li>-->
+                            <li class="<%= 'activeTab' if params[:controller] == 'forem/forums' %>">
+                                <%= link_to "Forum", main_app.forem_path %>
+                            </li>
                         </ul>
                     </div>
                     <div>
@@ -52,47 +52,47 @@
                                     </div>
                                     <div id="userMenu">
                                         <div>
-                                            <%= link_to edit_user_registration_path(current_user) do %> 
+                                            <%= link_to main_app.edit_user_registration_path(current_user) do %> 
                                                 <div class="menuRow">Edit Profile</div>
                                             <% end %>
                                         </div>
                                         <div>
                                             <% if can? :create, Album %>
-                                                <%= link_to new_album_path do %>
+                                                <%= link_to main_app.new_album_path do %>
                                                     <div class="menuRow">Submit a Review</div>
                                                 <% end %>
                                             <% else %>
-                                                <%= link_to become_contributor_path do %>
+                                                <%= link_to main_app.become_contributor_path do %>
                                                     <div class="menuRow">Become a Contributor</div>
                                                 <% end %>
                                             <% end %>
                                         </div>
                                         <div>
-                                            <%= link_to new_playlist_path do %>
+                                            <%= link_to main_app.new_playlist_path do %>
                                                 <div class="menuRow">Submit a Playlist</div>
                                             <% end %>
                                         </div>
                                         <div>
-                                            <%= link_to user_path(current_user) do %>
+                                            <%= link_to main_app.user_path(current_user) do %>
                                                 <div class="menuRow">My Reviews</div>
                                             <% end %>
                                         </div>
                                         <% if @hasDrafts %>
                                             <div>
-                                                <%= link_to my_drafts_path(current_user) do %>
+                                                <%= link_to main_app.my_drafts_path(current_user) do %>
                                                     <div class="menuRow">My Drafts</div>
                                                 <% end %>
                                             </div>
                                         <% end %>
                                         <% if can? :approve, Album %>
                                             <div>
-                                                <%= link_to non_approved_path do %>
+                                                <%= link_to main_app.non_approved_path do %>
                                                     <div class="menuRow">Pending Approval (<%= get_pending_submission_count %>)</div>
                                                 <% end %>
                                             </div>
                                         <% end %>
                                         <div>
-                                            <%= link_to destroy_user_session_path do %>
+                                            <%= link_to main_app.destroy_user_session_path do %>
                                                     <div class="menuRow">Sign Out</div>
                                             <% end %>
                                         </div>

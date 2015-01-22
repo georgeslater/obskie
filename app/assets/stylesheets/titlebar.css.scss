@@ -1,0 +1,172 @@
+body {
+  padding-top: 70px;
+}
+
+h1 {
+  font-family: 'Fauna One', Arial !important;
+  display: inline-block;
+}
+
+.navbar{
+	
+	margin-top: 0px !important;
+}
+
+.oaTitle {
+  float: left;
+  color: white;
+
+	#obscureIcon .icon {
+	  background-image: url('/images/vinyl_oh.png');
+	  width: 27px;
+	  height: 27px;
+	  display: inline-block;
+	}
+}
+
+#menuContent a {
+  list-style: none;
+  text-decoration: none;
+  color: white !important;
+}
+
+.loginInfo{
+	
+	color: white;
+	float: right;
+	margin-left: 20px;
+  	margin-top: 35px;
+	font-weight: bold;
+}
+
+.menuRow{
+  
+  padding: 10px;
+}
+
+.loginInfoMenu{
+  
+  position: relative;
+  height: 30px; 
+}
+
+.loginInfoArrowIcon.loginInfoArrowIconSelected{
+  
+  background-image: asset-url('/images/arrow-up.png')
+}
+
+.loginInfoArrowIcon{
+  
+    background: asset-url('/images/arrow-down.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 0;
+    margin-right: 7px;
+    top: 0;
+}
+
+#userMenu{
+  display: none;
+  width: 160px;
+  background-color: #222;
+  border-radius: 11px;
+  text-align: left;
+  font-size: 12px;
+  padding: 10px;
+  position:absolute;
+  right: 5px;
+}
+
+.displayNameArrow{
+  
+  font-size: 1.1em;
+  color: #fff;
+  height: 24px;
+  line-height: 24px;
+  cursor:pointer;
+  max-width:175px;
+  width:auto;
+}
+
+.displayNameArrow:hover span{
+
+  color: lightskyblue !important;
+}
+
+.menuRow:hover{
+  
+  color: lightskyblue;
+}
+
+.avatarImage{
+  
+  margin-right: 5px;
+}
+
+.login{
+  
+  display: inline-block;
+}
+
+.loginField{
+  
+  border-radius: 5px;
+  color: black;
+}
+
+.loginButton{
+  
+  color: black;
+  background-color: #a5b8da;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a5b8da), color-stop(100%, #7089b3));
+  background-image: -webkit-linear-gradient(top, #a5b8da, #7089b3);
+  background-image: -moz-linear-gradient(top, #a5b8da, #7089b3);
+  background-image: -ms-linear-gradient(top, #a5b8da, #7089b3);
+  background-image: -o-linear-gradient(top, #a5b8da, #7089b3);
+  background-image: linear-gradient(top, #a5b8da, #7089b3);
+  border-top: 1px solid #758fba;
+  border-right: 1px solid #6c84ab;
+  border-bottom: 1px solid #5c6f91;
+  border-left: 1px solid #6c84ab;
+  border-radius: 18px;
+  -webkit-box-shadow: inset 0 1px 0 0 #aec3e5;
+  box-shadow: inset 0 1px 0 0 #aec3e5;
+  color: #fff;
+  font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  padding: 4px 0;
+  text-align: center;
+  text-shadow: 0 -1px 1px #64799e;
+  width: 60px;
+}
+
+.loginLinks{
+  
+  margin-top: 3px;
+
+  .forgotPasswordLink{
+
+    float: right;
+  }
+}
+
+@media (min-width: 768px) {
+  #menuBar {
+    margin: 20px 0 0 50px !important;
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+	#menuBar li {
+	    display: block !important;
+	    padding: 10px;
+	    &:not(:last-child) {
+	      border-bottom: 1px solid lightgray;
+	      width: 80%;
+	    }
+	}
+}

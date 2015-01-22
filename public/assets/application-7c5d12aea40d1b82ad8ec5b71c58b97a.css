@@ -630,7 +630,8 @@ textarea {
 }
 /* line 112, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
 #new_post input[type="submit"] {
-  margin: 15px 0 30px 5%;
+  margin-left: 5%;
+  margin-top: 15px;
 }
 /* line 1, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/header.css.scss */
 #menuBar a {

@@ -14,7 +14,11 @@ class User < ActiveRecord::Base
 	validates :username,
   		:uniqueness => {
     	:case_sensitive => false
-  		}
+  		},
+      :length => {
+        minimum: 1,
+        maximum: 25
+      }
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment :avatar,
@@ -31,6 +35,12 @@ class User < ActiveRecord::Base
 
   def login
     @login || self.username || self.email
+  end
+
+  def forem_avatar
+    unless self.avatar.nil?
+      self.avatar
+    end
   end
 
   def self.find_first_by_auth_conditions(warden_conditions)

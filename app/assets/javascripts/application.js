@@ -16,7 +16,6 @@
 //= require turbolinks
 //= require_tree .
 //= require forem
-//= require tinymce
 
 $('document').ready(function() {
     $('.loginInfoMenu').click(function(e) {

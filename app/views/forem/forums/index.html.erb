@@ -1,6 +1,8 @@
+<%= stylesheet_link_tag "forem" %>
+<%= javascript_include_tag "forem" %>
 <div id='forums_container'>
-  <h1 id='forums_title'><%= t('.title') %></h1>
-
+  <h2 id='forums_title'><%= t('.title') %></h2>
+  <br/>
   <%= render @categories %>
 </div>
 

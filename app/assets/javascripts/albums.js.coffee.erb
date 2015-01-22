@@ -1,7 +1,11 @@
 
 ready = ->
+  
+  try
 
-  $('img.albumArt').lazyload();
+    $('img.albumArt').lazyload();
+
+  catch error  
 
   $("input[name='sync_with_spotify']").click ->
     if $(this).val() == 'Manual' 
