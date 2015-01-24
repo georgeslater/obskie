@@ -12,4 +12,7 @@
  *
  *= require_tree .
  *= require 'forem/base'
+ *= require froala_editor.min.css
+ *= require froala_style.min.css
+ *= require font-awesome
  */

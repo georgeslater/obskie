@@ -11,11 +11,11 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
 //= require forem
+//= require froala_editor.min.js
+//= require_tree .
+
 
 $('document').ready(function() {
     $('.loginInfoMenu').click(function(e) {

@@ -85,7 +85,7 @@
                     </div>
                     <div class="content" itemprop="review" itemscope itemtype="http://schema.org/Review">
                         <meta itemprop="dateCreated" content="<%= @album.created_at.to_time.iso8601 %>" />
-                        <article itemprop="reviewBody">
+                        <article itemprop="reviewBody" class="froala-view">
                             <%= simple_format(@album.body) %>
                         </article>
                         <br /><br />

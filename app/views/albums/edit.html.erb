@@ -21,7 +21,7 @@
 
 		<%= form_for(@album) do |f| %>
 
-			<%= f.text_area :body, :cols => "120", :rows => "40" %>
+			<%= f.text_area :body, :cols => "120", :rows => "40", :class => "wysiwyg" %>
 			<div>
 				<%= f.button "Save Draft", name: "type", value: "save" %> 
 				<%= f.button "Submit", name: "type", value: "publish", :onclick => "return checkSubmit();" %> 

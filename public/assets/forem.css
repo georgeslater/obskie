@@ -55,43 +55,47 @@
   padding: 25px;
   box-shadow: 5px 5px 5px lightgrey;
 }
+/* line 69, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
+#topic .froala-view img.fr-fin {
+  max-width: 100%;
+}
 
-/* line 70, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
+/* line 75, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
 #forum {
   margin-left: 30px;
 }
-/* line 74, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
+/* line 79, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
 #forum h2 {
   margin-left: 30px;
 }
-/* line 79, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
+/* line 84, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
 #forum .icon img {
   width: 100px;
   height: auto;
 }
 
-/* line 86, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
+/* line 91, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
 #new_topic {
   margin-left: 30px;
   width: 75%;
 }
-/* line 91, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
+/* line 96, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
 #new_topic #topic_subject {
   width: 100%;
   border-radius: 5px;
 }
 
-/* line 100, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
+/* line 105, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
 #new_post label.text.required {
   display: none;
 }
-/* line 105, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
+/* line 110, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
 #new_post textarea {
   width: 90%;
   margin-left: 5%;
   margin-top: 15px;
 }
-/* line 112, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
+/* line 117, /Users/georgeslater/Documents/obskie/app/assets/stylesheets/forem.css.scss */
 #new_post input[type="submit"] {
   margin: 15px 0 30px 5%;
 }

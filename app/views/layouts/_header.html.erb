@@ -57,7 +57,7 @@
                                             <% end %>
                                         </div>
                                         <div>
-                                            <% if can? :create, Album %>
+                                            <% if current_user.is_approved_contributor %>
                                                 <%= link_to main_app.new_album_path do %>
                                                     <div class="menuRow">Submit a Review</div>
                                                 <% end %>

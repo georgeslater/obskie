@@ -33,7 +33,7 @@
           <%= post_time_tag(post) %>
         </a>
         <br/><br/>
-        <%= forem_format(post.text) %>
+        <span class="froala-view"><%= forem_format(post.text) %></span>
 
         <% if post.reply_to %>
           <div class='in-reply-to'>

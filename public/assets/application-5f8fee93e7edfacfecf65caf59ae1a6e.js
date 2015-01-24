@@ -10832,15 +10832,10 @@ for(var c=0;c<this.options.linkList.length;c++){var d=this.options.linkList[c];a
   var ready;
 
   ready = function() {
-    if ($('img.albumArt').length) {
-      $('img.albumArt').lazyload();
-    }
-    if ($("textarea.wysiwyg").length) {
-      $('textarea.wysiwyg').editable({
-        inlineMode: false,
-        minHeight: 200
-      });
-    }
+    $('img.albumArt').lazyload();
+    $('textarea.wysiwyg').editable({
+      inlineMode: false
+    });
     $("input[name='sync_with_spotify']").click(function() {
       if ($(this).val() === 'Manual') {
         $("#manualSection").show();
