@@ -4,7 +4,7 @@ ruby "2.1.3"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use sqlite3 as the database for Active Record
+# Use postgres as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -19,6 +19,17 @@ gem 'responders', '~> 2.0'
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk'
 gem 'dotenv-rails', :groups => [:development, :test]
+
+group :test, :development do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'capybara'
+  gem "capybara-webkit"
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem 'fabrication'
+  gem 'sqlite3'
+  gem 'faker'
+end
 
 gem 'lazyload-rails'
 
