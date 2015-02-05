@@ -16,3 +16,9 @@ development:
   encoding: unicode
   pool: 8
   username: georgeslater
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  pool: 8
+  username: georgeslater
