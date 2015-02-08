@@ -44,9 +44,7 @@
                             <div class="albumHeader">
                                 <h2 itemprop="name"><%= @album.title %></h2>
                                 <h5 itemprop="byArtist" itemscope itemtype="http://schema.org/MusicGroup">
-                                    <%= link_to artist_path(@album.artist) do %>
-                                        <span itemprop="name"><%= @album.artist.name %></span>
-                                    <% end %>
+                                    <span itemprop="name"><%= @album.artist.name %></span>
                                 </h5>
                                 <h4><%= @album.year %></h4>
                                 <meta itemprop="numTracks" content="<%= @album.tracks.size %>" />

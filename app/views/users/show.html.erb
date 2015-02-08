@@ -1,14 +1,16 @@
 <div id="userWrapper">
 	
-	<div style="float:left; margin-right: 10px;">
-		<%= image_tag @user.avatar.url(:thumb) %>
+	<div id="userHeader">
+		<div id="userAvatarImg">
+			<%= image_tag @user.avatar.url(:thumb) %>
+		</div>
+
+		<h4><%= @user.username %></h4>
 	</div>
 
-	<h4><%= @user.username %></h4>
-
-	<ul>
-		<li>Date Joined: <%= @user.created_at.strftime("%A, %d %b %Y") %></li>
-	</ul>
+	<div>
+		<span>Member since <%= @user.created_at.strftime("%A, %d %b %Y") %></span>
+	</div>
 
 	<div>
 		<a href="#reviews">Reviews (<%= @userAlbums.size %>)</a>
@@ -19,6 +21,13 @@
 	<div>
 		<a href="#playlists">Playlists (<%= @userPlaylists.size %>)</a>
 	</div>
+
+	<% if @user.about_me.present? %>
+		<h5>About Me</h5>
+		<div class="froala-view">
+			<%= simple_format(@user.about_me) %>
+		</div>
+	<% end %>
 	<br />
 	<div id="reviews">
 		<h4>Reviews (<%= @userAlbums.size %>)</h4>

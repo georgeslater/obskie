@@ -2,6 +2,17 @@
 	
 	margin-left: 15px;
 
+	#userAvatarImg{
+
+		display: inline-block; 
+		margin: 20px 10px;
+	}
+
+	h4{
+
+		display: inline-block;
+	}
+
 	td.accepted{
 
 		color: green;
@@ -37,4 +48,17 @@
 #editProfile{
 	
 	margin-left: 30px;
+	margin-bottom: 30px;
+
+	.editProfileTabPane{
+
+		 margin-left: 10px; 
+		 padding-bottom: 20px; 
+		 border-bottom: 1px lightgrey solid;
+	}
+
+	.field{
+
+		margin-bottom: 10px;
+	}
 }
