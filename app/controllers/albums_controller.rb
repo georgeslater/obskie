@@ -9,7 +9,7 @@ class AlbumsController < ApplicationController
   	respond_to :html
 
 	def index
-
+		
 		order = params[:order]
 
 		case order
@@ -41,6 +41,8 @@ class AlbumsController < ApplicationController
 
 			@albums = Album.where("workflow_state = 'accepted'").order('created_at DESC')
 		end
+
+		Rails.logger.debug("%%% "+@albums.to_yaml)
 
 		respond_with(@albums)
 

@@ -16,6 +16,19 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require 'capybara/rspec'
+require 'capybara/poltergeist'
+
+Capybara.register_driver :poltergeist_debug do |app|
+  Capybara::Poltergeist::Driver.new(app, :inspector => true)
+end
+
+Capybara.javascript_driver = :poltergeist_debug
+
+RSpec::Matchers.define :appear_before do |later_content|
+  match do |earlier_content|
+    page.body.index(earlier_content) < page.body.index(later_content)
+  end
+end
 
 RSpec.configure do |config|
 # The settings below are suggested to provide a good initial experience

@@ -19,6 +19,7 @@ development:
 
 test:
   adapter: postgresql
-  encoding: unicode
-  pool: 8
+  encoding: utf8
+  database: obskie_test
   username: georgeslater
+  host: localhost

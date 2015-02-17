@@ -25,6 +25,8 @@ group :test, :development do
   gem 'capybara'
   gem "capybara-webkit"
   gem 'selenium-webdriver'
+  gem "chromedriver-helper"
+  gem "poltergeist"
   gem 'database_cleaner'
   gem 'fabrication'
   gem 'sqlite3'
