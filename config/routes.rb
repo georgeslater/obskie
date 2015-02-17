@@ -68,7 +68,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get "sitemap.xml" => "home#sitemap", format: :xml, as: :sitemap
   get "robots.txt" => "home#robots", format: :text, as: :robots
 
   # Example resource route with options:
