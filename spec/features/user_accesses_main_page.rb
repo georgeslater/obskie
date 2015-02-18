@@ -15,6 +15,8 @@ feature 'User accesses main page' do
 		album1 = Fabricate(:album)
 		album2 = Fabricate(:album)
 
+		sleep(5)
+
 		visit root_path
 
 		expect(page).to have_content(album1.title)
@@ -22,11 +24,8 @@ feature 'User accesses main page' do
 		
 		expect(album2.title).to appear_before(album1.title)
 
-		select "Oldest first", :from => "sort_by"
+		page.execute_script("changeSortOrderJs('Oldest first')") 
 
-		Timeout.timeout(5) do
-
-			expect(album1.title).to appear_before(album2.title)	
-		end	
+		expect(album1.title).to appear_before(album2.title)		
 	end
 end
