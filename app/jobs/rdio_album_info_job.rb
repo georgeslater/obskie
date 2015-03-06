@@ -20,12 +20,18 @@ class RdioAlbumInfoJob < ApplicationController
 			if result
 			
 				url = result['url']
+
+				if url.present?
+
+					linkshare_uri = 'http://click.linksynergy.com/fs-bin/click?id=/0gJtLz2nOs&subid=&offerid=341998.1&type=10&tmpid=8599&RD_PARM1='+ERB::Util.url_encode(url)
+				end
+
 				key = result['key']
 			end		
 
-			if url
+			if url && linkshare_uri
 
-				album_created.update_attributes({rdio_url: url})
+				album_created.update_attributes({rdio_url: linkshare_uri})
 
 				#Get tracks
 				track_response = rdio.call('search', {'query' => album_created.title+" "+album_created.artist.name, 'never_or' => false, 'count' => 200, 'types' => 'Track'})

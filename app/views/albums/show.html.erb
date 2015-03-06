@@ -64,7 +64,7 @@
                                         <a href="<%= get_amazon_link(@album) %>" target="_blank" class="externalLink amazon" title="Amazon"></a>
                                     <% end %>
                                     <% if @album.rdio_url.present? %>
-                                        <a href="http://rdio.com<%= @album.rdio_url %>" class="externalLink rdio" target="_blank" title="Rdio"></a>
+                                        <a href="<%= @album.rdio_url %>" class="externalLink rdio" target="_blank" title="Rdio"></a>
                                     <% end %>
                                 </div>
                                 <div id="obscurometer">
