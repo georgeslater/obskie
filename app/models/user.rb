@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username
 
+  after_create :skip_conf!
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -25,6 +27,10 @@ class User < ActiveRecord::Base
   :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"] }
   do_not_validate_attachment_file_type :avatar
   
+  def skip_conf!
+    self.confirm! if Rails.env.development?
+  end
+
   def forem_name
     username
   end

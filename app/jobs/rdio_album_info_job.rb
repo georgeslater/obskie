@@ -52,7 +52,7 @@ class RdioAlbumInfoJob < ApplicationController
 						Rails.logger.debug(apostrophe_changed_name) 
 						if url == track_result['albumUrl'] && track.name.casecmp(apostrophe_changed_name) == 0
 
-							track_url = track_result['url']
+							track_url = 'http://www.rdio.com'+track_result['url']
 							linkshare_track_url = 'http://click.linksynergy.com/fs-bin/click?id=/0gJtLz2nOs&subid=&offerid=341998.1&type=10&tmpid=8599&RD_PARM1='+ERB::Util.url_encode(track_url)
 							track.update_attributes(rdio_url: track_url)
 							break
